@@ -12,10 +12,11 @@ Minimal and clean example implementations of data structures and algorithms in P
 
 ## Onboarding experience
 
-Did you choose a new project or continue on the previous one?
+For this assignment, our group decided to choose a new project compared to the project chosen in assignment 3. This decision was made because this new project had well defined issues which seemed clear to solve and was done in Python 3 which our group was more comfortable with. Meanwhile our previous project Jsoniter (http://jsoniter.com/java-features.html) had vague issues, making it hard for us to determine how to approach the assignment.
 
-If you changed the project, how did your experience differ from before?
+The onboarding experience for Algorithms was a lot smoother than Jsoniter due to couple of reasons. First off, being able to run unittests on this project was as simple as importing the project and simply running unittest in the relevant directory. Compared to Algorithms, Jsonited required us to use a IDE such as Intellij to easily work with Maven and have the correct dependencies for the project, which took a while and didn't work properly until we tweaked some of the Maven dependencies. Therefore, overall the onboarding experience with Algorithms has been easy and straightforward.
 
+Algorithms also has a much better documentation present in it's readme file compared to Jsoniter, as it has detailed instructions on how to test, install, and uninstall the software. It also has a long detailed list of every single function present in the project, making navigation and comprehension easy for the group.
 ## Effort spent
 
 For each team member, how much time was spent in
