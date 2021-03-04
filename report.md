@@ -1,4 +1,4 @@
-# Report for assignment 4
+# Report for assignment 4 Group 19
 
 This is a template for your report. You are free to modify it as needed.
 It is not required to use markdown for your report either, but the report
@@ -6,11 +6,11 @@ has to be delivered in a standard, cross-platform format.
 
 ## Project
 
-Name:
+Name: Algorithms (Pythonic Data Structures and Algorithms)
 
-URL:
+URL: https://github.com/keon/algorithms
 
-One or two sentences describing it
+Minimal and clean example implementations of data structures and algorithms in Python 3.
 
 ## Onboarding experience
 
