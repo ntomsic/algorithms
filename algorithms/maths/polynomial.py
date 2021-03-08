@@ -54,15 +54,14 @@ class Monomial:
 
     @staticmethod
     def _rationalize_if_possible(num):
-        '''
+        """
         A helper for converting numbers
         to Fraction only when possible.
-        '''
+        """
         if isinstance(num, Rational):
             res = Fraction(num, 1)
             return Fraction(res.numerator, res.denominator)
-        else:
-            return num
+        return num
 
     # def equal_upto_scalar(self, other: Monomial) -> bool:
     def equal_upto_scalar(self, other) -> bool:
@@ -321,15 +320,14 @@ class Polynomial:
 
     @staticmethod
     def _rationalize_if_possible(num):
-        '''
+        """
         A helper for converting numbers
         to Fraction only when possible.
-        '''
+        """
         if isinstance(num, Rational):
             res = Fraction(num, 1)
             return Fraction(res.numerator, res.denominator)
-        else:
-            return num
+        return num
 
     # def __add__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __add__(self, other: Union[int, float, Fraction, Monomial]):
@@ -339,7 +337,7 @@ class Polynomial:
         """
         if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
             return self.__add__(Monomial({}, Polynomial._rationalize_if_possible(other)))
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             monos = {m.clone() for m in self.monomials}
 
             for _own_monos in monos:
@@ -371,7 +369,7 @@ class Polynomial:
         """
         if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
             return self.__sub__(Monomial({}, Polynomial._rationalize_if_possible(other)))
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             monos = {m.clone() for m in self.all_monomials()}
             for _own_monos in monos:
                 if _own_monos.equal_upto_scalar(other):
@@ -409,13 +407,13 @@ class Polynomial:
             for m in monos:
                 result = result.__add__(m.clone() * other)
             return result
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             result = Polynomial([])
             monos = {m.clone() for m in self.all_monomials()}
             for m in monos:
                 result = result.__add__(m.clone() * other)
             return result
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             temp_self = {m.clone() for m in self.all_monomials()}
             temp_other = {m.clone() for m in other.all_monomials()}
 

@@ -18,13 +18,11 @@ def valid_solution_hashtable(board):
                 return False
             if value_row in dict_row:
                 return False
-            else:
-                dict_row[value_row] += 1
+            dict_row[value_row] += 1
 
             if value_col in dict_col:
                 return False
-            else:
-                dict_col[value_col] += 1
+            dict_col[value_col] += 1
 
     for i in range(3):
         for j in range(3):

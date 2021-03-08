@@ -1,4 +1,4 @@
-""" 
+"""
 Python implementation of the Interpolation Search algorithm.
 Given a sorted array in increasing order, interpolation search calculates
 the starting point of its search according to the search key.

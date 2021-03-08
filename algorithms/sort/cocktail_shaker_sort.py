@@ -5,7 +5,7 @@ def cocktail_shaker_sort(arr):
     mutation of bubble sort
 
     reference: https://en.wikipedia.org/wiki/Cocktail_shaker_sort
-    
+
     Worst-case performance: O(N^2)
     """
 

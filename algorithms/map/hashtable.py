@@ -29,7 +29,7 @@ class HashTable(object):
                 self._values[hash_] = value
                 self._len += 1
                 return
-            elif self._keys[hash_] == key:
+            if self._keys[hash_] == key:
                 # key already exists here, assign over
                 self._keys[hash_] = key
                 self._values[hash_] = value
@@ -47,7 +47,7 @@ class HashTable(object):
             if self._keys[hash_] is self._empty:
                 # That key was never assigned
                 return None
-            elif self._keys[hash_] == key:
+            if self._keys[hash_] == key:
                 # key found
                 return self._values[hash_]
 
@@ -62,7 +62,7 @@ class HashTable(object):
             if self._keys[hash_] is self._empty:
                 # That key was never assigned
                 return None
-            elif self._keys[hash_] == key:
+            if self._keys[hash_] == key:
                 # key found, assign with deleted sentinel
                 self._keys[hash_] = self._deleted
                 self._values[hash_] = self._deleted

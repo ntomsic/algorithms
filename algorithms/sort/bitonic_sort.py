@@ -3,10 +3,10 @@ def bitonic_sort(arr, reverse=False):
     bitonic sort is sorting algorithm to use multiple process, but this code not containing parallel process
     It can sort only array that sizes power of 2
     It can sort array in both increasing order and decreasing order by giving argument true(increasing) and false(decreasing)
-    
+
     Worst-case in parallel: O(log(n)^2)
     Worst-case in non-parallel: O(nlog(n)^2)
-    
+
     reference: https://en.wikipedia.org/wiki/Bitonic_sorter
     """
 

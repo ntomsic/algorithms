@@ -14,14 +14,16 @@ class ZigZagIterator:
         """
         v = self.queue.pop(0)
         ret = v.pop(0)
-        if v: self.queue.append(v)
+        if v:
+            self.queue.append(v)
         return ret
 
     def has_next(self):
         """
         :rtype: bool
         """
-        if self.queue: return True
+        if self.queue:
+            return True
         return False
 
 

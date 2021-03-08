@@ -159,11 +159,11 @@ def bob_shared_key(a_pu_k, b_pr_k, p):
 
 
 def diffie_hellman_key_exchange(a, p, option=None):
-    if (option != None):
+    if option != None:
         option = 1
         """ Print explanation of process
         when option parameter is given """
-    if (prime_check(p) == False):
+    if prime_check(p) == False:
         print("%d is not a prime number" % p)
         return False
         """p must be large prime number"""
@@ -196,4 +196,4 @@ def diffie_hellman_key_exchange(a, p, option=None):
         print("Shared key calculated by Alice = %d" % a_sh_k)
         print("Shared key calculated by Bob = %d" % b_sh_k)
 
-        return (a_sh_k == b_sh_k)
+        return a_sh_k == b_sh_k

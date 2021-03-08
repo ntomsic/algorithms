@@ -29,11 +29,11 @@ class TreeNode:
         self.right = right
 
 pre_index = 0
-        
+
 def construct_tree_util(pre: list, post: list, low: int, high: int, size: int):
     """
         Recursive function that constructs tree from preorder and postorder array.
-        
+
         preIndex is a global variable that keeps track of the index in preorder
         array.
         preorder and postorder array are represented are pre[] and post[] respectively.
@@ -44,8 +44,8 @@ def construct_tree_util(pre: list, post: list, low: int, high: int, size: int):
 
     if pre_index == -1:
         pre_index = 0
-  
-    
+
+
     #Base case
     if(pre_index >= size or low > high):
         return None
@@ -60,14 +60,14 @@ def construct_tree_util(pre: list, post: list, low: int, high: int, size: int):
     #Find the next element of pre[] in post[]
     i = low
     while i <= high:
-        if(pre[pre_index] == post[i]):
+        if pre[pre_index] == post[i]:
             break
 
         i += 1
 
     #Use index of element present in postorder to divide postorder array
     #to two parts: left subtree and right subtree
-    if(i <= high):
+    if i <= high:
         root.left = construct_tree_util(pre, post, low, i, size)
         root.right = construct_tree_util(pre, post, i+1, high, size)
 
@@ -93,9 +93,9 @@ def print_inorder(root: TreeNode, result = None):
     """
     if root is None:
         return []
-    if result is None: 
+    if result is None:
         result = []
-        
+
     print_inorder(root.left, result)
     result.append(root.val)
     print_inorder(root.right, result)

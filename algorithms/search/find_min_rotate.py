@@ -25,7 +25,6 @@ def find_min_rotate_recur(array, low, high):
     mid = (low + high) // 2
     if mid == low:
         return array[low]
-    elif array[mid] > array[high]:
+    if array[mid] > array[high]:
         return find_min_rotate_recur(array, mid + 1, high)
-    else:
-        return find_min_rotate_recur(array, low, mid)
+    return find_min_rotate_recur(array, low, mid)

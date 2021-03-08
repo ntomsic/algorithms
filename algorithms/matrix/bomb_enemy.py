@@ -1,3 +1,4 @@
+import unittest
 """
 Given a 2D grid, each cell is either a wall 'W',
 an enemy 'E' or empty '0' (the number zero),
@@ -68,7 +69,6 @@ def col_kills(grid, i, j):
     Testsuite for the project
 """
 
-import unittest
 
 
 class TestBombEnemy(unittest.TestCase):

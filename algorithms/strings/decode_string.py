@@ -22,8 +22,8 @@ def decode_string(s):
     :type s: str
     :rtype: str
     """
-    stack = [];
-    cur_num = 0;
+    stack = []
+    cur_num = 0
     cur_string = ''
     for c in s:
         if c == '[':

@@ -37,5 +37,4 @@ def jump_search(arr, target):
 
     if arr[block_prev] == target:
         return block_prev
-    else:
-        return -1
+    return -1

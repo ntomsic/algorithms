@@ -44,7 +44,7 @@ def strip_url_params1(url, params_to_strip=None):
                 if _token[0]:
                     length = len(_token[0])
                     if length == 1:
-                        if _token and (not (_token[0] in dict)):
+                        if _token and not (_token[0] in dict):
                             if params_to_strip:
                                 if _token[0] != params_to_strip[0]:
                                     dict[_token[0]] = _token[1]
@@ -56,7 +56,7 @@ def strip_url_params1(url, params_to_strip=None):
                     else:
                         check = _token[0]
                         letter = check[1]
-                        if _token and (not (letter in dict)):
+                        if _token and not (letter in dict):
                             if params_to_strip:
                                 if letter != params_to_strip[0]:
                                     dict[letter] = _token[1]
@@ -84,7 +84,8 @@ def strip_url_params2(url, param_to_strip=[]):
 
 # Here is my friend's solution using python's builtin libraries
 def strip_url_params3(url, strip=None):
-    if not strip: strip = []
+    if not strip:
+        strip = []
 
     parse = urllib.parse.urlparse(url)
     query = urllib.parse.parse_qs(parse.query)
