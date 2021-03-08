@@ -32,7 +32,7 @@ def first_is_consecutive(stack):
         storage_stack.append(first_value)
 
     # Back up stack from storage stack
-    for i in range(len(storage_stack)):
+    for _ in range(len(storage_stack)):
         stack.append(storage_stack.pop())
     return True
 
@@ -50,11 +50,11 @@ def second_is_consecutive(stack):
         _q.append(first_value)
 
     # Back up stack from queue
-    for i in range(len(_q)):
+    for _ in range(len(_q)):
         stack.append(_q.pop())
-    for i in range(len(stack)):
+    for _ in range(len(stack)):
         _q.append(stack.pop())
-    for i in range(len(_q)):
+    for _ in range(len(_q)):
         stack.append(_q.pop())
 
     return True

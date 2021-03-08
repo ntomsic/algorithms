@@ -7,15 +7,14 @@ For example:
 10: 1010    --> 5 : 0101
 """
 
-"""
-We can approach this as operating on the odds bit first, and then the even bits.
-We can mask all odd bits with 10101010 in binary ('AA') then shift them right by 1
-Similarly, we mask all even bit with 01010101 in binary ('55') then shift them left
-by 1. Finally, we merge these two values by OR operation.
-"""
-
 
 def swap_pair(num):
+    """
+    We can approach this as operating on the odds bit first, and then the even bits.
+    We can mask all odd bits with 10101010 in binary ('AA') then shift them right by 1
+    Similarly, we mask all even bit with 01010101 in binary ('55') then shift them left
+    by 1. Finally, we merge these two values by OR operation.
+    """
     # odd bit arithmetic right shift 1 bit
     odd = (num & int('AAAAAAAA', 16)) >> 1
     # even bit left shift 1 bit

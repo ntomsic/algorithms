@@ -1,4 +1,5 @@
 import re
+from functools import reduce
 """
 Given an api which returns an array of words and an array of symbols, display
 the word with their matched symbol surrounded by square brackets.
@@ -22,8 +23,6 @@ was O(n^2) and they expected an efficient algorithm.
 output:
 ['[Am]azon', 'Mi[cro]soft', 'Goog[le]', 'Amaz[o]n', 'Micr[o]s[o]ft', 'G[o][o]gle']
 """
-
-from functools import reduce
 
 
 def match_symbol(words, symbols):
@@ -54,14 +53,6 @@ def match_symbol_1(words, symbols):
     return res
 
 
-"""
-Another approach is to use a Tree for the dictionary (the symbols), and then
-match brute force. The complexity will depend on the dictionary;
-if all are suffixes of the other, it will be n*m
-(where m is the size of the dictionary). For example, in Python:
-"""
-
-
 class TreeNode:
     def __init__(self):
         self.c = dict()
@@ -69,6 +60,12 @@ class TreeNode:
 
 
 def bracket(words, symbols):
+    """
+    Another approach is to use a Tree for the dictionary (the symbols), and then
+    match brute force. The complexity will depend on the dictionary;
+    if all are suffixes of the other, it will be n*m
+    (where m is the size of the dictionary). For example, in Python:
+    """
     root = TreeNode()
     for _s in symbols:
         _t = root

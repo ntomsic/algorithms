@@ -32,9 +32,7 @@ def longest_common_subsequence(s_1, s_2):
     _n = len(s_2)
 
     d_p = [[0] * (_n + 1) for i in range(_m + 1)]
-    """
-    dp[i][j] : contains length of LCS of s1[0..i-1] and s2[0..j-1]
-    """
+    # dp[i][j] : contains length of LCS of s1[0..i-1] and s2[0..j-1]
 
     for i in range(_m + 1):
         for j in range(_n + 1):

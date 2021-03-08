@@ -12,20 +12,18 @@ def lcm(_a, _b):
     return _a * _b / gcd(_a, _b)
 
 
-"""
-Given a positive integer x, computes the number of trailing zero of x.
-Example
-Input : 34(100010)
-           ~~~~~^
-Output : 1
-
-Input : 40(101000)
-           ~~~^^^
-Output : 3
-"""
-
-
 def trailing_zero(_x):
+    """
+    Given a positive integer x, computes the number of trailing zero of x.
+    Example
+    Input : 34(100010)
+               ~~~~~^
+    Output : 1
+
+    Input : 40(101000)
+               ~~~^^^
+    Output : 3
+    """
     cnt = 0
     while _x and not _x & 1:
         cnt += 1
@@ -33,13 +31,11 @@ def trailing_zero(_x):
     return cnt
 
 
-"""
-Given two non-negative integer a and b,
-computes the greatest common divisor of a and b using bitwise operator.
-"""
-
-
 def gcd_bit(_a, _b):
+    """
+    Given two non-negative integer a and b,
+    computes the greatest common divisor of a and b using bitwise operator.
+    """
     tza = trailing_zero(_a)
     tzb = trailing_zero(_b)
     _a >>= tza

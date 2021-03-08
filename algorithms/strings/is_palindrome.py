@@ -63,7 +63,8 @@ def string_reverse(_s):
 def is_palindrome_reverse(_s):
     _s = remove_punctuation(_s)
 
-    # can also get rid of the string_reverse function and just do this return s == s[::-1] in one line.
+    # can also get rid of the string_reverse function
+    # and just do this return s == s[::-1] in one line.
     if _s == string_reverse(_s):
         return True
     return False

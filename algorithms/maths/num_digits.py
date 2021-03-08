@@ -1,5 +1,6 @@
 """
-   num_digits() method will return the number of digits of a number in O(1) time using math.log10() method.
+num_digits() method will return the number of digits of a number
+in O(1) time using math.log10() method.
 """
 
 import math

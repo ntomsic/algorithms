@@ -3,7 +3,8 @@ B-tree is used to disk operations. Each node (except root) contains
 at least t-1 keys (t children) and at most 2*t - 1 keys (2*t children)
 where t is the degree of b-tree. It is not a kind of typical bst tree, because
 this tree grows up.
-B-tree is balanced which means that the difference between height of left subtree and right subtree is at most 1.
+B-tree is balanced which means that the difference between height
+of left subtree and right subtree is at most 1.
 
 Complexity
     n - number of elements
@@ -153,7 +154,8 @@ class BTree:
 
         if not parent_node.children[child_index + 1].is_leaf:
             ownerless_child = parent_node.children[child_index + 1].children.pop(0)
-            # make ownerless_child as a new biggest child (with highest key) -> transfer from right subtree to left subtree
+            # make ownerless_child as a new biggest child (with highest key) ->
+            # transfer from right subtree to left subtree
             parent_node.children[child_index].children.append(ownerless_child)
 
     def _rotate_right(self, parent_node: Node, child_index: int):
@@ -167,7 +169,8 @@ class BTree:
 
         if not parent_node.children[child_index - 1].is_leaf:
             ownerless_child = parent_node.children[child_index - 1].children.pop()
-            # make ownerless_child as a new lowest child (with lowest key) -> transfer from left subtree to right subtree
+            # make ownerless_child as a new lowest child (with lowest key) ->
+            # transfer from left subtree to right subtree
             parent_node.children[child_index].children.insert(0, ownerless_child)
 
     def _merge(self, parent_node: Node, to_merge_index: int, transfered_child_index: int):

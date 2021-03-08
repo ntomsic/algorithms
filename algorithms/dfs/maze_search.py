@@ -46,7 +46,7 @@ def dfs(maze, i, j, depth, cnt):
         nx_i = i + directions[k][0]
         nx_j = j + directions[k][1]
 
-        if nx_i >= 0 and nx_i < row and nx_j >= 0 and nx_j < col:
+        if 0 <= nx_i < row and 0 <= nx_j < col:
             if maze[nx_i][nx_j] == 1:
                 cnt = dfs(maze, nx_i, nx_j, depth + 1, cnt)
 

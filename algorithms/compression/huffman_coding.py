@@ -160,7 +160,8 @@ class HuffmanWriter:
                 get_code_tree(_tree.right)
 
         get_code_tree(tree)
-        self.write_bits(tree_code + "1")  # "1" indicates that tree ended (it will be needed to load the tree)
+        # "1" indicates that tree ended (it will be needed to load the tree)
+        self.write_bits(tree_code + "1")
         for int_sign in signs:
             self.write_int(int_sign)
 
@@ -264,7 +265,8 @@ class HuffmanCoding:
             codes = HuffmanCoding._generate_codes(tree)
 
             writer = HuffmanWriter(file_out)
-            writer.write_bits("000")  # leave space to save how many bits will be appended to fill the last byte
+            # leave space to save how many bits will be appended to fill the last byte
+            writer.write_bits("000")
             writer.save_tree(tree)
             HuffmanCoding._encode_and_write_signs_to_file(file_in, writer, codes)
             writer.close()

@@ -7,8 +7,8 @@ Output: 2
 """
 
 
-def count_flips_to_convert(a, b):
-    diff = a ^ b
+def count_flips_to_convert(_a, _b):
+    diff = _a ^ _b
 
     # count number of ones in diff
     count = 0

@@ -4,14 +4,14 @@ Given two numbers N and k,​ find the number of strings of length N with 'K fac
 
 The algorithms is as follows:
 
-dp[n][k] will be a 4 element array, wherein each element can be the number of strings of length n and
-'K factor' = k which belong to the criteria represented by that index:
+dp[n][k] will be a 4 element array, wherein each element can be the number of strings of length n
+and 'K factor' = k which belong to the criteria represented by that index:
 
 dp[n][k][0] can be the number of strings of length n and K-factor = k which end with substring 'a'
 dp[n][k][1] can be the number of strings of length n and K-factor = k which end with substring 'ab'
 dp[n][k][2] can be the number of strings of length n and K-factor = k which end with substring 'abb'
-dp[n][k][3] can be the number of strings of length n and K-factor = k which end with anything other than
-the above substrings (anything other than 'a' 'ab' 'abb')
+dp[n][k][3] can be the number of strings of length n and K-factor = k which end with anything
+other than the above substrings (anything other than 'a' 'ab' 'abb')
 
 Example inputs
 

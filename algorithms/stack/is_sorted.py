@@ -26,7 +26,7 @@ def is_sorted(stack):
         stack.append(second_val)
 
     # Backup stack
-    for i in range(len(storage_stack)):
+    for _ in range(len(storage_stack)):
         stack.append(storage_stack.pop())
 
     return True

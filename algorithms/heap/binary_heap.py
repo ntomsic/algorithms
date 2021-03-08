@@ -71,32 +71,29 @@ class BinaryHeap(AbstractHeap):
                 self.heap[i], self.heap[i // 2] = self.heap[i // 2], self.heap[i]
             i = i // 2
 
-    """
-        Method insert always start by inserting the element at the bottom.
-        it inserts rightmost spot so as to maintain the complete tree property
-        Then, it fix the tree by swapping the new element with its parent,
-        until it finds an appropriate spot for the element. It essentially
-        perc_up the minimum element
-        Complexity: O(logN)
-    """
-
     def insert(self, val):
+        """
+            Method insert always start by inserting the element at the bottom.
+            it inserts rightmost spot so as to maintain the complete tree property
+            Then, it fix the tree by swapping the new element with its parent,
+            until it finds an appropriate spot for the element. It essentially
+            perc_up the minimum element
+            Complexity: O(logN)
+        """
         self.heap.append(val)
         self.currentSize = self.currentSize + 1
         self.perc_up(self.currentSize)
 
-    """
-        Method min_child returns index of smaller 2 childs of its parent
-    """
-
     def min_child(self, i):
+        """
+            Method min_child returns index of smaller 2 childs of its parent
+        """
         if 2 * i + 1 > self.currentSize:  # No right child
             return 2 * i
-        else:
-            # left child > right child
-            if self.heap[2 * i] > self.heap[2 * i + 1]:
-                return 2 * i + 1
-            return 2 * i
+        # left child > right child
+        if self.heap[2 * i] > self.heap[2 * i + 1]:
+            return 2 * i + 1
+        return 2 * i
 
     def perc_down(self, i):
         while 2 * i < self.currentSize:
@@ -106,17 +103,16 @@ class BinaryHeap(AbstractHeap):
                 self.heap[min_child], self.heap[i] = self.heap[i], self.heap[min_child]
             i = min_child
 
-    """
-        Remove Min method removes the minimum element and swap it with the last
-        element in the heap( the bottommost, rightmost element). Then, it
-        perc_down this element, swapping it with one of its children until the
-        min heap property is restored
-        Complexity: O(logN)
-    """
-
     def remove_min(self):
+        """
+            Remove Min method removes the minimum element and swap it with the last
+            element in the heap( the bottommost, rightmost element). Then, it
+            perc_down this element, swapping it with one of its children until the
+            min heap property is restored
+            Complexity: O(logN)
+        """
         ret = self.heap[1]  # the smallest value at beginning
-        self.heap[1] = self.heap[self.currentSize]  # Repalce it by the last value
+        self.heap[1] = self.heap[self.currentSize]  # Replace it by the last value
         self.currentSize = self.currentSize - 1
         self.heap.pop()
         self.perc_down(1)

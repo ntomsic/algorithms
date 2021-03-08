@@ -1,4 +1,8 @@
-# The stack remains always ordered such that the highest value is at the top and the lowest at the bottom
+"""
+The stack remains always ordered such that the highest value
+is at the top and the lowest at the bottom
+"""
+
 
 class OrderedStack:
     def __init__(self):

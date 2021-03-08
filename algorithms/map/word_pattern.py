@@ -19,7 +19,8 @@ Example 4:
 Input: pattern = "abba", str = "dog dog dog dog"
 Output: false
 Notes:
-You may assume pattern contains only lowercase letters, and str contains lowercase letters separated by a single space.
+You may assume pattern contains only lowercase letters,
+and str contains lowercase letters separated by a single space.
 Reference: https://leetcode.com/problems/word-pattern/description/
 """
 

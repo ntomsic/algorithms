@@ -21,10 +21,10 @@ def remove_range(head, start, end):
     else:
         current = head
         # Move pointer to start position
-        for i in range(0, start - 1):
+        for _ in range(0, start - 1):
             current = current.next
         # Remove data until the end
-        for i in range(0, end - start + 1):
+        for _ in range(0, end - start + 1):
             if current is not None and current.next is not None:
                 current.next = current.next.next
     return head

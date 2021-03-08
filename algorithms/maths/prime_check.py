@@ -5,7 +5,7 @@ def prime_check(_n):
 
     if _n <= 1:
         return False
-    if _n == 2 or _n == 3:
+    if _n in (2, 3):
         return True
     if _n % 2 == 0 or _n % 3 == 0:
         return False

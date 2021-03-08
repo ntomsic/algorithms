@@ -37,7 +37,11 @@ def array_sum_combinations(_a, _b, _c, target):
             array = _c
         return array
 
-    def backtrack(constructed_sofar=[], res=[]):
+    def backtrack(constructed_sofar=None, res=None):
+        if res is None:
+            res = []
+        if constructed_sofar is None:
+            constructed_sofar = []
         to_stop, reached_target = over(constructed_sofar)
         if to_stop:
             if reached_target:

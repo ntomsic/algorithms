@@ -20,7 +20,8 @@ return 3. (Placing a bomb at (1,1) kills 3 enemies)
 
 
 def max_killed_enemies(grid):
-    if not grid: return 0
+    if not grid:
+        return 0
     _m, _n = len(grid), len(grid[0])
     max_killed = 0
     row_e, col_e = 0, [0] * _n
@@ -65,13 +66,12 @@ def col_kills(grid, i, j):
 
 # ----------------- TESTS -------------------------
 
-"""
-    Testsuite for the project
-"""
-
-
 
 class TestBombEnemy(unittest.TestCase):
+    """
+    Testsuite for the project
+    """
+
     def test_3x4(self):
         grid1 = [["0", "E", "0", "0"],
                  ["E", "0", "W", "E"],

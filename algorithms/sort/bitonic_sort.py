@@ -1,8 +1,10 @@
 def bitonic_sort(arr, reverse=False):
     """
-    bitonic sort is sorting algorithm to use multiple process, but this code not containing parallel process
+    bitonic sort is sorting algorithm to use multiple process,
+    but this code not containing parallel process
     It can sort only array that sizes power of 2
-    It can sort array in both increasing order and decreasing order by giving argument true(increasing) and false(decreasing)
+    It can sort array in both increasing order
+    and decreasing order by giving argument true(increasing) and false(decreasing)
 
     Worst-case in parallel: O(log(_n)^2)
     Worst-case in non-parallel: O(nlog(_n)^2)
@@ -33,7 +35,7 @@ def bitonic_sort(arr, reverse=False):
     if _n <= 1:
         return arr
     # checks if _n is power of two
-    if not (_n and (not (_n & (_n - 1)))):
+    if not _n and not _n & _n - 1:
         raise ValueError("the size of input should be power of two")
 
     left = bitonic_sort(arr[:_n // 2], True)

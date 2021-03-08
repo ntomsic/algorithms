@@ -56,9 +56,8 @@ def intersection(h_1, h_2):
         if longer == shorter:
             # The nodes match, return the node
             return longer
-        else:
-            longer = longer.next
-            shorter = shorter.next
+        longer = longer.next
+        shorter = shorter.next
 
     return None
 

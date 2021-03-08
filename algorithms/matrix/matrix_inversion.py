@@ -49,7 +49,7 @@ def invert_matrix(_m):
         inverted[0][0] = multiplier * _m[1][1]
         inverted[1][1] = multiplier * _m[0][0]
         return inverted
-    """some steps combined in helpers to reduce traversals"""
+    # some steps combined in helpers to reduce traversals
     # get matrix of minors w/ "checkerboard" signs
     m_of_minors = get_matrix_of_minors(_m)
 
@@ -67,13 +67,12 @@ def get_determinant(_m):
     if len(_m) == 2:
         # trivial case
         return (_m[0][0] * _m[1][1]) - (_m[0][1] * _m[1][0])
-    else:
-        sign = 1
-        det = 0
-        for i in range(len(_m)):
-            det += sign * _m[0][i] * get_determinant(get_minor(_m, 0, i))
-            sign *= -1
-        return det
+    sign = 1
+    det = 0
+    for i in range(len(_m)):
+        det += sign * _m[0][i] * get_determinant(get_minor(_m, 0, i))
+        sign *= -1
+    return det
 
 
 def get_matrix_of_minors(_m):

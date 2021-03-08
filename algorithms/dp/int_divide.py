@@ -1,5 +1,6 @@
 """
-Given positive integer n, find an algorithm to find the number of non-negative number division, or descomposition.
+Given positive integer n,
+find an algorithm to find the number of non-negative number division, or decomposition.
 
 The complexity is O(n^2).
 

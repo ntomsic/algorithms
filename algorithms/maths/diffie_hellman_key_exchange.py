@@ -14,7 +14,7 @@ def prime_check(_n):
 
     if _n <= 1:
         return False
-    if _n == 2 or _n == 3:
+    if _n in (2, 3):
         return True
     if _n % 2 == 0 or _n % 3 == 0:
         return False
@@ -26,19 +26,16 @@ def prime_check(_n):
     return True
 
 
-"""
-For positive integer n and given integer a that satisfies gcd(a, n) = 1,
-the order of a modulo n is the smallest positive integer k that satisfies
-pow (a, k) % n = 1. In other words, (a^k) ≡ 1 (mod n).
-Order of certain number may or may not be exist. If so, return -1.
-"""
-
-
 def find_order(_a, _n):
+    """
+    For positive integer n and given integer a that satisfies gcd(a, n) = 1,
+    the order of a modulo n is the smallest positive integer k that satisfies
+    pow (a, k) % n = 1. In other words, (a^k) ≡ 1 (mod n).
+    Order of certain number may or may not be exist. If so, return -1.
+    """
     if (_a == 1) & (_n == 1):
         return 1
-        """ Exception Handeling :
-        1 is the order of of 1 """
+        # Exception Handling : 1 is the order of of 1
     if math.gcd(_a, _n) != 1:
         print("a and n should be relative prime!")
         return -1
@@ -48,18 +45,15 @@ def find_order(_a, _n):
     return -1
 
 
-"""
-Euler's totient function, also known as phi-function ϕ(n),
-counts the number of integers between 1 and n inclusive,
-which are coprime to n.
-(Two numbers are coprime if their greatest common divisor (GCD) equals 1).
-Code from /algorithms/maths/euler_totient.py, written by 'goswami-rahul'
-"""
-
-
 def euler_totient(_n):
-    """Euler's totient function or Phi function.
-    Time Complexity: O(sqrt(n))."""
+    """
+    Euler's totient function, also known as phi-function ϕ(n),
+    counts the number of integers between 1 and n inclusive,
+    which are coprime to n.
+    (Two numbers are coprime if their greatest common divisor (GCD) equals 1).
+    Code from /algorithms/maths/euler_totient.py, written by 'goswami-rahul'
+    Time Complexity: O(sqrt(n)).
+    """
     result = _n
     for i in range(2, int(_n ** 0.5) + 1):
         if _n % i == 0:
@@ -71,34 +65,28 @@ def euler_totient(_n):
     return result
 
 
-"""
-For positive integer n and given integer a that satisfies gcd(a, n) = 1,
-a is the primitive root of n, if a's order k for n satisfies k = ϕ(n).
-Primitive roots of certain number may or may not be exist.
-If so, return empty list.
-"""
-
-
 def find_primitive_root(_n):
+    """
+    For positive integer n and given integer a that satisfies gcd(a, n) = 1,
+    a is the primitive root of n, if a's order k for n satisfies k = ϕ(n).
+    Primitive roots of certain number may or may not be exist.
+    If so, return empty list.
+    """
     if _n == 1:
         return [0]
-        """ Exception Handeling :
-        0 is the only primitive root of 1 """
-    else:
-        phi = euler_totient(_n)
-        p_root_list = []
-        """ It will return every primitive roots of n. """
-        for i in range(1, _n):
-            if math.gcd(i, _n) != 1:
-                continue
-                """ To have order, a and n must be
-                relative prime with each other. """
-            else:
-                order = find_order(i, _n)
-                if order == phi:
-                    p_root_list.append(i)
-                continue
-        return p_root_list
+        # Exception Handling: 0 is the only primitive root of 1
+    phi = euler_totient(_n)
+    p_root_list = []
+    # It will return every primitive roots of n.
+    for i in range(1, _n):
+        if math.gcd(i, _n) != 1:
+            continue
+            # To have order, a and n must be relative prime with each other.
+        order = find_order(i, _n)
+        if order == phi:
+            p_root_list.append(i)
+        continue
+    return p_root_list
 
 
 """
@@ -156,41 +144,39 @@ def bob_shared_key(a_pu_k, b_pr_k, _p):
 
 
 def diffie_hellman_key_exchange(_a, _p, option=None):
-    if option != None:
+    if option is not None:
         option = 1
-        """ Print explanation of process
-        when option parameter is given """
-    if prime_check(_p) == False:
+        # Print explanation of process
+        # when option parameter is given
+    if not prime_check(_p):
         print("%d is not a prime number" % _p)
         return False
-        """p must be large prime number"""
-    else:
-        try:
-            p_root_list = find_primitive_root(_p)
-            p_root_list.index(_a)
-        except ValueError:
-            print("%d is not a primitive root of %d" % (_a, _p))
-            return False
-            """ a must be primitive root of p """
+        # p must be large prime number
+    try:
+        p_root_list = find_primitive_root(_p)
+        p_root_list.index(_a)
+    except ValueError:
+        print("%d is not a primitive root of %d" % (_a, _p))
+        return False
+        # a must be primitive root of p
 
-        a_pr_k = alice_private_key(_p)
-        a_pu_k = alice_public_key(a_pr_k, _a, _p)
+    a_pr_k = alice_private_key(_p)
+    a_pu_k = alice_public_key(a_pr_k, _a, _p)
 
-        b_pr_k = bob_private_key(_p)
-        b_pu_k = bob_public_key(b_pr_k, _a, _p)
+    b_pr_k = bob_private_key(_p)
+    b_pu_k = bob_public_key(b_pr_k, _a, _p)
 
-        if option == 1:
-            print("Private key of Alice = %d" % a_pr_k)
-            print("Public key of Alice = %d" % a_pu_k)
-            print("Private key of Bob = %d" % b_pr_k)
-            print("Public key of Bob = %d" % b_pu_k)
+    if option == 1:
+        print("Private key of Alice = %d" % a_pr_k)
+        print("Public key of Alice = %d" % a_pu_k)
+        print("Private key of Bob = %d" % b_pr_k)
+        print("Public key of Bob = %d" % b_pu_k)
 
-        """ In here, Alice send her public key to Bob,
-        and Bob also send his public key to Alice."""
+    # In here, Alice send her public key to Bob, and Bob also send his public key to Alice.
 
-        a_sh_k = alice_shared_key(b_pu_k, a_pr_k, _p)
-        b_sh_k = bob_shared_key(a_pu_k, b_pr_k, _p)
-        print("Shared key calculated by Alice = %d" % a_sh_k)
-        print("Shared key calculated by Bob = %d" % b_sh_k)
+    a_sh_k = alice_shared_key(b_pu_k, a_pr_k, _p)
+    b_sh_k = bob_shared_key(a_pu_k, b_pr_k, _p)
+    print("Shared key calculated by Alice = %d" % a_sh_k)
+    print("Shared key calculated by Bob = %d" % b_sh_k)
 
-        return a_sh_k == b_sh_k
+    return a_sh_k == b_sh_k

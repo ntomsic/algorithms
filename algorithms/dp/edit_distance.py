@@ -5,7 +5,8 @@ For example, the edit distance between FOOD and MONEY is at most four:
 
 FOOD -> MOOD -> MOND -> MONED -> MONEY
 
-Given two words A and B, find the minimum number of operations required to transform one string into the other.
+Given two words A and B,
+find the minimum number of operations required to transform one string into the other.
 In other words, find the edit distance between A and B.
 
 Thought process:

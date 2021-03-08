@@ -38,7 +38,7 @@ class Tarjan(object):
                 _v.lowlink = min(_v.lowlink, _w.lowlink)
             elif _w.on_stack:
                 # Successor w is in stack S and hence in the current SCC
-                # If w is not on stack, then (v, w) is a cross-edge in the DFS tree and must be ignored
+                # If w is not on stack, then (v, w) is a cross-edge in the DFS tree and is ignored
                 # Note: The next line may look odd - but is correct.
                 # It says w.index not w.lowlink; that is deliberate and from the original paper
                 _v.lowlink = min(_v.lowlink, _w.index)

@@ -15,9 +15,7 @@ Explanation: There is no common prefix among the input strings.
 Reference: https://leetcode.com/problems/longest-common-prefix/description/
 """
 
-"""
-First solution: Horizontal scanning
-"""
+# First solution: Horizontal scanning
 
 
 def common_prefix(s_1, s_2):
@@ -41,9 +39,7 @@ def longest_common_prefix_v1(strs):
     return result
 
 
-"""
-Second solution: Vertical scanning
-"""
+# Second solution: Vertical scanning
 
 
 def longest_common_prefix_v2(strs):
@@ -56,9 +52,7 @@ def longest_common_prefix_v2(strs):
     return strs[0]
 
 
-"""
-Third solution: Divide and Conquer
-"""
+# Third solution: Divide and Conquer
 
 
 def longest_common_prefix_v3(strs):

@@ -39,7 +39,7 @@ class Solution(object):
                     # The previous character has matched and the current one
                     # has to be matched. Two possible matches: the same or .
                     matches[i][j] = matches[i - 1][j - 1] and \
-                                    (s_s == p_p or p_p == '.')
+                                    (p_p in (s_s, '.'))
                 else:
                     # Horizontal look up [j - 2].
                     # Not use the character before *.

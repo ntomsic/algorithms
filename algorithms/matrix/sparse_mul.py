@@ -52,7 +52,8 @@ def multiply(_, _a, _b):
     :type B: List[List[int]]
     :rtype: List[List[int]]
     """
-    if _a is None or _b is None: return None
+    if _a is None or _b is None:
+        return None
     _m, _n, _l = len(_a), len(_a[0]), len(_b[0])
     if len(_b) != _n:
         raise Exception("A's column number must be equal to B's row number.")
@@ -61,7 +62,8 @@ def multiply(_, _a, _b):
     for k, row in enumerate(_b):
         table_b[k] = {}
         for j, ele_b in enumerate(row):
-            if ele_b: table_b[k][j] = ele_b
+            if ele_b:
+                table_b[k][j] = ele_b
     for i, row in enumerate(_a):
         for k, ele_a in enumerate(row):
             if ele_a:
@@ -77,7 +79,8 @@ def multiply(_, _a, _b):
     :type B: List[List[int]]
     :rtype: List[List[int]]
     """
-    if _a is None or _b is None: return None
+    if _a is None or _b is None:
+        return None
     _m, _n = len(_a), len(_b[0])
     if len(_b) != _n:
         raise Exception("A's column number must be equal to B's row number.")
@@ -86,17 +89,20 @@ def multiply(_, _a, _b):
     for i, row in enumerate(_a):
         for j, ele in enumerate(row):
             if ele:
-                if i not in table_a: table_a[i] = {}
+                if i not in table_a:
+                    table_a[i] = {}
                 table_a[i][j] = ele
     for i, row in enumerate(_b):
         for j, ele in enumerate(row):
             if ele:
-                if i not in table_b: table_b[i] = {}
+                if i not in table_b:
+                    table_b[i] = {}
                 table_b[i][j] = ele
     _c = [[0 for j in range(_l)] for i in range(_m)]
     for i in table_a:
         for k in table_a[i]:
-            if k not in table_b: continue
+            if k not in table_b:
+                continue
             for j in table_b[k]:
                 _c[i][j] += table_a[i][k] * table_b[k][j]
     return _c

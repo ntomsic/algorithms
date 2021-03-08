@@ -20,7 +20,7 @@ def cocktail_shaker_sort(arr):
             if arr[i - 1] > arr[i]:
                 swap(i - 1, i)
                 swapped = True
-        if swapped == False:
+        if not swapped:
             return arr
         swapped = False
         for i in range(_n - 1, 0, -1):

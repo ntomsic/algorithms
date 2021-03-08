@@ -29,7 +29,7 @@ def powerset(iterable):
     make all possible combinations and chain them together as one object.
     From https://docs.python.org/3/library/itertools.html#itertools-recipes
     """
-    "list(powerset([1,2,3])) --> [(), (1,), (2,), (3,), (1,2), (1,3), (2,3), (1,2,3)]"
+    # list(powerset([1,2,3])) --> [(), (1,), (2,), (3,), (1,2), (1,3), (2,3), (1,2,3)]"
     _s = list(iterable)
     return chain.from_iterable(combinations(_s, r) for r in range(len(_s) + 1))
 

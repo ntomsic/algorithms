@@ -79,7 +79,6 @@ class Sudoku:
                 self.val[k] = update[k]
             else:
                 self.val[k].append(update[k])
-        return None
 
     def __str__(self):
         """[summary]

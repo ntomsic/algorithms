@@ -23,7 +23,7 @@ def remove_min(stack):
             min = val
         storage_stack.append(val)
     # Back up stack and remove min value
-    for i in range(len(storage_stack)):
+    for _ in range(len(storage_stack)):
         val = storage_stack.pop()
         if val != min:
             stack.append(val)

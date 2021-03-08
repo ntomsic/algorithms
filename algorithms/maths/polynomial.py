@@ -81,7 +81,7 @@ class Monomial:
         monomials or the addition of
         a monomial with an int, float, or a Fraction.
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             return self.__add__(Monomial({}, Monomial._rationalize_if_possible(other)))
 
         if not isinstance(other, Monomial):
@@ -117,7 +117,7 @@ class Monomial:
             Monomial({3:2}) * 2.5 = (5/2)(a_3)^2
 
         """
-        if isinstance(other, float) or isinstance(other, int) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             mono = {i: self.variables[i] for i in self.variables}
             return Monomial(mono, Monomial._rationalize_if_possible(self.coeff * other)).clean()
 
@@ -162,7 +162,7 @@ class Monomial:
         or a monomial and some other datatype
         like int/float/Fraction.
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             mono = {i: self.variables[i] for i in self.variables}
             if other == 0:
                 raise ValueError('Cannot divide by 0.')
@@ -202,7 +202,7 @@ class Monomial:
         of a monomial and a datatype
         such as int, float, Fraction, or Monomial.
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             mono = {i: self.variables[i] for i in self.variables if self.variables[i] != 0}
             if len(mono) != 0:
                 raise ValueError('Can only subtract like monomials.')
@@ -247,7 +247,7 @@ class Monomial:
         monomial for values defined by
         the substitutions dictionary.
         """
-        if isinstance(substitutions, int) or isinstance(substitutions, float) or isinstance(substitutions, Fraction):
+        if isinstance(substitutions, (Fraction, float, int)):
             substitutions = {v: Monomial._rationalize_if_possible(substitutions) for v in self.all_variables()}
         else:
             if not self.all_variables().issubset(set(substitutions.keys())):
@@ -334,7 +334,7 @@ class Polynomial:
         Add a given poylnomial to a copy of self.
 
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             return self.__add__(Monomial({}, Polynomial._rationalize_if_possible(other)))
         if isinstance(other, Monomial):
             monos = {m.clone() for m in self.monomials}
@@ -365,7 +365,7 @@ class Polynomial:
         from a copy of self.
 
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             return self.__sub__(Monomial({}, Polynomial._rationalize_if_possible(other)))
         if isinstance(other, Monomial):
             monos = {m.clone() for m in self.all_monomials()}
@@ -397,7 +397,7 @@ class Polynomial:
         Multiply a given polynomial
         to a copy of self.
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             result = Polynomial([])
             monos = {m.clone() for m in self.all_monomials()}
             for _m in monos:
@@ -439,7 +439,7 @@ class Polynomial:
 
         TODO: Implement polynomial / polynomial.
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             return self.__truediv__(Monomial({}, other))
         elif isinstance(other, Monomial):
             poly_temp = reduce(lambda acc, val: acc + val, map(lambda x: x / other, [z for z in self.all_monomials()]),
@@ -508,7 +508,7 @@ class Polynomial:
         certain values for the variables
         defined in substitutions.
         """
-        if isinstance(substitutions, int) or isinstance(substitutions, float) or isinstance(substitutions, Fraction):
+        if isinstance(substitutions, (Fraction, float, int)):
             substitutions = {i: Polynomial._rationalize_if_possible(substitutions) for i in set(self.variables())}
             return self.subs(substitutions)
         elif not isinstance(substitutions, dict):

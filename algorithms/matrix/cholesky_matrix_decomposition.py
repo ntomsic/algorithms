@@ -1,6 +1,6 @@
 """
-Cholesky matrix decomposition is used to find the decomposition of a Hermitian positive-definite matrix A
-into matrix V, so that V * V* = A, where V* denotes the conjugate transpose of L.
+Cholesky matrix decomposition is used to find the decomposition of a Hermitian positive-definite
+matrix A into matrix V, so that V * V* = A, where V* denotes the conjugate transpose of L.
 The dimensions of the matrix A must match.
 
 This method is mainly used for numeric solution of linear equations Ax = b.
