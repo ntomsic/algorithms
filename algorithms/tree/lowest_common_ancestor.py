@@ -21,17 +21,17 @@ since a node can be a descendant of itself according to the LCA definition.
 """
 
 
-def lca(root, p, q):
+def lca(root, _p, _q):
     """
     :type root: TreeNode
-    :type p: TreeNode
-    :type q: TreeNode
+    :type _p: TreeNode
+    :type _q: TreeNode
     :rtype: TreeNode
     """
-    if root is None or root is p or root is q:
+    if root is None or root is _p or root is _q:
         return root
-    left = lca(root.left, p, q)
-    right = lca(root.right, p, q)
+    left = lca(root.left, _p, _q)
+    right = lca(root.right, _p, _q)
     if left is not None and right is not None:
         return root
     return left if left else right

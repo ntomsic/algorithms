@@ -18,10 +18,10 @@ Reference: https://leetcode.com/problems/repeated-substring-pattern/description/
 """
 
 
-def repeat_substring(s):
+def repeat_substring(_s):
     """
-    :type s: str
+    :type _s: str
     :rtype: bool
     """
-    str = (s + s)[1:-1]
-    return s in str
+    str = (_s + _s)[1:-1]
+    return _s in str

@@ -7,13 +7,13 @@ def reverse(array, i, j):
 
 def reverse_words(string):
     arr = string.strip().split()  # arr is list of words
-    n = len(arr)
-    reverse(arr, 0, n - 1)
+    _n = len(arr)
+    reverse(arr, 0, _n - 1)
 
     return " ".join(arr)
 
 
 if __name__ == "__main__":
-    test = "I am keon kim and I like pizza"
-    print(test)
-    print(reverse_words(test))
+    TEST = "I am keon kim and I like pizza"
+    print(TEST)
+    print(reverse_words(TEST))

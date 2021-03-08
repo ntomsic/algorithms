@@ -12,12 +12,12 @@ Reference: https://leetcode.com/problems/repeated-string-match/description/
 """
 
 
-def repeat_string(A, B):
+def repeat_string(_a, _b):
     count = 1
-    tmp = A
-    max_count = (len(B) / len(A)) + 1
-    while not B in tmp:
-        tmp = tmp + A
+    tmp = _a
+    max_count = (len(_b) / len(_a)) + 1
+    while not _b in tmp:
+        tmp = tmp + _a
         if count > max_count:
             count = -1
             break

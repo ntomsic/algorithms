@@ -49,6 +49,6 @@ if __name__ == '__main__':
     tree.left.right = TreeNode(30)
     tree.right.left = TreeNode(36)
 
-    height = min_height(tree)
+    HEIGHT = min_height(tree)
     print_tree(tree)
-    print("height:", height)
+    print("height:", HEIGHT)

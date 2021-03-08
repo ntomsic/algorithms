@@ -36,7 +36,7 @@ def stoogesort(arr, l, h):
 
 if __name__ == "__main__":
     array = [1, 3, 64, 5, 7, 8]
-    n = len(array)
-    stoogesort(array, 0, n - 1)
-    for i in range(0, n):
+    N = len(array)
+    stoogesort(array, 0, N - 1)
+    for i in range(0, N):
         print(array[i], end=' ')

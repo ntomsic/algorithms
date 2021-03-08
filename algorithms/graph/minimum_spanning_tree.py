@@ -73,8 +73,8 @@ def kruskal(n, edges, ds):
     mst = []  # List of edges taken, minimum spanning tree
 
     for edge in edges:
-        set_u = ds.find_set(edge.u)  # Set of the node <u>
-        set_v = ds.find_set(edge.v)  # Set of the node <v>
+        set_u = ds.find_set(edge.U)  # Set of the node <u>
+        set_v = ds.find_set(edge.V)  # Set of the node <v>
         if set_u != set_v:
             ds.merge_set(set_u, set_v)
             mst.append(edge)

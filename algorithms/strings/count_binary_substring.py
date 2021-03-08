@@ -20,12 +20,12 @@ Reference: https://leetcode.com/problems/count-binary-substrings/description/
 """
 
 
-def count_binary_substring(s):
+def count_binary_substring(_s):
     cur = 1
     pre = 0
     count = 0
-    for i in range(1, len(s)):
-        if s[i] != s[i - 1]:
+    for i in range(1, len(_s)):
+        if _s[i] != _s[i - 1]:
             count = count + min(pre, cur)
             pre = cur
             cur = 1

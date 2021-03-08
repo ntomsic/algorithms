@@ -1,24 +1,24 @@
-def recursive(s):
-    l = len(s)
-    if l < 2:
-        return s
-    return recursive(s[l // 2:]) + recursive(s[:l // 2])
+def recursive(_s):
+    _l = len(_s)
+    if _l < 2:
+        return _s
+    return recursive(_s[_l // 2:]) + recursive(_s[:_l // 2])
 
 
-def iterative(s):
-    r = list(s)
-    i, j = 0, len(s) - 1
+def iterative(_s):
+    _r = list(_s)
+    i, j = 0, len(_s) - 1
     while i < j:
-        r[i], r[j] = r[j], r[i]
+        _r[i], _r[j] = _r[j], _r[i]
         i += 1
         j -= 1
-    return "".join(r)
+    return "".join(_r)
 
 
-def pythonic(s):
-    r = list(reversed(s))
-    return "".join(r)
+def pythonic(_s):
+    _r = list(reversed(_s))
+    return "".join(_r)
 
 
-def ultra_pythonic(s):
-    return s[::-1]
+def ultra_pythonic(_s):
+    return _s[::-1]

@@ -10,9 +10,9 @@ Reference: https://leetcode.com/problems/rotate-string/description/
 """
 
 
-def is_rotated(s1, s2):
-    if len(s1) == len(s2):
-        return s2 in s1 + s1
+def is_rotated(s_1, s_2):
+    if len(s_1) == len(s_2):
+        return s_2 in s_1 + s_1
     return False
 
 
@@ -22,13 +22,13 @@ Complexity: O(N^2)
 """
 
 
-def is_rotated_v1(s1, s2):
-    if len(s1) != len(s2):
+def is_rotated_v1(s_1, s_2):
+    if len(s_1) != len(s_2):
         return False
-    if len(s1) == 0:
+    if len(s_1) == 0:
         return True
 
-    for c in range(len(s1)):
-        if all(s1[(c + i) % len(s1)] == s2[i] for i in range(len(s1))):
+    for _c in range(len(s_1)):
+        if all(s_1[(_c + i) % len(s_1)] == s_2[i] for i in range(len(s_1))):
             return True
     return False

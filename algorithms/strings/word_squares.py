@@ -46,14 +46,14 @@ import collections
 
 
 def word_squares(words):
-    n = len(words[0])
+    _n = len(words[0])
     fulls = collections.defaultdict(list)
     for word in words:
-        for i in range(n):
+        for i in range(_n):
             fulls[word[:i]].append(word)
 
     def build(square):
-        if len(square) == n:
+        if len(square) == _n:
             squares.append(square)
             return
         prefix = ""

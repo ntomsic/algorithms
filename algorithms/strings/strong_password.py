@@ -31,7 +31,7 @@ Output: 1 (Because the password isn't strong, but she can make it strong by addi
 """
 
 
-def strong_password(n, password):
+def strong_password(_n, password):
     count_error = 0
     # Return the minimum number of characters to make the password strong
     if not any(i.isdigit() for i in password):
@@ -42,4 +42,4 @@ def strong_password(n, password):
         count_error = count_error + 1
     if not any(i in '!@#$%^&*()-+' for i in password):
         count_error = count_error + 1
-    return max(count_error, 6 - n)
+    return max(count_error, 6 - _n)

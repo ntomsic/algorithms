@@ -13,19 +13,19 @@ we define empty string as valid palindrome.
 from string import ascii_letters
 
 
-def is_palindrome(s):
+def is_palindrome(_s):
     """
-    :type s: str
+    :type _s: str
     :rtype: bool
     """
     i = 0
-    j = len(s) - 1
+    j = len(_s) - 1
     while i < j:
-        while not s[i].isalnum():
+        while not _s[i].isalnum():
             i += 1
-        while not s[j].isalnum():
+        while not _s[j].isalnum():
             j -= 1
-        if s[i].lower() != s[j].lower():
+        if _s[i].lower() != _s[j].lower():
             return False
         i, j = i + 1, j - 1
     return True
@@ -56,37 +56,37 @@ def remove_punctuation(s):
 
 
 # Variation 1
-def string_reverse(s):
-    return s[::-1]
+def string_reverse(_s):
+    return _s[::-1]
 
 
-def is_palindrome_reverse(s):
-    s = remove_punctuation(s)
+def is_palindrome_reverse(_s):
+    _s = remove_punctuation(_s)
 
     # can also get rid of the string_reverse function and just do this return s == s[::-1] in one line.
-    if s == string_reverse(s):
+    if _s == string_reverse(_s):
         return True
     return False
 
 
 # Variation 2
-def is_palindrome_two_pointer(s):
-    s = remove_punctuation(s)
+def is_palindrome_two_pointer(_s):
+    _s = remove_punctuation(_s)
 
-    for i in range(0, len(s) // 2):
-        if s[i] != s[len(s) - i - 1]:
+    for i in range(0, len(_s) // 2):
+        if _s[i] != _s[len(_s) - i - 1]:
             return False
     return True
 
 
 # Variation 3
-def is_palindrome_stack(s):
+def is_palindrome_stack(_s):
     stack = []
-    s = remove_punctuation(s)
+    _s = remove_punctuation(_s)
 
-    for i in range(len(s) // 2, len(s)):
-        stack.append(s[i])
-    for i in range(0, len(s) // 2):
-        if s[i] != stack.pop():
+    for i in range(len(_s) // 2, len(_s)):
+        stack.append(_s[i])
+    for i in range(0, len(_s) // 2):
+        if _s[i] != stack.pop():
             return False
     return True

@@ -7,11 +7,11 @@ structurally identical and the nodes have the same value.
 """
 
 
-def is_same_tree(p, q):
-    if p is None and q is None:
+def is_same_tree(_p, _q):
+    if _p is None and _q is None:
         return True
-    if p is not None and q is not None and p.val == q.val:
-        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)
+    if _p is not None and _q is not None and _p.val == _q.val:
+        return is_same_tree(_p.left, _q.left) and is_same_tree(_p.right, _q.right)
     return False
 
 # Time Complexity O(min(N,M))

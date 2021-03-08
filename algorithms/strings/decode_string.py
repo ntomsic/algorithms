@@ -17,24 +17,24 @@
 # s = "3[a2[c]]", return "accaccacc".
 # s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 
-def decode_string(s):
+def decode_string(_s):
     """
-    :type s: str
+    :type _s: str
     :rtype: str
     """
     stack = []
     cur_num = 0
     cur_string = ''
-    for c in s:
-        if c == '[':
+    for _c in _s:
+        if _c == '[':
             stack.append((cur_string, cur_num))
             cur_string = ''
             cur_num = 0
-        elif c == ']':
+        elif _c == ']':
             prev_string, num = stack.pop()
             cur_string = prev_string + num * cur_string
-        elif c.isdigit():
-            cur_num = cur_num * 10 + int(c)
+        elif _c.isdigit():
+            cur_num = cur_num * 10 + int(_c)
         else:
-            cur_string += c
+            cur_string += _c
     return cur_string

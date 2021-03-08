@@ -12,8 +12,8 @@ returns bool
 """
 
 
-def rotate(s, k):
-    double_s = s + s
-    if k <= len(s):
-        return double_s[k:k + len(s)]
-    return double_s[k - len(s):k]
+def rotate(_s, k):
+    double_s = _s + _s
+    if k <= len(_s):
+        return double_s[k:k + len(_s)]
+    return double_s[k - len(_s):k]

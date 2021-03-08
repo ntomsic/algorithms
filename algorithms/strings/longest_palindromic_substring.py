@@ -16,30 +16,30 @@ Manacher's algorithm
 '''
 
 
-def longest_palindrome(s):
-    if len(s) < 2:
-        return s
+def longest_palindrome(_s):
+    if len(_s) < 2:
+        return _s
 
-    n_str = '#' + '#'.join(s) + '#'
-    p = [0] * len(n_str)
-    mx, loc = 0, 0
+    n_str = '#' + '#'.join(_s) + '#'
+    _p = [0] * len(n_str)
+    m_x, loc = 0, 0
     index, maxlen = 0, 0
     for i in range(len(n_str)):
-        if i < mx and 2 * loc - i < len(n_str):
-            p[i] = min(mx - i, p[2 * loc - i])
+        if i < m_x and 2 * loc - i < len(n_str):
+            _p[i] = min(m_x - i, _p[2 * loc - i])
         else:
-            p[i] = 1
+            _p[i] = 1
 
-        while p[i] + i < len(n_str) and i - p[i] >= 0 and n_str[
-            i - p[i]] == n_str[i + p[i]]:
-            p[i] += 1
+        while _p[i] + i < len(n_str) and i - _p[i] >= 0 and n_str[
+            i - _p[i]] == n_str[i + _p[i]]:
+            _p[i] += 1
 
-        if i + p[i] > mx:
-            mx = i + p[i]
+        if i + _p[i] > m_x:
+            m_x = i + _p[i]
             loc = i
 
-        if p[i] > maxlen:
+        if _p[i] > maxlen:
             index = i
-            maxlen = p[i]
-    s = n_str[index - p[index] + 1:index + p[index]]
-    return s.replace('#', '')
+            maxlen = _p[i]
+    _s = n_str[index - _p[index] + 1:index + _p[index]]
+    return _s.replace('#', '')

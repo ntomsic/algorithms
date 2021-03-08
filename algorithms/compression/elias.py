@@ -29,7 +29,8 @@ def elias_generic(lencoding, x):
     The second part is the binary number of x - 2^(⌊log2(x)⌋).
     For the final result we add these two parts.
     """
-    if x == 0: return '0'
+    if x == 0:
+        return '0'
 
     first_part = 1 + int(log2(x))
 

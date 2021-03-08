@@ -17,16 +17,16 @@ def encode(strs):
     return res
 
 
-def decode(s):
+def decode(_s):
     """Decodes a single string to a list of strings.
-    :type s: str
+    :type _s: str
     :rtype: List[str]
     """
     strs = []
     i = 0
-    while i < len(s):
-        index = s.find(":", i)
-        size = int(s[i:index])
-        strs.append(s[index + 1: index + 1 + size])
+    while i < len(_s):
+        index = _s.find(":", i)
+        size = int(_s[i:index])
+        strs.append(_s[index + 1: index + 1 + size])
         i = index + 1 + size
     return strs

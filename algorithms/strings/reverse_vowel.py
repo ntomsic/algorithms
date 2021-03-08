@@ -1,12 +1,12 @@
-def reverse_vowel(s):
+def reverse_vowel(_s):
     vowels = "AEIOUaeiou"
-    i, j = 0, len(s) - 1
-    s = list(s)
+    i, j = 0, len(_s) - 1
+    _s = list(_s)
     while i < j:
-        while i < j and s[i] not in vowels:
+        while i < j and _s[i] not in vowels:
             i += 1
-        while i < j and s[j] not in vowels:
+        while i < j and _s[j] not in vowels:
             j -= 1
-        s[i], s[j] = s[j], s[i]
+        _s[i], _s[j] = _s[j], _s[i]
         i, j = i + 1, j - 1
-    return "".join(s)
+    return "".join(_s)

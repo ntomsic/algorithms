@@ -12,31 +12,31 @@ part2:    o   e   a r s   = oears
 
 
 # Recursive Solution
-def is_merge_recursive(s, part1, part2):
+def is_merge_recursive(_s, part1, part2):
     if not part1:
-        return s == part2
+        return _s == part2
     if not part2:
-        return s == part1
-    if not s:
+        return _s == part1
+    if not _s:
         return part1 + part2 == ''
-    if s[0] == part1[0] and is_merge_recursive(s[1:], part1[1:], part2):
+    if _s[0] == part1[0] and is_merge_recursive(_s[1:], part1[1:], part2):
         return True
-    if s[0] == part2[0] and is_merge_recursive(s[1:], part1, part2[1:]):
+    if _s[0] == part2[0] and is_merge_recursive(_s[1:], part1, part2[1:]):
         return True
     return False
 
 
 # An iterative approach
-def is_merge_iterative(s, part1, part2):
-    tuple_list = [(s, part1, part2)]
+def is_merge_iterative(_s, part1, part2):
+    tuple_list = [(_s, part1, part2)]
     while tuple_list:
-        string, p1, p2 = tuple_list.pop()
+        string, p_1, p_2 = tuple_list.pop()
         if string:
-            if p1 and string[0] == p1[0]:
-                tuple_list.append((string[1:], p1[1:], p2))
-            if p2 and string[0] == p2[0]:
-                tuple_list.append((string[1:], p1, p2[1:]))
+            if p_1 and string[0] == p_1[0]:
+                tuple_list.append((string[1:], p_1[1:], p_2))
+            if p_2 and string[0] == p_2[0]:
+                tuple_list.append((string[1:], p_1, p_2[1:]))
         else:
-            if not p1 and not p2:
+            if not p_1 and not p_2:
                 return True
     return False

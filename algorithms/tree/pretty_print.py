@@ -16,8 +16,8 @@ def tree_print(tree):
     for key in tree:
         print(key, end=' ')  # end=' ' prevents a newline character
         tree_element = tree[key]  # multiple lookups is expensive, even amortized O(1)!
-        for subElem in tree_element:
-            print(" -> ", subElem, end=' ')
-            if type(subElem) != str:  # OP wants indenting after digits
+        for sub_elem in tree_element:
+            print(" -> ", sub_elem, end=' ')
+            if type(sub_elem) != str:  # OP wants indenting after digits
                 print("\n ")  # newline and a space to match indenting
         print()  # forces a newline

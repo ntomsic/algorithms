@@ -17,9 +17,9 @@ class AvlTree(object):
         Insert new key into node
         """
         # Create new node
-        n = TreeNode(key)
+        _n = TreeNode(key)
         if not self.node:
-            self.node = n
+            self.node = _n
             self.node.left = AvlTree()
             self.node.right = AvlTree()
         elif key < self.node.val:
@@ -65,7 +65,7 @@ class AvlTree(object):
                 if self.node.right:
                     self.node.right.update_heights()
 
-            self.height = 1 + max(self.node.left.height, self.node.right.height)
+            self.height = 1 + max(self.node.left.HEIGHT, self.node.right.HEIGHT)
         else:
             self.height = -1
 
@@ -81,7 +81,7 @@ class AvlTree(object):
                 if self.node.right:
                     self.node.right.update_balances()
 
-            self.balance = self.node.left.height - self.node.right.height
+            self.balance = self.node.left.HEIGHT - self.node.right.HEIGHT
         else:
             self.balance = 0
 

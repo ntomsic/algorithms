@@ -13,16 +13,16 @@ Reference: https://leetcode.com/problems/first-unique-character-in-a-string/desc
 """
 
 
-def first_unique_char(s):
+def first_unique_char(_s):
     """
-    :type s: str
+    :type _s: str
     :rtype: int
     """
-    if len(s) == 1:
+    if len(_s) == 1:
         return 0
     ban = []
-    for i in range(len(s)):
-        if all(s[i] != s[k] for k in range(i + 1, len(s))) == True and s[i] not in ban:
+    for i in range(len(_s)):
+        if all(_s[i] != _s[k] for k in range(i + 1, len(_s))) == True and _s[i] not in ban:
             return i
-        ban.append(s[i])
+        ban.append(_s[i])
     return -1

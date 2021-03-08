@@ -21,14 +21,17 @@
       Output: 8 4 9 2 5 1 6 3 7
 """
 
+
 class TreeNode:
 
-    def __init__(self, val, left = None, right = None):
+    def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-pre_index = 0
+
+PRE_INDEX = 0
+
 
 def construct_tree_util(pre: list, post: list, low: int, high: int, size: int):
     """
@@ -40,36 +43,35 @@ def construct_tree_util(pre: list, post: list, low: int, high: int, size: int):
         low and high are the indices for the postorder array.
     """
 
-    global pre_index
+    global PRE_INDEX
 
-    if pre_index == -1:
-        pre_index = 0
+    if PRE_INDEX == -1:
+        PRE_INDEX = 0
 
-
-    #Base case
-    if(pre_index >= size or low > high):
+    # Base case
+    if (PRE_INDEX >= size or low > high):
         return None
 
-    root = TreeNode(pre[pre_index])
-    pre_index += 1
+    root = TreeNode(pre[PRE_INDEX])
+    PRE_INDEX += 1
 
-    #If only one element in the subarray return root
-    if(low == high or pre_index >= size):
+    # If only one element in the subarray return root
+    if (low == high or PRE_INDEX >= size):
         return root
 
-    #Find the next element of pre[] in post[]
+    # Find the next element of pre[] in post[]
     i = low
     while i <= high:
-        if pre[pre_index] == post[i]:
+        if pre[PRE_INDEX] == post[i]:
             break
 
         i += 1
 
-    #Use index of element present in postorder to divide postorder array
-    #to two parts: left subtree and right subtree
+    # Use index of element present in postorder to divide postorder array
+    # to two parts: left subtree and right subtree
     if i <= high:
         root.left = construct_tree_util(pre, post, low, i, size)
-        root.right = construct_tree_util(pre, post, i+1, high, size)
+        root.right = construct_tree_util(pre, post, i + 1, high, size)
 
     return root
 
@@ -80,14 +82,13 @@ def construct_tree(pre: list, post: list, size: int):
         and postorder array.
     """
 
-    global pre_index
-    root = construct_tree_util(pre, post, 0, size-1, size)
+    global PRE_INDEX
+    root = construct_tree_util(pre, post, 0, size - 1, size)
 
     return print_inorder(root)
 
 
-
-def print_inorder(root: TreeNode, result = None):
+def print_inorder(root: TreeNode, result=None):
     """
         Prints the tree constructed in inorder format
     """
@@ -101,11 +102,12 @@ def print_inorder(root: TreeNode, result = None):
     print_inorder(root.right, result)
     return result
 
+
 if __name__ == '__main__':
     pre = [1, 2, 4, 5, 3, 6, 7]
     post = [4, 5, 2, 6, 7, 3, 1]
-    size = len(pre)
+    SIZE = len(pre)
 
-    result = construct_tree(pre, post, size)
+    result = construct_tree(pre, post, SIZE)
 
     print(result)

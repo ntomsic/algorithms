@@ -10,22 +10,22 @@ import collections
 
 
 # Time complexity O(n^2)
-def delete_nth_naive(array, n):
+def delete_nth_naive(array, _n):
     ans = []
     for num in array:
-        if ans.count(num) < n:
+        if ans.count(num) < _n:
             ans.append(num)
     return ans
 
 
 # Time Complexity O(n), using hash tables.
-def delete_nth(array, n):
+def delete_nth(array, _n):
     result = []
     counts = collections.defaultdict(int)  # keep track of occurrences
 
     for i in array:
 
-        if counts[i] < n:
+        if counts[i] < _n:
             result.append(i)
             counts[i] += 1
 

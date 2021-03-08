@@ -27,25 +27,25 @@ What limitation we need to add to the question to allow negative numbers?
 
 """
 
-dp = None
+DP = None
 
 
 def helper_topdown(nums, target):
-    global dp
-    if dp[target] != -1:
-        return dp[target]
+    global DP
+    if DP[target] != -1:
+        return DP[target]
     res = 0
     for i in range(0, len(nums)):
         if target >= nums[i]:
             res += helper_topdown(nums, target - nums[i])
-    dp[target] = res
+    DP[target] = res
     return res
 
 
 def combination_sum_topdown(nums, target):
-    global dp
-    dp = [-1] * (target + 1)
-    dp[0] = 1
+    global DP
+    DP = [-1] * (target + 1)
+    DP[0] = 1
     return helper_topdown(nums, target)
 
 

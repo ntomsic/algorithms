@@ -20,16 +20,16 @@ First solution: Horizontal scanning
 """
 
 
-def common_prefix(s1, s2):
+def common_prefix(s_1, s_2):
     "Return prefix common of 2 strings"
-    if not s1 or not s2:
+    if not s_1 or not s_2:
         return ""
     k = 0
-    while s1[k] == s2[k]:
+    while s_1[k] == s_2[k]:
         k = k + 1
-        if k >= len(s1) or k >= len(s2):
-            return s1[0:k]
-    return s1[0:k]
+        if k >= len(s_1) or k >= len(s_2):
+            return s_1[0:k]
+    return s_1[0:k]
 
 
 def longest_common_prefix_v1(strs):

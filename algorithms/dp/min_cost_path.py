@@ -45,9 +45,9 @@ if __name__ == '__main__':
             [-1, 0, 40, 50],  # going from i --> j
             [-1, -1, 0, 70],
             [-1, -1, -1, 0]]  # cost[i][j] = -1 for i > j
-    total_len = len(cost)
+    TOTAL_LEN = len(cost)
 
     mcost = min_cost(cost)
     assert mcost == 65
 
-    print("The Minimum cost to reach station %d is %d" % (total_len, mcost))
+    print("The Minimum cost to reach station %d is %d" % (TOTAL_LEN, mcost))

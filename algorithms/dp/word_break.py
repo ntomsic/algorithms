@@ -37,7 +37,7 @@ def word_break(s, word_dict):
 
 
 if __name__ == "__main__":
-    s = "keonkim"
+    S = "keonkim"
     dic = ["keon", "kim"]
 
-    print(word_break(s, dic))
+    print(word_break(S, dic))

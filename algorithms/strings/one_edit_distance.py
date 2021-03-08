@@ -3,33 +3,33 @@ Given two strings S and T, determine if they are both one edit distance apart.
 """
 
 
-def is_one_edit(s, t):
+def is_one_edit(_s, _t):
     """
-    :type s: str
-    :type t: str
+    :type _s: str
+    :type _t: str
     :rtype: bool
     """
-    if len(s) > len(t):
-        return is_one_edit(t, s)
-    if len(t) - len(s) > 1 or t == s:
+    if len(_s) > len(_t):
+        return is_one_edit(_t, _s)
+    if len(_t) - len(_s) > 1 or _t == _s:
         return False
-    for i in range(len(s)):
-        if s[i] != t[i]:
-            return s[i + 1:] == t[i + 1:] or s[i:] == t[i + 1:]
+    for i in range(len(_s)):
+        if _s[i] != _t[i]:
+            return _s[i + 1:] == _t[i + 1:] or _s[i:] == _t[i + 1:]
     return True
 
 
-def is_one_edit2(s, t):
-    l1, l2 = len(s), len(t)
-    if l1 > l2:
-        return is_one_edit2(t, s)
-    if len(t) - len(s) > 1 or t == s:
+def is_one_edit2(_s, _t):
+    l_1, l_2 = len(_s), len(_t)
+    if l_1 > l_2:
+        return is_one_edit2(_t, _s)
+    if len(_t) - len(_s) > 1 or _t == _s:
         return False
-    for i in range(len(s)):
-        if s[i] != t[i]:
-            if l1 == l2:
-                s = s[:i] + t[i] + s[i + 1:]  # modify
+    for i in range(len(_s)):
+        if _s[i] != _t[i]:
+            if l_1 == l_2:
+                _s = _s[:i] + _t[i] + _s[i + 1:]  # modify
             else:
-                s = s[:i] + t[i] + s[i:]  # insertion
+                _s = _s[:i] + _t[i] + _s[i:]  # insertion
             break
-    return s == t or s == t[:-1]
+    return _s == _t or _s == _t[:-1]

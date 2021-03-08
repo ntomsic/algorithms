@@ -26,16 +26,16 @@ Space: O(n)
 """
 
 
-def fizzbuzz(n):
+def fizzbuzz(_n):
     # Validate the input
-    if n < 1:
+    if _n < 1:
         raise ValueError('n cannot be less than one')
-    if n is None:
+    if _n is None:
         raise TypeError('n cannot be None')
 
     result = []
 
-    for i in range(1, n + 1):
+    for i in range(1, _n + 1):
         if i % 3 == 0 and i % 5 == 0:
             result.append('FizzBuzz')
         elif i % 3 == 0:
@@ -52,6 +52,6 @@ def fizzbuzz_with_helper_func(n):
     return [fb(m) for m in range(1, n + 1)]
 
 
-def fb(m):
-    r = (m % 3 == 0) * "Fizz" + (m % 5 == 0) * "Buzz"
-    return r if r != "" else m
+def fb(_m):
+    _r = (_m % 3 == 0) * "Fizz" + (_m % 5 == 0) * "Buzz"
+    return _r if _r != "" else _m

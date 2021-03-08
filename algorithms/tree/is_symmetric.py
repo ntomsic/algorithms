@@ -26,12 +26,12 @@ def is_symmetric(root):
     return helper(root.left, root.right)
 
 
-def helper(p, q):
-    if p is None and q is None:
+def helper(_p, _q):
+    if _p is None and _q is None:
         return True
-    if p is not None or q is not None or q.val != p.val:
+    if _p is not None or _q is not None or _q.val != _p.val:
         return False
-    return helper(p.left, q.right) and helper(p.right, q.left)
+    return helper(_p.left, _q.right) and helper(_p.right, _q.left)
 
 
 def is_symmetric_iterative(root):
