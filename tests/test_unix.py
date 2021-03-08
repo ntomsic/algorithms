@@ -6,6 +6,7 @@ from algorithms.unix import (
 )
 import os
 import unittest
+import platform
 class TestUnixPath(unittest.TestCase):
     def test_join_with_slash(self):
         self.assertEqual("path/to/dir/file", join_with_slash("path/to/dir/", "file"))
@@ -14,6 +15,9 @@ class TestUnixPath(unittest.TestCase):
         self.assertEqual("http://algorithms/part", join_with_slash("http://algorithms/", "part"))
 
     def test_full_path(self):
+        if platform.system() == "Windows":
+            self.skipTest("Test is not valid on Windows.")
+
         file_name = "file_name"
         # Test full path relative
         expect_path = "{}/{}".format(os.getcwd(), file_name)
@@ -36,6 +40,9 @@ class TestUnixPath(unittest.TestCase):
         self.assertEqual("test.py", expect_result[1])
 
     def test_simplify_path(self):
+        if platform.system() == "Windows":
+            self.skipTest("Test is not valid on Windows.")
+
         self.assertEqual("/", simplify_path_v1("/../"))
         self.assertEqual("/home/foo", simplify_path_v1("/home//foo/"))
         self.assertEqual("/", simplify_path_v2("/../"))
