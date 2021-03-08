@@ -4,7 +4,8 @@ from collections import deque
 BFS time complexity : O(|E| + |V|)
 BFS space complexity : O(|E| + |V|)
 
-do BFS from (0,0) of the grid and get the minimum number of steps needed to get to the lower right column
+do BFS from (0,0) of the grid and get the minimum number
+of steps needed to get to the lower right column.
 
 only step on the columns whose value is 1
 
@@ -15,14 +16,14 @@ If grid is
 [[1,0,1,1,1,1],
  [1,0,1,0,1,0],
  [1,0,1,0,1,1],
- [1,1,1,0,1,1]], 
+ [1,1,1,0,1,1]],
 the answer is: 14
 
 Ex 2)
 If grid is
 [[1,0,0],
  [0,1,1],
- [0,1,1]], 
+ [0,1,1]],
 the answer is: -1
 '''
 

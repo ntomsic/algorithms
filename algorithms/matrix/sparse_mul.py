@@ -24,13 +24,14 @@ AB = | -1 0 3 | x | 0 0 0 | = | -7 0 3 |
 
 
 # Python solution without table (~156ms):
-def multiply(self, a, b):
+def multiply(_, a, b):
     """
     :type A: List[List[int]]
     :type B: List[List[int]]
     :rtype: List[List[int]]
     """
-    if a is None or b is None: return None
+    if a is None or b is None:
+        return None
     m, n, l = len(a), len(b[0]), len(b[0])
     if len(b) != n:
         raise Exception("A's column number must be equal to B's row number.")
@@ -39,12 +40,13 @@ def multiply(self, a, b):
         for k, eleA in enumerate(row):
             if eleA:
                 for j, eleB in enumerate(b[k]):
-                    if eleB: c[i][j] += eleA * eleB
+                    if eleB:
+                        c[i][j] += eleA * eleB
     return c
 
 
 # Python solution with only one table for B (~196ms):
-def multiply(self, a, b):
+def multiply(_, a, b):
     """
     :type A: List[List[int]]
     :type B: List[List[int]]
@@ -69,7 +71,7 @@ def multiply(self, a, b):
 
 
 # Python solution with two tables (~196ms):
-def multiply(self, a, b):
+def multiply(_, a, b):
     """
     :type A: List[List[int]]
     :type B: List[List[int]]

@@ -20,7 +20,7 @@ class Dijkstra:
         dist[src] = 0
         min_dist_set = [False] * self.vertices
 
-        for count in range(self.vertices):
+        for _ in range(self.vertices):
 
             # minimum distance vertex that is not processed
             u = self.min_distance(dist, min_dist_set)

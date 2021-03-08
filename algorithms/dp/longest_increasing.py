@@ -108,7 +108,7 @@ def longest_increasing_subsequence_optimized2(sequence):
         return max(get_max(p << 1, l, mid, s, e), get_max((p << 1) | 1, mid + 1, r, s, e))
 
     ans = 0
-    for x, j in sorted_seq:
+    for _, j in sorted_seq:
         i = -j
         cur = get_max(1, 0, n - 1, 0, i - 1) + 1
         ans = max(ans, cur)

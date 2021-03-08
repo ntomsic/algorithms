@@ -1,6 +1,6 @@
 # Minimum spanning tree (MST) is going to use an undirected graph
 #
-# The disjoint set is represented with an list <n> of integers where 
+# The disjoint set is represented with an list <n> of integers where
 # <n[i]> is the parent of the node at position <i>.
 # If <n[i]> = <i>, <i> it's a root, or a head, of a set
 

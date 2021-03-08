@@ -15,7 +15,7 @@ def binary_search(array, query):
         val = array[mid]
         if val == query:
             return mid
-        elif val < query:
+        if val < query:
             lo = mid + 1
         else:
             hi = mid - 1

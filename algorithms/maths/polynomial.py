@@ -123,20 +123,19 @@ class Monomial:
 
         if not isinstance(other, Monomial):
             raise ValueError('Can only multiply monomials, ints, floats, or Fractions.')
-        else:
-            mono = {i: self.variables[i] for i in self.variables}
-            for i in other.variables:
-                if i in mono:
-                    mono[i] += other.variables[i]
-                else:
-                    mono[i] = other.variables[i]
+        mono = {i: self.variables[i] for i in self.variables}
+        for i in other.variables:
+            if i in mono:
+                mono[i] += other.variables[i]
+            else:
+                mono[i] = other.variables[i]
 
-            temp = dict()
-            for k in mono:
-                if mono[k] != 0:
-                    temp[k] = mono[k]
+        temp = dict()
+        for k in mono:
+            if mono[k] != 0:
+                temp[k] = mono[k]
 
-            return Monomial(temp, Monomial._rationalize_if_possible(self.coeff * other.coeff)).clean()
+        return Monomial(temp, Monomial._rationalize_if_possible(self.coeff * other.coeff)).clean()
 
     # def inverse(self) -> Monomial:
     def inverse(self):
@@ -350,15 +349,14 @@ class Polynomial:
 
             monos |= {other.clone()}
             return Polynomial([z for z in monos])
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             temp = list(z for z in {m.clone() for m in self.all_monomials()})
 
             p = Polynomial(temp)
             for o in other.all_monomials():
                 p = p.__add__(o.clone())
             return p
-        else:
-            raise ValueError('Can only add int, float, Fraction, Monomials, or Polynomials to Polynomials.')
+        raise ValueError('Can only add int, float, Fraction, Monomials, or Polynomials to Polynomials.')
 
     # def __sub__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __sub__(self, other: Union[int, float, Fraction, Monomial]):
@@ -385,15 +383,13 @@ class Polynomial:
             monos |= {to_insert}
             return Polynomial([z for z in monos])
 
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             p = Polynomial(list(z for z in {m.clone() for m in self.all_monomials()}))
             for o in other.all_monomials():
                 p = p.__sub__(o.clone())
             return p
 
-        else:
-            raise ValueError('Can only subtract int, float, Fraction, Monomials, or Polynomials from Polynomials.')
-            return
+        raise ValueError('Can only subtract int, float, Fraction, Monomials, or Polynomials from Polynomials.')
 
     # def __mul__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __mul__(self, other: Union[int, float, Fraction, Monomial]):

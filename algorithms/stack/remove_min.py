@@ -17,7 +17,7 @@ def remove_min(stack):
     # Find the smallest value
     min = stack.pop()
     stack.append(min)
-    for i in range(len(stack)):
+    for _ in range(len(stack)):
         val = stack.pop()
         if val <= min:
             min = val

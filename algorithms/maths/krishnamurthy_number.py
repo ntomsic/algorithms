@@ -39,4 +39,4 @@ def krishnamurthy_number(n):
         temp //= 10
 
     # returns True if number is krishnamurthy
-    return (sum_of_digits == n)
+    return sum_of_digits == n

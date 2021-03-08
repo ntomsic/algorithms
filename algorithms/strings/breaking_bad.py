@@ -1,3 +1,4 @@
+import re
 """
 Given an api which returns an array of words and an array of symbols, display
 the word with their matched symbol surrounded by square brackets.
@@ -26,7 +27,6 @@ from functools import reduce
 
 
 def match_symbol(words, symbols):
-    import re
     combined = []
     for s in symbols:
         for c in words:

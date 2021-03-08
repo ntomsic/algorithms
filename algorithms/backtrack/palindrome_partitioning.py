@@ -5,7 +5,8 @@ up into palindromic substrings.
 since one-character substrings are always palindromes.)
 
 ex)
-'abcbab' => [['abcba', 'b'], ['a', 'bcb', 'a', 'b'], ['a', 'b', 'c', 'bab'], ['a', 'b', 'c', 'b', 'a', 'b']]
+'abcbab' => [['abcba', 'b'], ['a', 'bcb', 'a', 'b'],
+['a', 'b', 'c', 'bab'], ['a', 'b', 'c', 'b', 'a', 'b']]
 """
 
 

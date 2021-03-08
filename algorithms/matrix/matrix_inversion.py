@@ -29,18 +29,18 @@ def invert_matrix(m):
     if not array_is_matrix(m):
         print("Invalid matrix: array is not a matrix")
         return [[-1]]
-    elif len(m) != len(m[0]):
+    if len(m) != len(m[0]):
         print("Invalid matrix: matrix is not square")
         return [[-2]]
-    elif len(m) < 2:
+    if len(m) < 2:
         print("Invalid matrix: matrix is too small")
         return [[-3]]
-    elif get_determinant(m) == 0:
+    if get_determinant(m) == 0:
         print("Invalid matrix: matrix is square, but singular (determinant = 0)")
         return [[-4]]
 
     # Calculation
-    elif len(m) == 2:
+    if len(m) == 2:
         # simple case
         multiplier = 1 / get_determinant(m)
         inverted = [[multiplier] * len(m) for n in range(len(m))]
@@ -49,18 +49,17 @@ def invert_matrix(m):
         inverted[0][0] = multiplier * m[1][1]
         inverted[1][1] = multiplier * m[0][0]
         return inverted
-    else:
-        """some steps combined in helpers to reduce traversals"""
-        # get matrix of minors w/ "checkerboard" signs
-        m_of_minors = get_matrix_of_minors(m)
+    """some steps combined in helpers to reduce traversals"""
+    # get matrix of minors w/ "checkerboard" signs
+    m_of_minors = get_matrix_of_minors(m)
 
-        # calculate determinant (we need to know 1/det)
-        multiplier = fractions.Fraction(1, get_determinant(m))
+    # calculate determinant (we need to know 1/det)
+    multiplier = fractions.Fraction(1, get_determinant(m))
 
-        # adjugate (swap on diagonals) and multiply by 1/det
-        inverted = transpose_and_multiply(m_of_minors, multiplier)
+    # adjugate (swap on diagonals) and multiply by 1/det
+    inverted = transpose_and_multiply(m_of_minors, multiplier)
 
-        return inverted
+    return inverted
 
 
 def get_determinant(m):

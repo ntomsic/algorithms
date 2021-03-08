@@ -4,7 +4,6 @@ from .ordered_stack import *
 from .remove_min import *
 from .simplify_path import *
 from .stack import *
-from .stack import *
 from .stutter import *
 from .switch_pairs import *
 from .valid_parenthesis import *

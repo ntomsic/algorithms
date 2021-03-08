@@ -51,7 +51,7 @@ def kth_to_last(head, k):
         return False
     p1 = head
     p2 = head
-    for i in range(1, k + 1):
+    for _ in range(1, k + 1):
         if p1 is None:
             # Went too far, k is not valid
             raise IndexError

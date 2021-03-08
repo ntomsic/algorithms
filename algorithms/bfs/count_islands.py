@@ -56,7 +56,7 @@ def count_islands(grid):
                     for k in range(len(directions)):
                         nx_x = x + directions[k][0]
                         nx_y = y + directions[k][1]
-                        if nx_x >= 0 and nx_y >= 0 and nx_x < row and nx_y < col:
+                        if 0 <= nx_x < row and 0 <= nx_y < col:
                             if visited[nx_x][nx_y] != 1 and grid[nx_x][nx_y] == 1:
                                 queue.append((nx_x, nx_y))
                                 visited[nx_x][nx_y] = 1

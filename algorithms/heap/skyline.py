@@ -22,7 +22,8 @@ where the rightmost building ends,
 is merely used to mark the termination of the skyline, and always has zero height.
 Also, the ground in between any two adjacent buildings should be considered part of the skyline contour.
 
-For instance, the skyline in Figure B should be represented as:[ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ].
+For instance, the skyline in Figure B should be represented as:
+[ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ].
 
 Notes:
 

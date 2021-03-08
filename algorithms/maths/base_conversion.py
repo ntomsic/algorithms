@@ -28,8 +28,7 @@ def int_to_base(n, base):
         n //= base
     if is_negative:
         return '-' + res[::-1]
-    else:
-        return res[::-1]
+    return res[::-1]
 
 
 def base_to_int(s, base):

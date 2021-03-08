@@ -2,7 +2,8 @@
 
 Idea: Maintain a max heap of k elements.
 We can iterate through all points.
-If a point p has a smaller distance to the origin than the top element of a heap, we add point p to the heap and remove the top element.
+If a point p has a smaller distance to the origin than the top element of a heap,
+we add point p to the heap and remove the top element.
 After iterating through all points, our heap contains the k closest points to the origin.
 """
 
@@ -12,8 +13,10 @@ from heapq import heapify, heappushpop
 def k_closest(points, k, origin=(0, 0)):
     # Time: O(k+(n-k)logk)
     # Space: O(k)
-    """Initialize max heap with first k points.
-    Python does not support a max heap; thus we can use the default min heap where the keys (distance) are negated.
+    """
+    Initialize max heap with first k points.
+    Python does not support a max heap;
+    thus we can use the default min heap where the keys (distance) are negated.
     """
     heap = [(-distance(p, origin), p) for p in points[:k]]
     heapify(heap)

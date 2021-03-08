@@ -36,6 +36,5 @@ def matrix_exponentiation(mat: list, n: int) -> list:
         return identity(len(mat))
     if n % 2 == 1:
         return multiply(matrix_exponentiation(mat, n - 1), mat)
-    else:
-        tmp = matrix_exponentiation(mat, n // 2)
-        return multiply(tmp, tmp)
+    tmp = matrix_exponentiation(mat, n // 2)
+    return multiply(tmp, tmp)

@@ -108,7 +108,7 @@ def n_sum(n, nums, target, **kv):
                 while (lt < len(nums) and
                        same_closure(nums[lt - 1], nums[lt])):
                     lt += 1
-                while (0 <= rt and
+                while (rt >= 0 and
                        same_closure(nums[rt], nums[rt + 1])):
                     rt -= 1
         return results

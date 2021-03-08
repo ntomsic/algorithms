@@ -90,8 +90,7 @@ class BTree:
                 return True
             if current_node.is_leaf:
                 return False
-            else:
-                current_node = current_node.children[i + 1]
+            current_node = current_node.children[i + 1]
 
     def remove_key(self, key):
         self._remove_key(self.root, key)
@@ -110,16 +109,15 @@ class BTree:
             if node.is_leaf:
                 print("Key not found.")
                 return False  # key not found
-            else:
-                i = 0
-                number_of_keys = len(node.keys)
-                while i < number_of_keys and key > node.keys[i]:  # decide in which subtree may be key
-                    i += 1
+            i = 0
+            number_of_keys = len(node.keys)
+            while i < number_of_keys and key > node.keys[i]:  # decide in which subtree may be key
+                i += 1
 
-                action_performed = self._repair_tree(node, i)
-                if action_performed:
-                    return self._remove_key(node, key)
-                return self._remove_key(node.children[i], key)
+            action_performed = self._repair_tree(node, i)
+            if action_performed:
+                return self._remove_key(node, key)
+            return self._remove_key(node.children[i], key)
 
     def _repair_tree(self, node: Node, child_index: int) -> bool:
         child = node.children[child_index]
@@ -201,23 +199,21 @@ class BTree:
     def _find_largest_and_delete_in_left_subtree(self, node: Node):
         if node.is_leaf:
             return node.keys.pop()
-        else:
-            ch_index = len(node.children) - 1
-            self._repair_tree(node, ch_index)
-            largest_key_in_subtree = self._find_largest_and_delete_in_left_subtree(
-                node.children[len(node.children) - 1])
-            # self._repair_tree(node, ch_index)
-            return largest_key_in_subtree
+        ch_index = len(node.children) - 1
+        self._repair_tree(node, ch_index)
+        largest_key_in_subtree = self._find_largest_and_delete_in_left_subtree(
+            node.children[len(node.children) - 1])
+        # self._repair_tree(node, ch_index)
+        return largest_key_in_subtree
 
     def _find_largest_and_delete_in_right_subtree(self, node: Node):
         if node.is_leaf:
             return node.keys.pop(0)
-        else:
-            ch_index = 0
-            self._repair_tree(node, ch_index)
-            largest_key_in_subtree = self._find_largest_and_delete_in_right_subtree(node.children[0])
-            # self._repair_tree(node, ch_index)
-            return largest_key_in_subtree
+        ch_index = 0
+        self._repair_tree(node, ch_index)
+        largest_key_in_subtree = self._find_largest_and_delete_in_right_subtree(node.children[0])
+        # self._repair_tree(node, ch_index)
+        return largest_key_in_subtree
 
     def traverse_tree(self):
         self._traverse_tree(self.root)

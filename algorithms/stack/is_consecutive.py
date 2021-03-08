@@ -21,7 +21,7 @@ import collections
 
 def first_is_consecutive(stack):
     storage_stack = []
-    for i in range(len(stack)):
+    for _ in range(len(stack)):
         first_value = stack.pop()
         if len(stack) == 0:  # Case odd number of values in stack
             return True
@@ -39,7 +39,7 @@ def first_is_consecutive(stack):
 
 def second_is_consecutive(stack):
     q = collections.deque()
-    for i in range(len(stack)):
+    for _ in range(len(stack)):
         first_value = stack.pop()
         if len(stack) == 0:  # Case odd number of values in stack
             return True

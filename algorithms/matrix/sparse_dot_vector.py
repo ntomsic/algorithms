@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+import random
+import time
 
 """
 Suppose we have very large sparse vectors, which contains a lot of zeros and double .
@@ -13,7 +15,6 @@ def vector_to_index_value_list(vector):
 
 
 def dot_product(iv_list1, iv_list2):
-
     product = 0
     p1 = len(iv_list1) - 1
     p2 = len(iv_list2) - 1
@@ -46,7 +47,6 @@ def __test_time():
     nozero_counut = 10
 
     def random_vector():
-        import random
         vector = [0 for _ in range(vector_length)]
         for i in random.sample(range(vector_length), nozero_counut):
             vector[i] = random.random()
@@ -54,8 +54,6 @@ def __test_time():
 
     vectors = [random_vector() for _ in range(vector_count)]
     iv_lists = [vector_to_index_value_list(vector) for vector in vectors]
-
-    import time
 
     time_start = time.time()
     for i in range(vector_count):

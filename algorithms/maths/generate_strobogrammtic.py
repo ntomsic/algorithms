@@ -51,8 +51,7 @@ def strobogrammatic_in_range(low, high):
             continue
         if len(perm) == high_len and int(perm) > int(high):
             continue
-        else:
-            count += 1
+        count += 1
     return count
 
 

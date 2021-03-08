@@ -21,7 +21,8 @@ def top_sort_recursive(graph):
         order.append(node)
         state[node] = BLACK
 
-    while enter: dfs(enter.pop())
+    while enter:
+        dfs(enter.pop())
     return order
 
 
