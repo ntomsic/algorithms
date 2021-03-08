@@ -40,20 +40,20 @@ def length_longest_path(input):
     """
     curr_len, max_len = 0, 0  # running length and max length
     stack = []  # keep track of the name length
-    for s in input.split('\n'):
+    for _s in input.split('\n'):
         print("---------")
-        print("<path>:", s)
-        depth = s.count('\t')  # the depth of current dir or file
+        print("<path>:", _s)
+        depth = _s.count('\t')  # the depth of current dir or file
         print("depth: ", depth)
         print("stack: ", stack)
         print("curlen: ", curr_len)
         while len(stack) > depth:  # go back to the correct depth
             curr_len -= stack.pop()
-        stack.append(len(s.strip('\t')) + 1)  # 1 is the length of '/'
+        stack.append(len(_s.strip('\t')) + 1)  # 1 is the length of '/'
         curr_len += stack[-1]  # increase current length
         print("stack: ", stack)
         print("curlen: ", curr_len)
-        if '.' in s:  # update maxlen only when it is a file
+        if '.' in _s:  # update maxlen only when it is a file
             max_len = max(max_len, curr_len - 1)  # -1 is to minus one '/'
     return max_len
 

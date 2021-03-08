@@ -12,10 +12,10 @@ class ZigZagIterator:
         """
         :rtype: int
         """
-        v = self.queue.pop(0)
-        ret = v.pop(0)
-        if v:
-            self.queue.append(v)
+        _v = self.queue.pop(0)
+        ret = _v.pop(0)
+        if _v:
+            self.queue.append(_v)
         return ret
 
     def has_next(self):

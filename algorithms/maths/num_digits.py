@@ -5,8 +5,8 @@
 import math
 
 
-def num_digits(n):
-    n = abs(n)
-    if n == 0:
+def num_digits(_n):
+    _n = abs(_n)
+    if _n == 0:
         return 1
-    return int(math.log10(n)) + 1
+    return int(math.log10(_n)) + 1

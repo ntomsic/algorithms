@@ -16,19 +16,19 @@ The following function will check if a number is a Krishnamurthy Number or not a
 """
 
 
-def find_factorial(n):
+def find_factorial(_n):
     fact = 1
-    while n != 0:
-        fact *= n
-        n -= 1
+    while _n != 0:
+        fact *= _n
+        _n -= 1
     return fact
 
 
-def krishnamurthy_number(n):
-    if n == 0:
+def krishnamurthy_number(_n):
+    if _n == 0:
         return False
     sum_of_digits = 0  # will hold sum of FACTORIAL of digits
-    temp = n
+    temp = _n
 
     while temp != 0:
         # get the factorial of of the last digit of n and add it to sum_of_digits
@@ -39,4 +39,4 @@ def krishnamurthy_number(n):
         temp //= 10
 
     # returns True if number is krishnamurthy
-    return sum_of_digits == n
+    return sum_of_digits == _n

@@ -32,13 +32,13 @@ def kth_to_last_dict(head, k):
     """
     if not (head and k > -1):
         return False
-    d = dict()
+    _d = dict()
     count = 0
     while head:
-        d[count] = head
+        _d[count] = head
         head = head.next
         count += 1
-    return len(d) - k in d and d[len(d) - k]
+    return len(_d) - k in _d and _d[len(_d) - k]
 
 
 def kth_to_last(head, k):
@@ -49,17 +49,17 @@ def kth_to_last(head, k):
     """
     if not (head or k > -1):
         return False
-    p1 = head
-    p2 = head
+    p_1 = head
+    p_2 = head
     for _ in range(1, k + 1):
-        if p1 is None:
+        if p_1 is None:
             # Went too far, k is not valid
             raise IndexError
-        p1 = p1.next
-    while p1:
-        p1 = p1.next
-        p2 = p2.next
-    return p2
+        p_1 = p_1.next
+    while p_1:
+        p_1 = p_1.next
+        p_2 = p_2.next
+    return p_2
 
 
 def print_linked_list(head):
@@ -74,45 +74,45 @@ def print_linked_list(head):
 def test():
     # def make_test_li
     # A A B C D C F G
-    a1 = Node("A")
-    a2 = Node("A")
-    b = Node("B")
-    c1 = Node("C")
-    d = Node("D")
-    c2 = Node("C")
-    f = Node("F")
-    g = Node("G")
-    a1.next = a2
-    a2.next = b
-    b.next = c1
-    c1.next = d
-    d.next = c2
-    c2.next = f
-    f.next = g
-    print_linked_list(a1)
+    a_1 = Node("A")
+    a_2 = Node("A")
+    _b = Node("B")
+    c_1 = Node("C")
+    _d = Node("D")
+    c_2 = Node("C")
+    _f = Node("F")
+    _g = Node("G")
+    a_1.next = a_2
+    a_2.next = _b
+    _b.next = c_1
+    c_1.next = _d
+    _d.next = c_2
+    c_2.next = _f
+    _f.next = _g
+    print_linked_list(a_1)
 
     # test kth_to_last_eval
-    kth = kth_to_last_eval(a1, 4)
+    kth = kth_to_last_eval(a_1, 4)
     try:
         assert kth.val == "D"
-    except AssertionError as e:
-        e.args += ("Expecting D, got %s" % kth.val,)
+    except AssertionError as _e:
+        _e.args += ("Expecting D, got %s" % kth.val,)
         raise
 
     # test kth_to_last_dict
-    kth = kth_to_last_dict(a1, 4)
+    kth = kth_to_last_dict(a_1, 4)
     try:
         assert kth.val == "D"
-    except AssertionError as e:
-        e.args += ("Expecting D, got %s" % kth.val,)
+    except AssertionError as _e:
+        _e.args += ("Expecting D, got %s" % kth.val,)
         raise
 
     # test kth_to_last
-    kth = kth_to_last(a1, 4)
+    kth = kth_to_last(a_1, 4)
     try:
         assert kth.val == "D"
-    except AssertionError as e:
-        e.args += ("Expecting D, got %s" % kth.val,)
+    except AssertionError as _e:
+        _e.args += ("Expecting D, got %s" % kth.val,)
         raise
     print("all passed.")
 

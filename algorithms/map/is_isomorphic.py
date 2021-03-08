@@ -20,23 +20,23 @@ Reference: https://leetcode.com/problems/isomorphic-strings/description/
 """
 
 
-def is_isomorphic(s, t):
+def is_isomorphic(_s, _t):
     """
-    :type s: str
-    :type t: str
+    :type _s: str
+    :type _t: str
     :rtype: bool
     """
-    if len(s) != len(t):
+    if len(_s) != len(_t):
         return False
     dict = {}
     set_value = set()
-    for i in range(len(s)):
-        if s[i] not in dict:
-            if t[i] in set_value:
+    for i in range(len(_s)):
+        if _s[i] not in dict:
+            if _t[i] in set_value:
                 return False
-            dict[s[i]] = t[i]
-            set_value.add(t[i])
+            dict[_s[i]] = _t[i]
+            set_value.add(_t[i])
         else:
-            if dict[s[i]] != t[i]:
+            if dict[_s[i]] != _t[i]:
                 return False
     return True

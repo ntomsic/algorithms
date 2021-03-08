@@ -27,19 +27,19 @@ def first_stutter(stack):
 
 
 def second_stutter(stack):
-    q = collections.deque()
+    _q = collections.deque()
     # Put all values into queue from stack
     for _ in range(len(stack)):
-        q.append(stack.pop())
+        _q.append(stack.pop())
     # Put values back into stack from queue
-    for _ in range(len(q)):
-        stack.append(q.pop())
+    for _ in range(len(_q)):
+        stack.append(_q.pop())
     # Now, stack is reverse, put all values into queue from stack
     for _ in range(len(stack)):
-        q.append(stack.pop())
+        _q.append(stack.pop())
     # Put 2 times value into stack from queue
-    for _ in range(len(q)):
-        val = q.pop()
+    for _ in range(len(_q)):
+        val = _q.pop()
         stack.append(val)
         stack.append(val)
 

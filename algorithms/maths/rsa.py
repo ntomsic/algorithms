@@ -30,13 +30,13 @@ def generate_key(k, seed=None):
     k is the number of bits in n
     """
 
-    def modinv(a, m):
+    def modinv(_a, _m):
         """calculate the inverse of a mod m
         that is, find b such that (a * b) % m == 1"""
-        b = 1
-        while not (a * b) % m == 1:
-            b += 1
-        return b
+        _b = 1
+        while not (_a * _b) % _m == 1:
+            _b += 1
+        return _b
 
     def gen_prime(k, seed=None):
         """generate a prime with k bits"""
@@ -59,31 +59,31 @@ def generate_key(k, seed=None):
     p_size = k / 2
     q_size = k - p_size
 
-    e = gen_prime(k, seed)  # in many cases, e is also chosen to be a small constant
+    _e = gen_prime(k, seed)  # in many cases, e is also chosen to be a small constant
 
     while True:
-        p = gen_prime(p_size, seed)
-        if p % e != 1:
+        _p = gen_prime(p_size, seed)
+        if _p % _e != 1:
             break
 
     while True:
-        q = gen_prime(q_size, seed)
-        if q % e != 1:
+        _q = gen_prime(q_size, seed)
+        if _q % _e != 1:
             break
 
-    n = p * q
-    l = (p - 1) * (q - 1)  # calculate totient function
-    d = modinv(e, l)
+    _n = _p * _q
+    _l = (_p - 1) * (_q - 1)  # calculate totient function
+    _d = modinv(_e, _l)
 
-    return int(n), int(e), int(d)
-
-
-def encrypt(data, e, n):
-    return pow(int(data), int(e), int(n))
+    return int(_n), int(_e), int(_d)
 
 
-def decrypt(data, d, n):
-    return pow(int(data), int(d), int(n))
+def encrypt(data, _e, _n):
+    return pow(int(data), int(_e), int(_n))
+
+
+def decrypt(data, _d, _n):
+    return pow(int(data), int(_d), int(_n))
 
 # sample usage:
 # n,e,d = generate_key(16)

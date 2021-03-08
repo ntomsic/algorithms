@@ -10,10 +10,10 @@ Write a function that returns a list of numbers with the above property. The fun
 """
 
 
-def sum_dig_pow(a, b):
+def sum_dig_pow(_a, _b):
     result = []
 
-    for number in range(a, b + 1):
+    for number in range(_a, _b + 1):
         exponent = 1  # set to 1
         summation = 0  # set to 1
         number_as_string = str(number)

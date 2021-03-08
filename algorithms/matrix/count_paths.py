@@ -10,29 +10,29 @@
 #
 
 
-def count_paths(m, n):
-    if m < 1 or n < 1:
+def count_paths(_m, _n):
+    if _m < 1 or _n < 1:
         return -1
-    count = [[None for j in range(n)] for i in range(m)]
+    count = [[None for j in range(_n)] for i in range(_m)]
 
     # Taking care of the edge cases- matrix of size 1xn or mx1
-    for i in range(n):
+    for i in range(_n):
         count[0][i] = 1
-    for j in range(m):
+    for j in range(_m):
         count[j][0] = 1
 
-    for i in range(1, m):
-        for j in range(1, n):
+    for i in range(1, _m):
+        for j in range(1, _n):
             # Number of ways to reach a[i][j] = number of ways to reach
             #                                   a[i-1][j] + a[i][j-1]
             count[i][j] = count[i - 1][j] + count[i][j - 1]
 
-    print(count[m - 1][n - 1])
+    print(count[_m - 1][_n - 1])
 
 
 def main():
-    m, n = map(int, input('Enter two positive integers: ').split())
-    count_paths(m, n)
+    _m, _n = map(int, input('Enter two positive integers: ').split())
+    count_paths(_m, _n)
 
 
 if __name__ == '__main__':

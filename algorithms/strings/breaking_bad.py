@@ -28,11 +28,11 @@ from functools import reduce
 
 def match_symbol(words, symbols):
     combined = []
-    for s in symbols:
-        for c in words:
-            r = re.search(s, c)
-            if r:
-                combined.append(re.sub(s, "[{}]".format(s), c))
+    for _s in symbols:
+        for _c in words:
+            _r = re.search(_s, _c)
+            if _r:
+                combined.append(re.sub(_s, "[{}]".format(_s), _c))
     return combined
 
 
@@ -70,23 +70,23 @@ class TreeNode:
 
 def bracket(words, symbols):
     root = TreeNode()
-    for s in symbols:
-        t = root
-        for char in s:
-            if char not in t.c:
-                t.c[char] = TreeNode()
-            t = t.c[char]
-        t.sym = s
+    for _s in symbols:
+        _t = root
+        for char in _s:
+            if char not in _t.c:
+                _t.c[char] = TreeNode()
+            _t = _t.c[char]
+        _t.sym = _s
     result = dict()
     for word in words:
         i = 0
         symlist = list()
         while i < len(word):
-            j, t = i, root
-            while j < len(word) and word[j] in t.c:
-                t = t.c[word[j]]
-                if t.sym is not None:
-                    symlist.append((j + 1 - len(t.sym), j + 1, t.sym))
+            j, _t = i, root
+            while j < len(word) and word[j] in _t.c:
+                _t = _t.c[word[j]]
+                if _t.sym is not None:
+                    symlist.append((j + 1 - len(_t.sym), j + 1, _t.sym))
                 j += 1
             i += 1
         if len(symlist) > 0:

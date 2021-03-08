@@ -9,16 +9,16 @@
 
 
 def binary_search(array, query):
-    lo, hi = 0, len(array) - 1
-    while lo <= hi:
-        mid = (hi + lo) // 2
+    low, high = 0, len(array) - 1
+    while low <= high:
+        mid = (high + low) // 2
         val = array[mid]
         if val == query:
             return mid
         if val < query:
-            lo = mid + 1
+            low = mid + 1
         else:
-            hi = mid - 1
+            high = mid - 1
     return None
 
 

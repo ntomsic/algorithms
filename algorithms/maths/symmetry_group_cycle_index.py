@@ -68,7 +68,7 @@ from polynomial import (Monomial, Polynomial)
 """
 
 
-def cycle_product(m1: Monomial, m2: Monomial) -> Monomial:
+def cycle_product(m_1: Monomial, m_2: Monomial) -> Monomial:
     """
     Given two monomials (from the
     cycle index of a symmetry group),
@@ -76,23 +76,23 @@ def cycle_product(m1: Monomial, m2: Monomial) -> Monomial:
     in the cartesian product
     corresponding to their merging.
     """
-    assert isinstance(m1, Monomial) and isinstance(m2, Monomial)
-    A = m1.variables
-    B = m2.variables
+    assert isinstance(m_1, Monomial) and isinstance(m_2, Monomial)
+    _a = m_1.variables
+    _b = m_2.variables
     result_variables = dict()
-    for i in A:
-        for j in B:
+    for i in _a:
+        for j in _b:
             k = lcm(i, j)
-            g = (i * j) // k
+            _g = (i * j) // k
             if k in result_variables:
-                result_variables[k] += A[i] * B[j] * g
+                result_variables[k] += _a[i] * _b[j] * _g
             else:
-                result_variables[k] = A[i] * B[j] * g
+                result_variables[k] = _a[i] * _b[j] * _g
 
-    return Monomial(result_variables, Fraction(m1.coeff * m2.coeff, 1))
+    return Monomial(result_variables, Fraction(m_1.coeff * m_2.coeff, 1))
 
 
-def cycle_product_for_two_polynomials(p1: Polynomial, p2: Polynomial, q: Union[float, int, Fraction]) -> Union[
+def cycle_product_for_two_polynomials(p_1: Polynomial, p_2: Polynomial, _q: Union[float, int, Fraction]) -> Union[
     float, int, Fraction]:
     """
     Compute the product of
@@ -100,14 +100,14 @@ def cycle_product_for_two_polynomials(p1: Polynomial, p2: Polynomial, q: Union[f
     and p2 and evaluate it at q.
     """
     ans = Fraction(0, 1)
-    for m1 in p1.monomials:
-        for m2 in p2.monomials:
-            ans += cycle_product(m1, m2).substitute(q)
+    for m_1 in p_1.monomials:
+        for m_2 in p_2.monomials:
+            ans += cycle_product(m_1, m_2).substitute(_q)
 
     return ans
 
 
-def cycle_index_sym_helper(n: int, memo: Dict[int, Polynomial]) -> Polynomial:
+def cycle_index_sym_helper(_n: int, memo: Dict[int, Polynomial]) -> Polynomial:
     """
     A helper for the dp-style evaluation
     of the cycle index.
@@ -116,24 +116,24 @@ def cycle_index_sym_helper(n: int, memo: Dict[int, Polynomial]) -> Polynomial:
     https://en.wikipedia.org/wiki/Cycle_index#Symmetric_group_Sn
 
     """
-    if n in memo:
-        return memo[n]
+    if _n in memo:
+        return memo[_n]
     ans = Polynomial([Monomial({}, Fraction(0, 1))])
-    for t in range(1, n + 1):
-        ans = ans.__add__(Polynomial([Monomial({t: 1}, Fraction(1, 1))]) * cycle_index_sym_helper(n - t, memo))
-    ans *= Fraction(1, n)
-    memo[n] = ans
-    return memo[n]
+    for _t in range(1, _n + 1):
+        ans = ans.__add__(Polynomial([Monomial({_t: 1}, Fraction(1, 1))]) * cycle_index_sym_helper(_n - _t, memo))
+    ans *= Fraction(1, _n)
+    memo[_n] = ans
+    return memo[_n]
 
 
-def get_cycle_index_sym(n: int) -> Polynomial:
+def get_cycle_index_sym(_n: int) -> Polynomial:
     """
     Compute the cycle index
     of S_n, i.e. the symmetry
     group of n symbols.
 
     """
-    if n < 0:
+    if _n < 0:
         raise ValueError('n should be a non-negative integer.')
 
     memo = {
@@ -160,5 +160,5 @@ def get_cycle_index_sym(n: int) -> Polynomial:
             Monomial({4: 1}, Fraction(1, 4)),
         ])
     }
-    result = cycle_index_sym_helper(n, memo)
+    result = cycle_index_sym_helper(_n, memo)
     return result

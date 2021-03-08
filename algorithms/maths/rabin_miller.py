@@ -7,7 +7,7 @@ with a 4 ** -k chance of being wrong
 import random
 
 
-def is_prime(n, k):
+def is_prime(_n, k):
     def pow2_factor(num):
         """factor n into a power of 2 times an odd number"""
         power = 0
@@ -16,35 +16,35 @@ def is_prime(n, k):
             power += 1
         return power, num
 
-    def valid_witness(a):
+    def valid_witness(_a):
         """
         returns true if a is a valid 'witness' for n
         a valid witness increases chances of n being prime
         an invalid witness guarantees n is composite
         """
-        x = pow(int(a), int(d), int(n))
+        _x = pow(int(_a), int(_d), int(_n))
 
-        if x == 1 or x == n - 1:
+        if _x == 1 or _x == _n - 1:
             return False
 
-        for _ in range(r - 1):
-            x = pow(int(x), int(2), int(n))
+        for _ in range(_r - 1):
+            _x = pow(int(_x), int(2), int(_n))
 
-            if x == 1:
+            if _x == 1:
                 return True
-            if x == n - 1:
+            if _x == _n - 1:
                 return False
 
         return True
 
     # precondition n >= 5
-    if n < 5:
-        return n == 2 or n == 3  # True for prime
+    if _n < 5:
+        return _n == 2 or _n == 3  # True for prime
 
-    r, d = pow2_factor(n - 1)
+    _r, _d = pow2_factor(_n - 1)
 
     for _ in range(k):
-        if valid_witness(random.randrange(2, n - 2)):
+        if valid_witness(random.randrange(2, _n - 2)):
             return False
 
     return True

@@ -6,9 +6,9 @@
 #
 
 
-def search_in_a_sorted_matrix(mat, m, n, key):
-    i, j = m-1, 0
-    while i >= 0 and j < n:
+def search_in_a_sorted_matrix(mat, _m, _n, key):
+    i, j = _m - 1, 0
+    while i >= 0 and j < _n:
         if key == mat[i][j]:
             print ('Key %s found at row- %s column- %s' % (key, i+1, j+1))
             return

@@ -48,11 +48,11 @@ Note: We are assuming that we are just checking a one word string. To check if a
 """
 
 
-def remove_punctuation(s):
+def remove_punctuation(_s):
     """
     Remove punctuation, case sensitivity and spaces
     """
-    return "".join(i.lower() for i in s if i in ascii_letters)
+    return "".join(i.lower() for i in _s if i in ascii_letters)
 
 
 # Variation 1

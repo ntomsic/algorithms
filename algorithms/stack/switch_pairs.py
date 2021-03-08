@@ -39,25 +39,25 @@ def first_switch_pairs(stack):
 
 
 def second_switch_pairs(stack):
-    q = collections.deque()
+    _q = collections.deque()
     # Put all values into queue from stack
     for i in range(len(stack)):
-        q.append(stack.pop())
+        _q.append(stack.pop())
     # Put values back into stack from queue
-    for i in range(len(q)):
-        stack.append(q.pop())
+    for i in range(len(_q)):
+        stack.append(_q.pop())
     # Now, stack is reverse, put all values into queue from stack
     for i in range(len(stack)):
-        q.append(stack.pop())
+        _q.append(stack.pop())
     # Swap pairs by appending the 2nd value before appending 1st value
-    for i in range(len(q)):
-        if len(q) == 0:
+    for i in range(len(_q)):
+        if len(_q) == 0:
             break
-        first = q.pop()
-        if len(q) == 0:  # case: odd number of values in stack
+        first = _q.pop()
+        if len(_q) == 0:  # case: odd number of values in stack
             stack.append(first)
             break
-        second = q.pop()
+        second = _q.pop()
         stack.append(second)
         stack.append(first)
 

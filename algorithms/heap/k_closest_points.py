@@ -26,10 +26,10 @@ def k_closest(points, k, origin=(0, 0)):
     check if p is smaller than the root of the max heap;
     if it is, add p to heap and remove root. Reheapify.
     """
-    for p in points[k:]:
-        d = distance(p, origin)
+    for _p in points[k:]:
+        _d = distance(_p, origin)
 
-        heappushpop(heap, (-d, p))  # heappushpop does conditional check
+        heappushpop(heap, (-_d, _p))  # heappushpop does conditional check
         """Same as:
             if d < -heap[0][0]:
                 heappush(heap, (-d,p))

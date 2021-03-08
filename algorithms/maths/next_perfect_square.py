@@ -5,8 +5,8 @@ for instance if you pass 121 then the script should return the next perfect squa
 """
 
 
-def find_next_square(sq):
-    root = sq ** 0.5
+def find_next_square(sqr):
+    root = sqr ** 0.5
     if root.is_integer():
         return (root + 1) ** 2
     return -1
@@ -14,6 +14,6 @@ def find_next_square(sq):
 
 # Another way:
 
-def find_next_square2(sq):
-    x = sq ** 0.5
-    return -1 if x % 1 else (x + 1) ** 2
+def find_next_square2(sqr):
+    _x = sqr ** 0.5
+    return -1 if _x % 1 else (_x + 1) ** 2

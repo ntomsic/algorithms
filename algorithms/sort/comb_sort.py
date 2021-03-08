@@ -11,8 +11,8 @@ def comb_sort(arr):
     def swap(i, j):
         arr[i], arr[j] = arr[j], arr[i]
 
-    n = len(arr)
-    gap = n
+    _n = len(arr)
+    gap = _n
     shrink = 1.3
     sorted = False
     while not sorted:
@@ -24,7 +24,7 @@ def comb_sort(arr):
             sorted = True
 
         i = 0
-        while i + gap < n:
+        while i + gap < _n:
             if arr[i] > arr[i + gap]:
                 swap(i, i + gap)
                 sorted = False

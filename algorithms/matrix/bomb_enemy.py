@@ -21,12 +21,12 @@ return 3. (Placing a bomb at (1,1) kills 3 enemies)
 
 def max_killed_enemies(grid):
     if not grid: return 0
-    m, n = len(grid), len(grid[0])
+    _m, _n = len(grid), len(grid[0])
     max_killed = 0
-    row_e, col_e = 0, [0] * n
+    row_e, col_e = 0, [0] * _n
     # iterates over all cells in the grid
-    for i in range(m):
-        for j in range(n):
+    for i in range(_m):
+        for j in range(_n):
             # makes sure we are next to a wall.
             if j == 0 or grid[i][j - 1] == 'W':
                 row_e = row_kills(grid, i, j)

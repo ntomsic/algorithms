@@ -43,13 +43,13 @@ def two_sum1(numbers, target):
 
 # Using two pointers
 def two_sum2(numbers, target):
-    p1 = 0  # pointer 1 holds from left of array numbers
-    p2 = len(numbers) - 1  # pointer 2 holds from right of array numbers
-    while p1 < p2:
-        s = numbers[p1] + numbers[p2]
-        if s == target:
-            return [p1 + 1, p2 + 1]
-        elif s > target:
-            p2 = p2 - 1
+    p_1 = 0  # pointer 1 holds from left of array numbers
+    p_2 = len(numbers) - 1  # pointer 2 holds from right of array numbers
+    while p_1 < p_2:
+        _s = numbers[p_1] + numbers[p_2]
+        if _s == target:
+            return [p_1 + 1, p_2 + 1]
+        if _s > target:
+            p_2 = p_2 - 1
         else:
-            p1 = p1 + 1
+            p_1 = p_1 + 1

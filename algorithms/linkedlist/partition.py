@@ -27,13 +27,13 @@ def print_linked_list(head):
     print(string)
 
 
-def partition(head, x):
+def partition(head, _x):
     left = None
     right = None
     prev = None
     current = head
     while current:
-        if int(current.val) >= x:
+        if int(current.val) >= _x:
             if not right:
                 right = current
         else:
@@ -52,24 +52,24 @@ def partition(head, x):
 
 
 def test():
-    a = Node("3")
-    b = Node("5")
-    c = Node("8")
-    d = Node("5")
-    e = Node("10")
-    f = Node("2")
-    g = Node("1")
+    _a = Node("3")
+    _b = Node("5")
+    _c = Node("8")
+    _d = Node("5")
+    _e = Node("10")
+    _f = Node("2")
+    _g = Node("1")
 
-    a.next = b
-    b.next = c
-    c.next = d
-    d.next = e
-    e.next = f
-    f.next = g
+    _a.next = _b
+    _b.next = _c
+    _c.next = _d
+    _d.next = _e
+    _e.next = _f
+    _f.next = _g
 
-    print_linked_list(a)
-    partition(a, 5)
-    print_linked_list(a)
+    print_linked_list(_a)
+    partition(_a, 5)
+    print_linked_list(_a)
 
 
 if __name__ == '__main__':

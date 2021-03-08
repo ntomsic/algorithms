@@ -62,14 +62,14 @@ def convert_to_list(number: int) -> Node:
     print("number must be positive!")
 
 
-def convert_to_str(l: Node) -> str:
+def convert_to_str(_l: Node) -> str:
     """
         converts the non-negative number list into a string.
     """
     result = ""
-    while l:
-        result += str(l.val)
-        l = l.next
+    while _l:
+        result += str(_l.val)
+        _l = _l.next
     return result
 
 

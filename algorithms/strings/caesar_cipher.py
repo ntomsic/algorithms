@@ -8,13 +8,13 @@ Alphabet rotated +3:    defghijklmnopqrstuvwxyzabc
 """
 
 
-def caesar_cipher(s, k):
+def caesar_cipher(_s, k):
     result = ""
-    for char in s:
-        n = ord(char)
-        if 64 < n < 91:
-            n = ((n - 65 + k) % 26) + 65
-        if 96 < n < 123:
-            n = ((n - 97 + k) % 26) + 97
-        result = result + chr(n)
+    for char in _s:
+        _n = ord(char)
+        if 64 < _n < 91:
+            _n = ((_n - 65 + k) % 26) + 65
+        if 96 < _n < 123:
+            _n = ((_n - 97 + k) % 26) + 97
+        result = result + chr(_n)
     return result

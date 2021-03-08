@@ -9,11 +9,11 @@ Given N = 5 and P = 0.001, can produce output x such that
 """
 
 
-def square_root(n, epsilon=0.001):
+def square_root(_n, epsilon=0.001):
     """Return square root of n, with maximum absolute error epsilon"""
-    guess = n / 2
+    guess = _n / 2
 
-    while abs(guess * guess - n) > epsilon:
-        guess = (guess + (n / guess)) / 2
+    while abs(guess * guess - _n) > epsilon:
+        guess = (guess + (_n / guess)) / 2
 
     return guess

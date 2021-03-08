@@ -18,23 +18,23 @@ class Node(object):
         self.next = None
 
 
-def intersection(h1, h2):
+def intersection(h_1, h_2):
     count = 0
     flag = None
-    h1_orig = h1
-    h2_orig = h2
+    h1_orig = h_1
+    h2_orig = h_2
 
-    while h1 or h2:
+    while h_1 or h_2:
         count += 1
 
-        if not flag and (h1.next is None or h2.next is None):
+        if not flag and (h_1.next is None or h_2.next is None):
             # We hit the end of one of the lists, set a flag for this
-            flag = (count, h1.next, h2.next)
+            flag = (count, h_1.next, h_2.next)
 
-        if h1:
-            h1 = h1.next
-        if h2:
-            h2 = h2.next
+        if h_1:
+            h_1 = h_1.next
+        if h_2:
+            h_2 = h_2.next
 
     long_len = count  # Mark the length of the longer of the two lists
     short_len = flag[0]
@@ -72,26 +72,26 @@ class TestSuite(unittest.TestCase):
         #             7 -> 9 -> 11
         #            /
         # 2 -> 4 -> 6
-        a1 = Node(1)
-        b1 = Node(3)
-        c1 = Node(5)
-        d = Node(7)
-        a2 = Node(2)
-        b2 = Node(4)
-        c2 = Node(6)
-        e = Node(9)
-        f = Node(11)
+        a_1 = Node(1)
+        b_1 = Node(3)
+        c_1 = Node(5)
+        _d = Node(7)
+        a_2 = Node(2)
+        b_2 = Node(4)
+        c_2 = Node(6)
+        _e = Node(9)
+        _f = Node(11)
 
-        a1.next = b1
-        b1.next = c1
-        c1.next = d
-        a2.next = b2
-        b2.next = c2
-        c2.next = d
-        d.next = e
-        e.next = f
+        a_1.next = b_1
+        b_1.next = c_1
+        c_1.next = _d
+        a_2.next = b_2
+        b_2.next = c_2
+        c_2.next = _d
+        _d.next = _e
+        _e.next = _f
 
-        self.assertEqual(7, intersection(a1, a2).val)
+        self.assertEqual(7, intersection(a_1, a_2).val)
 
 
 if __name__ == '__main__':

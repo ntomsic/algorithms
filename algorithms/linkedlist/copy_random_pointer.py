@@ -20,14 +20,14 @@ def copy_random_pointer_v1(head):
     :rtype: RandomListNode
     """
     dic = dict()
-    m = n = head
-    while m:
-        dic[m] = RandomListNode(m.label)
-        m = m.next
-    while n:
-        dic[n].next = dic.get(n.next)
-        dic[n].random = dic.get(n.random)
-        n = n.next
+    _m = _n = head
+    while _m:
+        dic[_m] = RandomListNode(_m.label)
+        _m = _m.next
+    while _n:
+        dic[_n].next = dic.get(_n.next)
+        dic[_n].random = dic.get(_n.random)
+        _n = _n.next
     return dic.get(head)
 
 

@@ -13,11 +13,11 @@ log3 = log base 3
 """
 
 
-def ternary_search(l, r, key, arr):
-    while r >= l:
+def ternary_search(_l, _r, key, arr):
+    while _r >= _l:
 
-        mid1 = l + (r - l) // 3
-        mid2 = r - (r - l) // 3
+        mid1 = _l + (_r - _l) // 3
+        mid2 = _r - (_r - _l) // 3
 
         if key == arr[mid1]:
             return mid1
@@ -26,14 +26,14 @@ def ternary_search(l, r, key, arr):
 
         if key < arr[mid1]:
             # key lies between l and mid1
-            r = mid1 - 1
+            _r = mid1 - 1
         elif key > arr[mid2]:
             # key lies between mid2 and r
-            l = mid2 + 1
+            _l = mid2 + 1
         else:
             # key lies between mid1 and mid2
-            l = mid1 + 1
-            r = mid2 - 1
+            _l = mid1 + 1
+            _r = mid2 - 1
 
     # key not found
     return -1

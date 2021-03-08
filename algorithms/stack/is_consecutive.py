@@ -38,7 +38,7 @@ def first_is_consecutive(stack):
 
 
 def second_is_consecutive(stack):
-    q = collections.deque()
+    _q = collections.deque()
     for _ in range(len(stack)):
         first_value = stack.pop()
         if len(stack) == 0:  # Case odd number of values in stack
@@ -47,14 +47,14 @@ def second_is_consecutive(stack):
         if first_value - second_value != 1:  # Not consecutive
             return False
         stack.append(second_value)  # Backup second value
-        q.append(first_value)
+        _q.append(first_value)
 
     # Back up stack from queue
-    for i in range(len(q)):
-        stack.append(q.pop())
+    for i in range(len(_q)):
+        stack.append(_q.pop())
     for i in range(len(stack)):
-        q.append(stack.pop())
-    for i in range(len(q)):
-        stack.append(q.pop())
+        _q.append(stack.pop())
+    for i in range(len(_q)):
+        stack.append(_q.pop())
 
     return True

@@ -28,8 +28,8 @@ def valid_solution_hashtable(board):
         for j in range(3):
             grid_add = 0
             for k in range(3):
-                for l in range(3):
-                    grid_add += board[i*3+k][j*3+l]
+                for _l in range(3):
+                    grid_add += board[i*3+k][j*3+_l]
             if grid_add != 45:
                 return False
     return True
@@ -74,9 +74,9 @@ def valid_solution_set (board):
         if set(col) != valid:
             return False
 
-    for x in range(3):
-        for y in range(3):
-            if set(sum([row[x*3:(x+1)*3] for row in board[y*3:(y+1)*3]], [])) != valid:
+    for _x in range(3):
+        for _y in range(3):
+            if set(sum([row[_x*3:(_x+1)*3] for row in board[_y*3:(_y+1)*3]], [])) != valid:
                 return False
 
     return True

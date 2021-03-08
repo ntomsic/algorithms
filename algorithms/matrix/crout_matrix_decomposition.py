@@ -26,22 +26,22 @@ We can check that L * U = A.
 I think the complexity should be O(n^3).
 """
 
-def crout_matrix_decomposition(A):
-    n = len(A)
-    L = [[0.0] * n for i in range(n)]
-    U = [[0.0] * n for i in range(n)]
-    for j in range(n):
-        U[j][j] = 1.0
-        for i in range(j, n):
-            alpha = float(A[i][j])
+def crout_matrix_decomposition(_a):
+    _n = len(_a)
+    _l = [[0.0] * _n for i in range(_n)]
+    _u = [[0.0] * _n for i in range(_n)]
+    for j in range(_n):
+        _u[j][j] = 1.0
+        for i in range(j, _n):
+            alpha = float(_a[i][j])
             for k in range(j):
-                alpha -= L[i][k]*U[k][j]
-            L[i][j] = float(alpha)
-        for i in range(j+1, n):
-            tempU = float(A[j][i])
+                alpha -= _l[i][k] * _u[k][j]
+            _l[i][j] = float(alpha)
+        for i in range(j + 1, _n):
+            temp_u = float(_a[j][i])
             for k in range(j):
-                tempU -= float(L[j][k]*U[k][i])
-            if int(L[j][j]) == 0:
-                L[j][j] = float(0.1**40)
-            U[j][i] = float(tempU/L[j][j])
-    return (L,U)
+                temp_u -= float(_l[j][k] * _u[k][i])
+            if int(_l[j][j]) == 0:
+                _l[j][j] = float(0.1 ** 40)
+            _u[j][i] = float(temp_u / _l[j][j])
+    return _l, _u

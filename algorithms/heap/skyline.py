@@ -45,18 +45,18 @@ def get_skyline(lrh):
     :rtype: List[List[int]]
     """
     skyline, live = [], []
-    i, n = 0, len(lrh)
-    while i < n or live:
-        if not live or i < n and lrh[i][0] <= -live[0][1]:
-            x = lrh[i][0]
-            while i < n and lrh[i][0] == x:
+    i, _n = 0, len(lrh)
+    while i < _n or live:
+        if not live or i < _n and lrh[i][0] <= -live[0][1]:
+            _x = lrh[i][0]
+            while i < _n and lrh[i][0] == _x:
                 heapq.heappush(live, (-lrh[i][2], -lrh[i][1]))
                 i += 1
         else:
-            x = -live[0][1]
-            while live and -live[0][1] <= x:
+            _x = -live[0][1]
+            while live and -live[0][1] <= _x:
                 heapq.heappop(live)
         height = len(live) and -live[0][0]
         if not skyline or height != skyline[-1][1]:
-            skyline += [x, height],
+            skyline += [_x, height],
     return skyline

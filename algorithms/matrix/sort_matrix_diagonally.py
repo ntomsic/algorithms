@@ -33,42 +33,42 @@ def sort_diagonally(mat: List[List[int]]) -> List[List[int]]:
         # Process the rows
         if i+1 < len(mat):
             # Initialize heap, set row and column
-            h = []
+            _h = []
             row = len(mat)-(i+1)
             col = 0
 
             # Traverse diagonally, and add the values to the heap
             while row < len(mat):
-                heappush(h, (mat[row][col]))
+                heappush(_h, (mat[row][col]))
                 row += 1
                 col += 1
 
             # Sort the diagonal
             row = len(mat)-(i+1)
             col = 0
-            while h:
-                ele = heappop(h)
+            while _h:
+                ele = heappop(_h)
                 mat[row][col] = ele
                 row += 1
                 col += 1
         else:
             # Process the columns
             # Initialize heap, row and column
-            h = []
+            _h = []
             row = 0
             col = i - (len(mat)-1)
 
             # Traverse Diagonally
             while col < len(mat[0]) and row < len(mat):
-                heappush(h, (mat[row][col]))
+                heappush(_h, (mat[row][col]))
                 row += 1
                 col += 1
 
             # Sort the diagonal
             row = 0
             col = i - (len(mat)-1)
-            while h:
-                ele = heappop(h)
+            while _h:
+                ele = heappop(_h)
                 mat[row][col] = ele
                 row += 1
                 col += 1

@@ -16,16 +16,16 @@ Reference: https://leetcode.com/problems/valid-anagram/description/
 """
 
 
-def is_anagram(s, t):
+def is_anagram(_s, _t):
     """
-    :type s: str
-    :type t: str
+    :type _s: str
+    :type _t: str
     :rtype: bool
     """
     maps = {}
     mapt = {}
-    for i in s:
+    for i in _s:
         maps[i] = maps.get(i, 0) + 1
-    for i in t:
+    for i in _t:
         mapt[i] = mapt.get(i, 0) + 1
     return maps == mapt

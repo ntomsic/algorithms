@@ -21,8 +21,8 @@ def decimal_to_binary_util(val):
     return binary_rep
 
 
-def decimal_to_binary_ip(ip):
-    values = ip.split('.')
+def decimal_to_binary_ip(i_p):
+    values = i_p.split('.')
     binary_list = []
     for val in values:
         binary_list.append(decimal_to_binary_util(val))

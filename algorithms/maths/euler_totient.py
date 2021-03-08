@@ -6,15 +6,15 @@ which are coprime to n.
 """
 
 
-def euler_totient(n):
+def euler_totient(_n):
     """Euler's totient function or Phi function.
     Time Complexity: O(sqrt(n))."""
-    result = n
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            while n % i == 0:
-                n //= i
+    result = _n
+    for i in range(2, int(_n ** 0.5) + 1):
+        if _n % i == 0:
+            while _n % i == 0:
+                _n //= i
             result -= result // i
-    if n > 1:
-        result -= result // n
+    if _n > 1:
+        result -= result // _n
     return result

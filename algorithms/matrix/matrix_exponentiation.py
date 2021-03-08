@@ -1,40 +1,40 @@
-def multiply(matA: list, matB: list) -> list:
+def multiply(mat_a: list, mat_b: list) -> list:
     """
     Multiplies two square matrices matA and matB od size n x n
     Time Complexity: O(n^3)
     """
-    n = len(matA)
-    matC = [[0 for i in range(n)] for j in range(n)]
+    _n = len(mat_a)
+    mat_c = [[0 for i in range(_n)] for j in range(_n)]
 
-    for i in range(n):
-        for j in range(n):
-            for k in range(n):
-                matC[i][j] += matA[i][k] * matB[k][j]
+    for i in range(_n):
+        for j in range(_n):
+            for k in range(_n):
+                mat_c[i][j] += mat_a[i][k] * mat_b[k][j]
 
-    return matC
+    return mat_c
 
-def identity(n: int) -> list:
+def identity(_n: int) -> list:
     """
     Returns the Identity matrix of size n x n
     Time Complecity: O(n^2)
     """
-    I = [[0 for i in range(n)] for j in range(n)]
+    _i = [[0 for i in range(_n)] for j in range(_n)]
 
-    for i in range(n):
-        I[i][i] = 1
+    for i in range(_n):
+        _i[i][i] = 1
 
-    return I
+    return _i
 
-def matrix_exponentiation(mat: list, n: int) -> list:
+def matrix_exponentiation(mat: list, _n: int) -> list:
     """
     Calculates mat^n by repeated squaring
     Time Complexity: O(d^3 log(n))
                      d: dimesion of the square matrix mat
                      n: power the matrix is raised to
     """
-    if n == 0:
+    if _n == 0:
         return identity(len(mat))
-    if n % 2 == 1:
-        return multiply(matrix_exponentiation(mat, n - 1), mat)
-    tmp = matrix_exponentiation(mat, n // 2)
+    if _n % 2 == 1:
+        return multiply(matrix_exponentiation(mat, _n - 1), mat)
+    tmp = matrix_exponentiation(mat, _n // 2)
     return multiply(tmp, tmp)

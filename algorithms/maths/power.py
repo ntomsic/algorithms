@@ -1,4 +1,4 @@
-def power(a: int, n: int, r: int = None):
+def power(_a: int, _n: int, _r: int = None):
     """
     Iterative version of binary exponentiation
 
@@ -9,18 +9,18 @@ def power(a: int, n: int, r: int = None):
     Space Complexity : O(1)
     """
     ans = 1
-    while n:
-        if n & 1:
-            ans = ans * a
-        a = a * a
-        if r:
-            ans %= r
-            a %= r
-        n >>= 1
+    while _n:
+        if _n & 1:
+            ans = ans * _a
+        _a = _a * _a
+        if _r:
+            ans %= _r
+            _a %= _r
+        _n >>= 1
     return ans
 
 
-def power_recur(a: int, n: int, r: int = None):
+def power_recur(_a: int, _n: int, _r: int = None):
     """
     Recursive version of binary exponentiation
 
@@ -30,15 +30,15 @@ def power_recur(a: int, n: int, r: int = None):
     Time Complexity :  O(log(n))
     Space Complexity : O(log(n))
     """
-    if n == 0:
+    if _n == 0:
         ans = 1
-    elif n == 1:
-        ans = a
+    elif _n == 1:
+        ans = _a
     else:
-        ans = power_recur(a, n // 2, r)
+        ans = power_recur(_a, _n // 2, _r)
         ans = ans * ans
-        if n % 2:
-            ans = ans * a
-    if r:
-        ans %= r
+        if _n % 2:
+            ans = ans * _a
+    if _r:
+        ans %= _r
     return ans

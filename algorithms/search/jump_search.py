@@ -12,17 +12,17 @@ def jump_search(arr, target):
         reference: https://en.wikipedia.org/wiki/Jump_search
 
     """
-    n = len(arr)
-    block_size = int(math.sqrt(n))
+    _n = len(arr)
+    block_size = int(math.sqrt(_n))
     block_prev = 0
     block = block_size
 
     # return -1 means that array doesn't contain target value
     # find block that contains target value
 
-    if arr[n - 1] < target:
+    if arr[_n - 1] < target:
         return -1
-    while block <= n and arr[block - 1] < target:
+    while block <= _n and arr[block - 1] < target:
         block_prev = block
         block += block_size
 
@@ -30,7 +30,7 @@ def jump_search(arr, target):
 
     while arr[block_prev] < target:
         block_prev += 1
-        if block_prev == min(block, n):
+        if block_prev == min(block, _n):
             return -1
 
     # if there is target value in array, return it

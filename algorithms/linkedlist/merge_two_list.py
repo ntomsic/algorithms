@@ -15,26 +15,26 @@ class Node:
         self.next = None
 
 
-def merge_two_list(l1, l2):
+def merge_two_list(l_1, l_2):
     ret = cur = Node(0)
-    while l1 and l2:
-        if l1.val < l2.val:
-            cur.next = l1
-            l1 = l1.next
+    while l_1 and l_2:
+        if l_1.val < l_2.val:
+            cur.next = l_1
+            l_1 = l_1.next
         else:
-            cur.next = l2
-            l2 = l2.next
+            cur.next = l_2
+            l_2 = l_2.next
         cur = cur.next
-    cur.next = l1 or l2
+    cur.next = l_1 or l_2
     return ret.next
 
 
 # recursively
-def merge_two_list_recur(l1, l2):
-    if not l1 or not l2:
-        return l1 or l2
-    if l1.val < l2.val:
-        l1.next = merge_two_list_recur(l1.next, l2)
-        return l1
-    l2.next = merge_two_list_recur(l1, l2.next)
-    return l2
+def merge_two_list_recur(l_1, l_2):
+    if not l_1 or not l_2:
+        return l_1 or l_2
+    if l_1.val < l_2.val:
+        l_1.next = merge_two_list_recur(l_1.next, l_2)
+        return l_1
+    l_2.next = merge_two_list_recur(l_1, l_2.next)
+    return l_2

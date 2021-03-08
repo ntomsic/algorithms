@@ -48,8 +48,8 @@ def fizzbuzz(_n):
 
 
 # Alternative solution
-def fizzbuzz_with_helper_func(n):
-    return [fb(m) for m in range(1, n + 1)]
+def fizzbuzz_with_helper_func(_n):
+    return [fb(m) for m in range(1, _n + 1)]
 
 
 def fb(_m):

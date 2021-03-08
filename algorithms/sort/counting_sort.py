@@ -9,14 +9,14 @@ def counting_sort(arr):
     Complexity: 0(n)
     """
 
-    m = min(arr)
+    _m = min(arr)
     # in case there are negative elements, change the array to all positive element
     different = 0
-    if m < 0:
+    if _m < 0:
         # save the change, so that we can convert the array back to all positive number
-        different = -m
+        different = -_m
         for i in range(len(arr)):
-            arr[i] += -m
+            arr[i] += -_m
     k = max(arr)
     temp_arr = [0] * (k + 1)
     for i in range(0, len(arr)):

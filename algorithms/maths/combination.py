@@ -1,19 +1,19 @@
-def combination(n, r):
+def combination(_n, _r):
     """This function calculates nCr."""
-    if n == r or r == 0:
+    if _n == _r or _r == 0:
         return 1
-    return combination(n - 1, r - 1) + combination(n - 1, r)
+    return combination(_n - 1, _r - 1) + combination(_n - 1, _r)
 
 
-def combination_memo(n, r):
+def combination_memo(_n, _r):
     """This function calculates nCr using memoization method."""
     memo = {}
 
-    def recur(n, r):
-        if n == r or r == 0:
+    def recur(_n, _r):
+        if _n == _r or _r == 0:
             return 1
-        if (n, r) not in memo:
-            memo[(n, r)] = recur(n - 1, r - 1) + recur(n - 1, r)
-        return memo[(n, r)]
+        if (_n, _r) not in memo:
+            memo[(_n, _r)] = recur(_n - 1, _r - 1) + recur(_n - 1, _r)
+        return memo[(_n, _r)]
 
-    return recur(n, r)
+    return recur(_n, _r)

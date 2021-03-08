@@ -15,15 +15,15 @@ class ListNode(object):
 
 def merge_k_lists(lists):
     dummy = node = ListNode(0)
-    h = [(n.val, n) for n in lists if n]
-    heapify(h)
-    while h:
-        _, n = h[0]
-        if n.next is None:
-            heappop(h)  # only change heap size when necessary
+    _h = [(n.val, n) for n in lists if n]
+    heapify(_h)
+    while _h:
+        _, _n = _h[0]
+        if _n.next is None:
+            heappop(_h)  # only change heap size when necessary
         else:
-            heapreplace(h, (n.next.val, n.next))
-        node.next = n
+            heapreplace(_h, (_n.next.val, _n.next))
+        node.next = _n
         node = node.next
 
     return dummy.next
@@ -32,15 +32,15 @@ def merge_k_lists(lists):
 def merge_k_lists(lists):
     dummy = ListNode(None)
     curr = dummy
-    q = PriorityQueue()
+    _q = PriorityQueue()
     for node in lists:
         if node:
-            q.put((node.val, node))
-    while not q.empty():
-        curr.next = q.get()[1]  # These two lines seem to
+            _q.put((node.val, node))
+    while not _q.empty():
+        curr.next = _q.get()[1]  # These two lines seem to
         curr = curr.next  # be equivalent to :-   curr = q.get()[1]
         if curr.next:
-            q.put((curr.next.val, curr.next))
+            _q.put((curr.next.val, curr.next))
     return dummy.next
 
 

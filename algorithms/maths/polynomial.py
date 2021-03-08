@@ -168,8 +168,8 @@ class Monomial:
                 raise ValueError('Cannot divide by 0.')
             return Monomial(mono, Monomial._rationalize_if_possible(self.coeff / other)).clean()
 
-        o = other.inverse()
-        return self.__mul__(o)
+        _o = other.inverse()
+        return self.__mul__(_o)
 
     # def __floordiv__(self, other: Union[int, float, Fraction, Monomial]) -> Monomial:
     def __floordiv__(self, other: Union[int, float, Fraction]):
@@ -308,11 +308,11 @@ class Polynomial:
 
         '''
         self.monomials = set()
-        for m in monomials:
-            if any(map(lambda x: isinstance(m, x), [int, float, Fraction])):
-                self.monomials |= {Monomial({}, m)}
-            elif isinstance(m, Monomial):
-                self.monomials |= {m}
+        for _m in monomials:
+            if any(map(lambda x: isinstance(_m, x), [int, float, Fraction])):
+                self.monomials |= {Monomial({}, _m)}
+            elif isinstance(_m, Monomial):
+                self.monomials |= {_m}
             else:
                 raise ValueError('Iterable should have monomials, int, float, or Fraction.')
         self.monomials -= {Monomial({}, 0)}
@@ -352,10 +352,10 @@ class Polynomial:
         if isinstance(other, Polynomial):
             temp = list(z for z in {m.clone() for m in self.all_monomials()})
 
-            p = Polynomial(temp)
-            for o in other.all_monomials():
-                p = p.__add__(o.clone())
-            return p
+            _p = Polynomial(temp)
+            for _o in other.all_monomials():
+                _p = _p.__add__(_o.clone())
+            return _p
         raise ValueError('Can only add int, float, Fraction, Monomials, or Polynomials to Polynomials.')
 
     # def __sub__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
@@ -384,10 +384,10 @@ class Polynomial:
             return Polynomial([z for z in monos])
 
         if isinstance(other, Polynomial):
-            p = Polynomial(list(z for z in {m.clone() for m in self.all_monomials()}))
-            for o in other.all_monomials():
-                p = p.__sub__(o.clone())
-            return p
+            _p = Polynomial(list(z for z in {m.clone() for m in self.all_monomials()}))
+            for _o in other.all_monomials():
+                _p = _p.__sub__(_o.clone())
+            return _p
 
         raise ValueError('Can only subtract int, float, Fraction, Monomials, or Polynomials from Polynomials.')
 
@@ -400,14 +400,14 @@ class Polynomial:
         if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
             result = Polynomial([])
             monos = {m.clone() for m in self.all_monomials()}
-            for m in monos:
-                result = result.__add__(m.clone() * other)
+            for _m in monos:
+                result = result.__add__(_m.clone() * other)
             return result
         if isinstance(other, Monomial):
             result = Polynomial([])
             monos = {m.clone() for m in self.all_monomials()}
-            for m in monos:
-                result = result.__add__(m.clone() * other)
+            for _m in monos:
+                result = result.__add__(_m.clone() * other)
             return result
         if isinstance(other, Polynomial):
             temp_self = {m.clone() for m in self.all_monomials()}
@@ -517,8 +517,8 @@ class Polynomial:
             raise ValueError('Some variables didn\'t receive their values.')
 
         ans = 0
-        for m in self.all_monomials():
-            ans += Polynomial._rationalize_if_possible(m.substitute(substitutions))
+        for _m in self.all_monomials():
+            ans += Polynomial._rationalize_if_possible(_m.substitute(substitutions))
         return Polynomial._rationalize_if_possible(ans)
 
     def __str__(self) -> str:

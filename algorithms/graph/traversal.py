@@ -17,9 +17,9 @@ def dfs_traverse(graph, start):
         node = stack.pop()
         if node not in visited:
             visited.add(node)
-            for nextNode in graph[node]:
-                if nextNode not in visited:
-                    stack.append(nextNode)
+            for next_node in graph[node]:
+                if next_node not in visited:
+                    stack.append(next_node)
     return visited
 
 
@@ -32,9 +32,9 @@ def bfs_traverse(graph, start):
         node = queue.pop(0)
         if node not in visited:
             visited.add(node)
-            for nextNode in graph[node]:
-                if nextNode not in visited:
-                    queue.append(nextNode)
+            for next_node in graph[node]:
+                if next_node not in visited:
+                    queue.append(next_node)
     return visited
 
 
@@ -44,9 +44,9 @@ def dfs_traverse_recursive(graph, start, visited=None):
     if visited is None:
         visited = set()
     visited.add(start)
-    for nextNode in graph[start]:
-        if nextNode not in visited:
-            dfs_traverse_recursive(graph, nextNode, visited)
+    for next_node in graph[start]:
+        if next_node not in visited:
+            dfs_traverse_recursive(graph, next_node, visited)
     return visited
 
 # print(dfs_traverse_recursive(graph, 'A'))

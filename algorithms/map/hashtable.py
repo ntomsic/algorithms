@@ -103,7 +103,7 @@ class ResizableHashTable(HashTable):
         super().__init__(self.MIN_SIZE)
 
     def put(self, key, value):
-        rv = super().put(key, value)
+        _ = super().put(key, value)
         # increase size of dict * 2 if filled >= 2/3 size (like python dict)
         if len(self) >= (self.size * 2) / 3:
             self.__resize()

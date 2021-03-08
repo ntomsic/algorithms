@@ -1,15 +1,15 @@
-def gcd(a, b):
+def gcd(_a, _b):
     """Computes the greatest common divisor of integers a and b using
     Euclid's Algorithm.
     """
-    while b != 0:
-        a, b = b, a % b
-    return a
+    while _b != 0:
+        _a, _b = _b, _a % _b
+    return _a
 
 
-def lcm(a, b):
+def lcm(_a, _b):
     """Computes the lowest common multiple of integers a and b."""
-    return a * b / gcd(a, b)
+    return _a * _b / gcd(_a, _b)
 
 
 """
@@ -25,11 +25,11 @@ Output : 3
 """
 
 
-def trailing_zero(x):
+def trailing_zero(_x):
     cnt = 0
-    while x and not x & 1:
+    while _x and not _x & 1:
         cnt += 1
-        x >>= 1
+        _x >>= 1
     return cnt
 
 
@@ -39,14 +39,14 @@ computes the greatest common divisor of a and b using bitwise operator.
 """
 
 
-def gcd_bit(a, b):
-    tza = trailing_zero(a)
-    tzb = trailing_zero(b)
-    a >>= tza
-    b >>= tzb
-    while b:
-        if a < b:
-            a, b = b, a
-        a -= b
-        a >>= trailing_zero(a)
-    return a << min(tza, tzb)
+def gcd_bit(_a, _b):
+    tza = trailing_zero(_a)
+    tzb = trailing_zero(_b)
+    _a >>= tza
+    _b >>= tzb
+    while _b:
+        if _a < _b:
+            _a, _b = _b, _a
+        _a -= _b
+        _a >>= trailing_zero(_a)
+    return _a << min(tza, tzb)

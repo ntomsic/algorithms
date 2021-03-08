@@ -21,14 +21,14 @@ import collections
 
 
 def max_sliding_window(arr, k):
-    qi = collections.deque()  # queue storing indexes of elements
+    q_i = collections.deque()  # queue storing indexes of elements
     result = []
-    for i, n in enumerate(arr):
-        while qi and arr[qi[-1]] < n:
-            qi.pop()
-        qi.append(i)
-        if qi[0] == i - k:
-            qi.popleft()
+    for i, _n in enumerate(arr):
+        while q_i and arr[q_i[-1]] < _n:
+            q_i.pop()
+        q_i.append(i)
+        if q_i[0] == i - k:
+            q_i.popleft()
         if i >= k - 1:
-            result.append(arr[qi[0]])
+            result.append(arr[q_i[0]])
     return result

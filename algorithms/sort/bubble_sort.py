@@ -14,17 +14,17 @@ def bubble_sort(arr, simulation=False):
     def swap(i, j):
         arr[i], arr[j] = arr[j], arr[i]
 
-    n = len(arr)
+    _n = len(arr)
     swapped = True
 
     iteration = 0
     if simulation:
         print("iteration", iteration, ":", *arr)
-    x = -1
+    _x = -1
     while swapped:
         swapped = False
-        x = x + 1
-        for i in range(1, n - x):
+        _x = _x + 1
+        for i in range(1, _n - _x):
             if arr[i - 1] > arr[i]:
                 swap(i - 1, i)
                 swapped = True

@@ -16,21 +16,21 @@ def vector_to_index_value_list(vector):
 
 def dot_product(iv_list1, iv_list2):
     product = 0
-    p1 = len(iv_list1) - 1
-    p2 = len(iv_list2) - 1
+    p_1 = len(iv_list1) - 1
+    p_2 = len(iv_list2) - 1
 
-    while p1 >= 0 and p2 >= 0:
-        i1, v1 = iv_list1[p1]
-        i2, v2 = iv_list2[p2]
+    while p_1 >= 0 and p_2 >= 0:
+        i_1, v_1 = iv_list1[p_1]
+        i_2, v_2 = iv_list2[p_2]
 
-        if i1 < i2:
-            p1 -= 1
-        elif i2 < i1:
-            p2 -= 1
+        if i_1 < i_2:
+            p_1 -= 1
+        elif i_2 < i_1:
+            p_2 -= 1
         else:
-            product += v1 * v2
-            p1 -= 1
-            p2 -= 1
+            product += v_1 * v_2
+            p_1 -= 1
+            p_2 -= 1
 
     return product
 

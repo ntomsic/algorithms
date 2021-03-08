@@ -9,7 +9,7 @@ the character '.'.
 def is_valid_sudoku(_, board):
     seen = []
     for i, row in enumerate(board):
-        for j, c in enumerate(row):
-            if c != '.':
-                seen += [(c, j), (i, c), (i / 3, j / 3, c)]
+        for j, _c in enumerate(row):
+            if _c != '.':
+                seen += [(_c, j), (i, _c), (i / 3, j / 3, _c)]
     return len(seen) == len(set(seen))

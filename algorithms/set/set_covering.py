@@ -30,8 +30,8 @@ def powerset(iterable):
     From https://docs.python.org/3/library/itertools.html#itertools-recipes
     """
     "list(powerset([1,2,3])) --> [(), (1,), (2,), (3,), (1,2), (1,3), (2,3), (1,2,3)]"
-    s = list(iterable)
-    return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
+    _s = list(iterable)
+    return chain.from_iterable(combinations(_s, r) for r in range(len(_s) + 1))
 
 
 def optimal_set_cover(universe, subsets, costs):
@@ -49,9 +49,9 @@ def optimal_set_cover(universe, subsets, costs):
     for subset in pset:
         covered = set()
         cost = 0
-        for s in subset:
-            covered.update(subsets[s])
-            cost += costs[s]
+        for _s in subset:
+            covered.update(subsets[_s])
+            cost += costs[_s]
         if len(covered) == len(universe) and cost < best_cost:
             best_set = subset
             best_cost = cost
@@ -80,15 +80,15 @@ def greedy_set_cover(universe, subsets, costs):
         min_cost_elem_ratio = float("inf")
         min_set = None
         # find set with minimum cost:elements_added ratio
-        for s, elements in subsets.items():
+        for _s, elements in subsets.items():
             new_elements = len(elements - covered)
             # set may have same elements as already covered -> new_elements = 0
             # check to avoid division by 0 error
             if new_elements != 0:
-                cost_elem_ratio = costs[s] / new_elements
+                cost_elem_ratio = costs[_s] / new_elements
                 if cost_elem_ratio < min_cost_elem_ratio:
                     min_cost_elem_ratio = cost_elem_ratio
-                    min_set = s
+                    min_set = _s
         cover_sets.append(min_set)
         # union
         covered |= subsets[min_set]

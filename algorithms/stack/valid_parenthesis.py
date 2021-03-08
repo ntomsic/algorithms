@@ -8,12 +8,12 @@ The brackets must close in the correct order,
 """
 
 
-def is_valid(s: str) -> bool:
+def is_valid(_s: str) -> bool:
     stack = []
     dic = {")": "(",
            "}": "{",
            "]": "["}
-    for char in s:
+    for char in _s:
         if char in dic.values():
             stack.append(char)
         elif char in dic:

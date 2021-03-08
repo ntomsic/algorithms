@@ -22,27 +22,27 @@ Time complexity of this algorithm is O(n^3), specifically about (n^3)/3
 import math
 
 
-def cholesky_decomposition(A):
+def cholesky_decomposition(_a):
     """
-    :param A: Hermitian positive-definite matrix of type List[List[float]]
+    :param _a: Hermitian positive-definite matrix of type List[List[float]]
     :return: matrix of type List[List[float]] if A can be decomposed, otherwise None
     """
-    n = len(A)
-    for ai in A:
-        if len(ai) != n:
+    _n = len(_a)
+    for a_i in _a:
+        if len(a_i) != _n:
             return None
-    V = [[0.0] * n for _ in range(n)]
-    for j in range(n):
+    _v = [[0.0] * _n for _ in range(_n)]
+    for j in range(_n):
         sum_diagonal_element = 0
         for k in range(j):
-            sum_diagonal_element = sum_diagonal_element + math.pow(V[j][k], 2)
-        sum_diagonal_element = A[j][j] - sum_diagonal_element
+            sum_diagonal_element = sum_diagonal_element + math.pow(_v[j][k], 2)
+        sum_diagonal_element = _a[j][j] - sum_diagonal_element
         if sum_diagonal_element <= 0:
             return None
-        V[j][j] = math.pow(sum_diagonal_element, 0.5)
-        for i in range(j+1, n):
+        _v[j][j] = math.pow(sum_diagonal_element, 0.5)
+        for i in range(j+1, _n):
             sum_other_element = 0
             for k in range(j):
-                sum_other_element += V[i][k]*V[j][k]
-            V[i][j] = (A[i][j] - sum_other_element)/V[j][j]
-    return V
+                sum_other_element += _v[i][k]*_v[j][k]
+            _v[i][j] = (_a[i][j] - sum_other_element) / _v[j][j]
+    return _v

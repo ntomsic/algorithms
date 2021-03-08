@@ -8,9 +8,9 @@ Worst case performance is O(n^2)
 
 
 def gnome_sort(arr):
-    n = len(arr)
+    _n = len(arr)
     index = 0
-    while index < n:
+    while index < _n:
         if index == 0 or arr[index] >= arr[index - 1]:
             index = index + 1
         else:

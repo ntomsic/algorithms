@@ -11,10 +11,10 @@ def top_sort_recursive(graph):
         state[node] = GRAY
         # print(node)
         for k in graph.get(node, ()):
-            sk = state.get(k, None)
-            if sk == GRAY:
+            s_k = state.get(k, None)
+            if s_k == GRAY:
                 raise ValueError("cycle")
-            if sk == BLACK:
+            if s_k == BLACK:
                 continue
             enter.discard(k)
             dfs(k)
@@ -37,10 +37,10 @@ def top_sort(graph):
         if len(lst) == 0:
             return True
         for k in lst:
-            sk = state.get(k, None)
-            if sk == GRAY:
+            s_k = state.get(k, None)
+            if s_k == GRAY:
                 raise ValueError("cycle")
-            if sk != BLACK:
+            if s_k != BLACK:
                 return False
         return True
 
@@ -51,10 +51,10 @@ def top_sort(graph):
             state[node] = GRAY
             stack.append(node)
             for k in graph.get(node, ()):
-                sk = state.get(k, None)
-                if sk == GRAY:
+                s_k = state.get(k, None)
+                if s_k == GRAY:
                     raise ValueError("cycle")
-                if sk == BLACK:
+                if s_k == BLACK:
                     continue
                 enter.discard(k)
                 stack.append(k)

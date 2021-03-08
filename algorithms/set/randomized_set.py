@@ -46,14 +46,14 @@ class RandomizedSet():
 def __test():
     rset = RandomizedSet()
     ground_truth = set()
-    n = 64
+    _n = 64
 
-    for i in range(n):
+    for i in range(_n):
         rset.insert(i)
         ground_truth.add(i)
 
     # Remove a half
-    for i in random.sample(range(n), n // 2):
+    for i in random.sample(range(_n), _n // 2):
         rset.remove(i)
         ground_truth.remove(i)
 
@@ -61,7 +61,7 @@ def __test():
     for i in ground_truth:
         assert i == rset.elements[rset.index_map[i]]
 
-    for i in range(n):
+    for i in range(_n):
         print(rset.random_element(), end=' ')
     print()
 
