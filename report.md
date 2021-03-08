@@ -43,6 +43,37 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overview of issue(s) and work done.
 
+Title: Low pylint score
+
+Issue: https://github.com/keon/algorithms/issues/761
+PR: 
+
+Pylint is the go-to program for checking whether a Python program is adhering to the [PEP8](https://www.python.org/dev/peps/pep-0008/)-standard. The algorithms project scores really low.
+
+A run of the pylint linter results in a little under 4000 warnings across the entire code-base. Correcting these should not in any way affect the outcome of functions, but would instead improve readability, reduce dead code, and reduce the use of deprecated functions. [TODO: E-Joon, write the score improvement. Maybe link to the branch?]
+
+
+Title: Tree planting algorithm
+
+Issue: https://github.com/keon/algorithms/issues/768
+PR: https://github.com/keon/algorithms/pull/770
+
+A tree planting algorithm utilizing dynamic programming.
+
+This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test algorithms using dynamic programming.
+
+
+Title: Algorithm for calculating the least amount of perfect squares needed to sum a given integer
+
+Issue: https://github.com/keon/algorithms/issues/767
+PR: https://github.com/keon/algorithms/pull/769
+
+An algorithm for calculating the least amount of perfect squares needed to sum a given integer.
+
+This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test math algorithms.
+
+[TODO: Add the pytest logs after all our issues are done.]
+
 Title:
 
 URL:
