@@ -115,7 +115,15 @@ Optional (point 2): relation to design pattern(s).
 
 What are your main take-aways from this project? What did you learn?
 
+This project strenghtened our main take-away from the last project, and made us appreciate the value of a well-documented onboarding experience even more. The difference between not knowing whether the failing tests should fail or not, and the exact steps to set-up, install, test, or uninstall the project is very real, and having experienced two projects at the very extremes of onboarding has been a humbling experience.
+
+Another take-away is that you really shouldn't trust the Canvas deadlines-tab since it doesn't necessarily reflect the actual deadlines.
+
 How did you grow as a team, using the Essence standard to evaluate yourself?
+
+According to the Essence checklist on p.52, we achieved the 'Formed' state even before the first assignment was handed in. The group adopted regular meetings early on where we discussed what had been done, current issues that group members were having, and what neeeded to be done. This, combined with establishing project leaders already during the first meeting, led to a well-defined but adaptable and scrum-like setup for each of the projects. We did not achieve 'Collaborating' during the first project as we didn't really get to know each-other until after that assignment. A reason for this probably being the first assignment being so easily divided between group members.
+
+Discounting that we lost a member after the assignment, 'Collaboration' was met towards the end of assignment 2. This was when we started doing regular pair-programming sessions as well as discussing issues over text char during off-time. Now, at the end of assignment 4, we feel that we've reached 'Performing'. Aside from the mis-hap of missing the original deadline, we've reached a state where we have an active and honest flow of communication between all active members. Our dynamic division of work has reduced extraneous work to nil, and we've gained the ability to adapt to unforeseeable events such as 'sudden deadline at work' and 'prolonged internet outage'. At the time of writing this, we still have another assignment left (More on refactoring), and as such we can't consider the group 'Adjourned' just yet.
 
 Optional (point 6): How would you put your work in context with best software engineering practice?
 
