@@ -10,14 +10,14 @@ ex)
 """
 
 
-def palindromic_substrings(s):
-    if not s:
+def palindromic_substrings(_s):
+    if not _s:
         return [[]]
     results = []
-    for i in range(len(s), 0, -1):
-        sub = s[:i]
+    for i in range(len(_s), 0, -1):
+        sub = _s[:i]
         if sub == sub[::-1]:
-            for rest in palindromic_substrings(s[i:]):
+            for rest in palindromic_substrings(_s[i:]):
                 results.append([sub] + rest)
     return results
 
@@ -32,15 +32,15 @@ each item before adding it to the results.
 """
 
 
-def palindromic_substrings_iter(s):
+def palindromic_substrings_iter(_s):
     """
     A slightly more Pythonic approach with a recursive generator
     """
-    if not s:
+    if not _s:
         yield []
         return
-    for i in range(len(s), 0, -1):
-        sub = s[:i]
+    for i in range(len(_s), 0, -1):
+        sub = _s[:i]
         if sub == sub[::-1]:
-            for rest in palindromic_substrings_iter(s[i:]):
+            for rest in palindromic_substrings_iter(_s[i:]):
                 yield [sub] + rest

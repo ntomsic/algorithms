@@ -21,16 +21,16 @@ def encode_rle(input):
     prev_ch = ''
     count = 1
 
-    for ch in input:
+    for char in input:
 
         # Check If the subsequent character does not match
-        if ch != prev_ch:
+        if char != prev_ch:
             # Add the count and character
             if prev_ch:
                 encoded_str += str(count) + prev_ch
             # Reset the count and set the character
             count = 1
-            prev_ch = ch
+            prev_ch = char
         else:
             # Otherwise increment the counter
             count += 1
@@ -48,13 +48,13 @@ def decode_rle(input):
     decode_str = ''
     count = ''
 
-    for ch in input:
+    for char in input:
         # If not numerical
-        if not ch.isdigit():
+        if not char.isdigit():
             # Expand it for the decoding
-            decode_str += ch * int(count)
+            decode_str += char * int(count)
             count = ''
         else:
             # Add it in the counter
-            count += ch
+            count += char
     return decode_str

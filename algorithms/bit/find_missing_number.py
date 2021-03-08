@@ -21,7 +21,7 @@ def find_missing_number(nums):
 
 def find_missing_number2(nums):
     num_sum = sum(nums)
-    n = len(nums)
-    total_sum = n * (n + 1) // 2
+    _n = len(nums)
+    total_sum = _n * (_n + 1) // 2
     missing = total_sum - num_sum
     return missing

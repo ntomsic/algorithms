@@ -2,30 +2,30 @@ from collections import defaultdict
 
 
 class Graph:
-    def __init__(self, v):
-        self.v = v
+    def __init__(self, _v):
+        self.v = _v
         self.graph = defaultdict(list)
         self.has_path = False
 
-    def add_edge(self, u, v):
-        self.graph[u].append(v)
+    def add_edge(self, _u, _v):
+        self.graph[_u].append(_v)
 
-    def dfs(self, x, y):
+    def dfs(self, _x, _y):
         visited = [False] * self.v
-        self.dfsutil(visited, x, y, )
+        self.dfsutil(visited, _x, _y, )
 
-    def dfsutil(self, visited, x, y):
-        visited[x] = True
-        for i in self.graph[x]:
-            if y in self.graph[x]:
+    def dfsutil(self, visited, _x, _y):
+        visited[_x] = True
+        for i in self.graph[_x]:
+            if _y in self.graph[_x]:
                 self.has_path = True
                 return
             if not visited[i]:
-                self.dfsutil(visited, x, i)
+                self.dfsutil(visited, _x, i)
 
-    def is_reachable(self, x, y):
+    def is_reachable(self, _x, _y):
         self.has_path = False
-        self.dfs(x, y)
+        self.dfs(_x, _y)
         return self.has_path
 
 

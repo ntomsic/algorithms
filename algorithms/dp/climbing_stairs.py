@@ -11,13 +11,13 @@ Note: Given n will be a positive integer.
 
 # O(n) space
 
-def climb_stairs(n):
+def climb_stairs(_n):
     """
-    :type n: int
+    :type _n: int
     :rtype: int
     """
     arr = [1, 1]
-    for _ in range(1, n):
+    for _ in range(1, _n):
         arr.append(arr[-1] + arr[-2])
     return arr[-1]
 
@@ -25,8 +25,8 @@ def climb_stairs(n):
 # the above function can be optimized as:
 # O(1) space
 
-def climb_stairs_optimized(n):
-    a = b = 1
-    for _ in range(n):
-        a, b = b, a + b
-    return a
+def climb_stairs_optimized(_n):
+    _a = _b = 1
+    for _ in range(_n):
+        _a, _b = _b, _a + _b
+    return _a

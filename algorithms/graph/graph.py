@@ -65,13 +65,13 @@ class DirectedGraph(object):
         self.adjmt = {}
 
         if load_dict and type(load_dict) == dict:
-            for v in load_dict:
-                node_from = self.add_node(v)
+            for _v in load_dict:
+                node_from = self.add_node(_v)
                 self.adjmt[node_from] = []
-                for w in load_dict[v]:
-                    node_to = self.add_node(w)
+                for _w in load_dict[_v]:
+                    node_to = self.add_node(_w)
                     self.adjmt[node_from].append(node_to)
-                    self.add_edge(v, w)
+                    self.add_edge(_v, _w)
 
     def add_node(self, node_name):
         try:
@@ -102,11 +102,11 @@ class Graph:
         self.tc = [[0 for j in range(self.V)] for i in range(self.V)]
 
     # function to add an edge to graph
-    def add_edge(self, u, v):
-        if u in self.graph:
-            self.graph[u].append(v)
+    def add_edge(self, _u, _v):
+        if _u in self.graph:
+            self.graph[_u].append(_v)
         else:
-            self.graph[u] = [v]
+            self.graph[_u] = [_v]
 
 # g = Graph(4)
 # g.add_edge(0, 1)

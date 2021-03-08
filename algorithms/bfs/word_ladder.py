@@ -67,6 +67,6 @@ def ladder_length(begin_word, end_word, word_list):
 def word_range(word):
     for ind in range(len(word)):
         temp = word[ind]
-        for c in [chr(x) for x in range(ord('a'), ord('z') + 1)]:
-            if c != temp:
-                yield word[:ind] + c + word[ind + 1:]
+        for _c in [chr(x) for x in range(ord('a'), ord('z') + 1)]:
+            if _c != temp:
+                yield word[:ind] + _c + word[ind + 1:]

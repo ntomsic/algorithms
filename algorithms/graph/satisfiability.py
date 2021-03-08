@@ -19,23 +19,23 @@ formula = [(('x', False), ('y', False)),
            (('c', False), ('b', True))]
 
 
-def dfs_transposed(v, graph, order, vis):
-    vis[v] = True
+def dfs_transposed(_v, graph, order, vis):
+    vis[_v] = True
 
-    for u in graph[v]:
-        if not vis[u]:
-            dfs_transposed(u, graph, order, vis)
+    for _u in graph[_v]:
+        if not vis[_u]:
+            dfs_transposed(_u, graph, order, vis)
 
-    order.append(v)
+    order.append(_v)
 
 
-def dfs(v, current_comp, vertex_scc, graph, vis):
-    vis[v] = True
-    vertex_scc[v] = current_comp
+def dfs(_v, current_comp, vertex_scc, graph, vis):
+    vis[_v] = True
+    vertex_scc[_v] = current_comp
 
-    for u in graph[v]:
-        if not vis[u]:
-            dfs(u, current_comp, vertex_scc, graph, vis)
+    for _u in graph[_v]:
+        if not vis[_u]:
+            dfs(_u, current_comp, vertex_scc, graph, vis)
 
 
 def add_edge(graph, vertex_from, vertex_to):
@@ -52,22 +52,22 @@ def scc(graph):
 
     graph_transposed = {vertex: [] for vertex in graph}
 
-    for (v, neighbours) in graph.iteritems():
-        for u in neighbours:
-            add_edge(graph_transposed, u, v)
+    for (_v, neighbours) in graph.iteritems():
+        for _u in neighbours:
+            add_edge(graph_transposed, _u, _v)
 
-    for v in graph:
-        if not vis[v]:
-            dfs_transposed(v, graph_transposed, order, vis)
+    for _v in graph:
+        if not vis[_v]:
+            dfs_transposed(_v, graph_transposed, order, vis)
 
     vis = {vertex: False for vertex in graph}
     vertex_scc = {}
 
     current_comp = 0
-    for v in reversed(order):
-        if not vis[v]:
+    for _v in reversed(order):
+        if not vis[_v]:
             # Each dfs will visit exactly one component
-            dfs(v, current_comp, vertex_scc, graph, vis)
+            dfs(_v, current_comp, vertex_scc, graph, vis)
             current_comp += 1
 
     return vertex_scc

@@ -31,7 +31,7 @@ Example:
 """
 
 
-def n_sum(n, nums, target, **kv):
+def n_sum(_n, nums, target, **kv):
     """
     n: int
     nums: list[object]
@@ -49,8 +49,8 @@ def n_sum(n, nums, target, **kv):
        as type of compare_closure's first param
     """
 
-    def sum_closure_default(a, b):
-        return a + b
+    def sum_closure_default(_a, _b):
+        return _a + _b
 
     def compare_closure_default(num, target):
         """ above, below, or right on? """
@@ -60,11 +60,11 @@ def n_sum(n, nums, target, **kv):
             return 1
         return 0
 
-    def same_closure_default(a, b):
-        return a == b
+    def same_closure_default(_a, _b):
+        return _a == _b
 
-    def n_sum(n, nums, target):
-        if n == 2:  # want answers with only 2 terms? easy!
+    def n_sum(_n, nums, target):
+        if _n == 2:  # want answers with only 2 terms? easy!
             results = two_sum(nums, target)
         else:
             results = []
@@ -77,7 +77,7 @@ def n_sum(n, nums, target, **kv):
                 prev_num = num
                 n_minus1_results = (
                     n_sum(  # recursive call
-                        n - 1,  # a
+                        _n - 1,  # a
                         nums[index + 1:],  # b
                         target - num  # c
                     )  # x = n_sum( a, b, c )
@@ -91,26 +91,26 @@ def n_sum(n, nums, target, **kv):
 
     def two_sum(nums, target):
         nums.sort()
-        lt = 0
-        rt = len(nums) - 1
+        l_t = 0
+        r_t = len(nums) - 1
         results = []
-        while lt < rt:
-            sum_ = sum_closure(nums[lt], nums[rt])
+        while l_t < r_t:
+            sum_ = sum_closure(nums[l_t], nums[r_t])
             flag = compare_closure(sum_, target)
             if flag == -1:
-                lt += 1
+                l_t += 1
             elif flag == 1:
-                rt -= 1
+                r_t -= 1
             else:
-                results.append(sorted([nums[lt], nums[rt]]))
-                lt += 1
-                rt -= 1
-                while (lt < len(nums) and
-                       same_closure(nums[lt - 1], nums[lt])):
-                    lt += 1
-                while (rt >= 0 and
-                       same_closure(nums[rt], nums[rt + 1])):
-                    rt -= 1
+                results.append(sorted([nums[l_t], nums[r_t]]))
+                l_t += 1
+                r_t -= 1
+                while (l_t < len(nums) and
+                       same_closure(nums[l_t - 1], nums[l_t])):
+                    l_t += 1
+                while (r_t >= 0 and
+                       same_closure(nums[r_t], nums[r_t + 1])):
+                    r_t -= 1
         return results
 
     def append_elem_to_each_list(elem, container):
@@ -136,4 +136,4 @@ def n_sum(n, nums, target, **kv):
     same_closure = kv.get('same_closure', same_closure_default)
     compare_closure = kv.get('compare_closure', compare_closure_default)
     nums.sort()
-    return n_sum(n, nums, target)
+    return n_sum(_n, nums, target)

@@ -20,23 +20,23 @@ import heapq  # for priority queue
 # prim's algo. to find weight of minimum spanning tree
 def prims_minimum_spanning(graph_used):
     vis = []
-    s = [[0, 1]]
+    _s = [[0, 1]]
     prim = []
     mincost = 0
 
-    while len(s) > 0:
-        v = heapq.heappop(s)
-        x = v[1]
-        if x in vis:
+    while len(_s) > 0:
+        _v = heapq.heappop(_s)
+        _x = _v[1]
+        if _x in vis:
             continue
 
-        mincost += v[0]
-        prim.append(x)
-        vis.append(x)
+        mincost += _v[0]
+        prim.append(_x)
+        vis.append(_x)
 
-        for j in graph_used[x]:
+        for j in graph_used[_x]:
             i = j[-1]
             if i not in vis:
-                heapq.heappush(s, j)
+                heapq.heappush(_s, j)
 
     return mincost

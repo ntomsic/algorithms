@@ -4,19 +4,19 @@ Ex) [3, 5] lo=1 hi=10 => answer: [(1, 2), (4, 4), (6, 10)]
 """
 
 
-def missing_ranges(arr, lo, hi):
+def missing_ranges(arr, low, high):
     res = []
-    start = lo
+    start = low
 
-    for n in arr:
+    for _n in arr:
 
-        if n == start:
+        if _n == start:
             start += 1
-        elif n > start:
-            res.append((start, n - 1))
-            start = n + 1
+        elif _n > start:
+            res.append((start, _n - 1))
+            start = _n + 1
 
-    if start <= hi:  # after done iterating thru array,
-        res.append((start, hi))  # append remainder to list
+    if start <= high:  # after done iterating thru array,
+        res.append((start, high))  # append remainder to list
 
     return res

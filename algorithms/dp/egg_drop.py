@@ -25,13 +25,13 @@ Hence, we needed 2 moves in the worst case to know what F is with certainty.
 INT_MAX = 32767
 
 
-def egg_drop(n, k):
+def egg_drop(_n, k):
     # A 2D table where entery eggFloor[i][j] will represent minimum
     # number of trials needed for i eggs and j floors.
-    egg_floor = [[0 for x in range(k + 1)] for x in range(n + 1)]
+    egg_floor = [[0 for x in range(k + 1)] for x in range(_n + 1)]
 
     # We need one trial for one floor and 0 trials for 0 floors
-    for i in range(1, n + 1):
+    for i in range(1, _n + 1):
         egg_floor[i][1] = 1
         egg_floor[i][0] = 0
 
@@ -41,13 +41,13 @@ def egg_drop(n, k):
 
     # Fill rest of the entries in table using optimal substructure
     # property
-    for i in range(2, n + 1):
+    for i in range(2, _n + 1):
         for j in range(2, k + 1):
             egg_floor[i][j] = INT_MAX
-            for x in range(1, j + 1):
-                res = 1 + max(egg_floor[i - 1][x - 1], egg_floor[i][j - x])
+            for _x in range(1, j + 1):
+                res = 1 + max(egg_floor[i - 1][_x - 1], egg_floor[i][j - _x])
                 if res < egg_floor[i][j]:
                     egg_floor[i][j] = res
 
     # eggFloor[n][k] holds the result
-    return egg_floor[n][k]
+    return egg_floor[_n][k]

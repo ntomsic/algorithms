@@ -30,20 +30,20 @@ class Sudoku:
         self.val = self.possible_values()
 
     def possible_values(self):
-        a = "123456789"
-        d, val = {}, {}
+        _a = "123456789"
+        _d, val = {}, {}
         for i in range(self.row):
             for j in range(self.col):
                 ele = self.board[i][j]
                 if ele != ".":
-                    d[("r", i)] = d.get(("r", i), []) + [ele]
-                    d[("c", j)] = d.get(("c", j), []) + [ele]
-                    d[(i // 3, j // 3)] = d.get((i // 3, j // 3), []) + [ele]
+                    _d[("r", i)] = _d.get(("r", i), []) + [ele]
+                    _d[("c", j)] = _d.get(("c", j), []) + [ele]
+                    _d[(i // 3, j // 3)] = _d.get((i // 3, j // 3), []) + [ele]
                 else:
                     val[(i, j)] = []
         for (i, j) in val.keys():
-            inval = d.get(("r", i), []) + d.get(("c", j), []) + d.get((i / 3, j / 3), [])
-            val[(i, j)] = [n for n in a if n not in inval]
+            inval = _d.get(("r", i), []) + _d.get(("c", j), []) + _d.get((i / 3, j / 3), [])
+            val[(i, j)] = [n for n in _a if n not in inval]
         return val
 
     def solve(self):
@@ -51,23 +51,23 @@ class Sudoku:
             return True
         kee = min(self.val.keys(), key=lambda x: len(self.val[x]))
         nums = self.val[kee]
-        for n in nums:
+        for _n in nums:
             update = {kee: self.val[kee]}
-            if self.valid_one(n, kee, update):  # valid choice
+            if self.valid_one(_n, kee, update):  # valid choice
                 if self.solve():  # keep solving
                     return True
             self.undo(kee, update)  # invalid choice or didn't solve it => undo
         return False
 
-    def valid_one(self, n, kee, update):
-        self.board[kee[0]][kee[1]] = n
+    def valid_one(self, _n, kee, update):
+        self.board[kee[0]][kee[1]] = _n
         del self.val[kee]
         i, j = kee
         for ind in self.val.keys():
-            if n in self.val[ind]:
+            if _n in self.val[ind]:
                 if ind[0] == i or ind[1] == j or (ind[0] / 3, ind[1] / 3) == (i / 3, j / 3):
-                    update[ind] = n
-                    self.val[ind].remove(n)
+                    update[ind] = _n
+                    self.val[ind].remove(_n)
                     if len(self.val[ind]) == 0:
                         return False
         return True

@@ -20,27 +20,27 @@ The complexity is O(n^3).
 """
 
 
-def hosoya(n, m):
-    if ((n == 0 and m == 0) or (n == 1 and m == 0) or
-            (n == 1 and m == 1) or (n == 2 and m == 1)):
+def hosoya(_n, _m):
+    if ((_n == 0 and _m == 0) or (_n == 1 and _m == 0) or
+            (_n == 1 and _m == 1) or (_n == 2 and _m == 1)):
         return 1
-    if n > m:
-        return hosoya(n - 1, m) + hosoya(n - 2, m)
-    if m == n:
-        return hosoya(n - 1, m - 1) + hosoya(n - 2, m - 2)
+    if _n > _m:
+        return hosoya(_n - 1, _m) + hosoya(_n - 2, _m)
+    if _m == _n:
+        return hosoya(_n - 1, _m - 1) + hosoya(_n - 2, _m - 2)
     return 0
 
 
-def print_hosoya(n):
-    for i in range(n):
+def print_hosoya(_n):
+    for i in range(_n):
         for j in range(i + 1):
             print(hosoya(i, j), end=" ")
         print("\n", end="")
 
 
-def hosoya_testing(n):
-    x = []
-    for i in range(n):
+def hosoya_testing(_n):
+    _x = []
+    for i in range(_n):
         for j in range(i + 1):
-            x.append(hosoya(i, j))
-    return x
+            _x.append(hosoya(i, j))
+    return _x

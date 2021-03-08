@@ -20,10 +20,10 @@ def rotate_v1(array, k):
     :rtype: void Do not return anything, modify array in-place instead.
     """
     array = array[:]
-    n = len(array)
+    _n = len(array)
     for _ in range(k):  # unused variable is not a problem
-        temp = array[n - 1]
-        for j in range(n - 1, 0, -1):
+        temp = array[_n - 1]
+        for j in range(_n - 1, 0, -1):
             array[j] = array[j - 1]
         array[0] = temp
     return array
@@ -39,17 +39,17 @@ def rotate_v2(array, k):
     """
     array = array[:]
 
-    def reverse(arr, a, b):
-        while a < b:
-            arr[a], arr[b] = arr[b], arr[a]
-            a += 1
-            b -= 1
+    def reverse(arr, _a, _b):
+        while _a < _b:
+            arr[_a], arr[_b] = arr[_b], arr[_a]
+            _a += 1
+            _b -= 1
 
-    n = len(array)
-    k = k % n
-    reverse(array, 0, n - k - 1)
-    reverse(array, n - k, n - 1)
-    reverse(array, 0, n - 1)
+    _n = len(array)
+    k = k % _n
+    reverse(array, 0, _n - k - 1)
+    reverse(array, _n - k, _n - 1)
+    reverse(array, 0, _n - 1)
     return array
 
 

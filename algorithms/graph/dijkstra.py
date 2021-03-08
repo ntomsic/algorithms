@@ -8,10 +8,10 @@ class Dijkstra:
 
     def min_distance(self, dist, min_dist_set):
         min_dist = float("inf")
-        for v in range(self.vertices):
-            if dist[v] < min_dist and min_dist_set[v] == False:
-                min_dist = dist[v]
-                min_index = v
+        for _v in range(self.vertices):
+            if dist[_v] < min_dist and min_dist_set[_v] == False:
+                min_dist = dist[_v]
+                min_index = _v
         return min_index
 
     def dijkstra(self, src):
@@ -23,14 +23,14 @@ class Dijkstra:
         for _ in range(self.vertices):
 
             # minimum distance vertex that is not processed
-            u = self.min_distance(dist, min_dist_set)
+            _u = self.min_distance(dist, min_dist_set)
 
             # put minimum distance vertex in shortest tree
-            min_dist_set[u] = True
+            min_dist_set[_u] = True
 
             # Update dist value of the adjacent vertices
-            for v in range(self.vertices):
-                if self.graph[u][v] > 0 and min_dist_set[v] == False and dist[v] > dist[u] + self.graph[u][v]:
-                    dist[v] = dist[u] + self.graph[u][v]
+            for _v in range(self.vertices):
+                if self.graph[_u][_v] > 0 and min_dist_set[_v] == False and dist[_v] > dist[_u] + self.graph[_u][_v]:
+                    dist[_v] = dist[_u] + self.graph[_u][_v]
 
         return dist

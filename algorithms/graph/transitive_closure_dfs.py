@@ -11,23 +11,23 @@ class Graph:
         self.tc = [[0 for j in range(self.V)] for i in range(self.V)]
 
     # function to add an edge to graph
-    def add_edge(self, u, v):
-        if u in self.graph:
-            self.graph[u].append(v)
+    def add_edge(self, _u, _v):
+        if _u in self.graph:
+            self.graph[_u].append(_v)
         else:
-            self.graph[u] = [v]
+            self.graph[_u] = [_v]
 
     # A recursive DFS traversal function that finds
     # all reachable vertices for s
-    def dfs_util(self, s, v):
+    def dfs_util(self, _s, _v):
 
         # Mark reachability from s to v as true.
-        self.tc[s][v] = 1
+        self.tc[_s][_v] = 1
 
         # Find all the vertices reachable through v
-        for i in self.graph[v]:
-            if self.tc[s][i] == 0:
-                self.dfs_util(s, i)
+        for i in self.graph[_v]:
+            if self.tc[_s][i] == 0:
+                self.dfs_util(_s, i)
 
     # The function to find transitive closure. It uses
     # recursive dfs_util()

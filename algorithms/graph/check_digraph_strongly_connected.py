@@ -2,12 +2,12 @@ from collections import defaultdict
 
 
 class Graph:
-    def __init__(self, v):
-        self.v = v
+    def __init__(self, _v):
+        self.v = _v
         self.graph = defaultdict(list)
 
-    def add_edge(self, u, v):
-        self.graph[u].append(v)
+    def add_edge(self, _u, _v):
+        self.graph[_u].append(_v)
 
     def dfs(self):
         visited = [False] * self.v
@@ -18,21 +18,21 @@ class Graph:
 
     def dfs_util(self, i, visited):
         visited[i] = True
-        for u in self.graph[i]:
-            if not visited[u]:
-                self.dfs_util(u, visited)
+        for _u in self.graph[i]:
+            if not visited[_u]:
+                self.dfs_util(_u, visited)
 
     def reverse_graph(self):
-        g = Graph(self.v)
+        _g = Graph(self.v)
         for i in range(len(self.graph)):
             for j in self.graph[i]:
-                g.add_edge(j, i)
-        return g
+                _g.add_edge(j, i)
+        return _g
 
     def is_sc(self):
         if self.dfs():
-            gr = self.reverse_graph()
-            if gr.dfs():
+            g_r = self.reverse_graph()
+            if g_r.dfs():
                 return True
         return False
 

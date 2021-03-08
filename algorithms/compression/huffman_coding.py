@@ -81,8 +81,8 @@ class HuffmanReader:
         leaves_queue.reverse()
         while leaves_queue:
             node = leaves_queue.pop()
-            s = int(self.get_byte(), 2)
-            node.sign = s
+            _s = int(self.get_byte(), 2)
+            node.sign = _s
 
     def _load_byte(self, buff_limit=8) -> bool:
         """
@@ -148,16 +148,16 @@ class HuffmanWriter:
         signs = []
         tree_code = ""
 
-        def get_code_tree(T):
+        def get_code_tree(_tree):
             nonlocal tree_code
-            if T.sign is not None:
-                signs.append(T.sign)
-            if T.left:
+            if _tree.sign is not None:
+                signs.append(_tree.sign)
+            if _tree.left:
                 tree_code += "0"
-                get_code_tree(T.left)
-            if T.right:
+                get_code_tree(_tree.left)
+            if _tree.right:
                 tree_code += "1"
-                get_code_tree(T.right)
+                get_code_tree(_tree.right)
 
         get_code_tree(tree)
         self.write_bits(tree_code + "1")  # "1" indicates that tree ended (it will be needed to load the tree)

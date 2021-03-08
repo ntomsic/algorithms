@@ -20,16 +20,16 @@ Example:
 
 # Code is Here
 
-def dfs(source, visited, l):
+def dfs(source, visited, _l):
     ''' Function that performs DFS '''
 
     visited[source] = True
-    for child in l[source]:
+    for child in _l[source]:
         if not visited[child]:
-            dfs(child, visited, l)
+            dfs(child, visited, _l)
 
 
-def count_components(l, size):
+def count_components(_l, size):
     """
     Function that counts the Connected components on bases of DFS.
     return type : int
@@ -39,7 +39,7 @@ def count_components(l, size):
     visited = [False] * (size + 1)
     for i in range(1, size + 1):
         if not visited[i]:
-            dfs(i, visited, l)
+            dfs(i, visited, _l)
             count += 1
     return count
 

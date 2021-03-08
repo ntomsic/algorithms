@@ -53,14 +53,14 @@ def edmonds_karp(capacity, source, sink):
     flow = [[0] * vertices for i in range(vertices)]
     while True:
         tmp = 0
-        q = queue.Queue()
+        _q = queue.Queue()
         visit = [False for i in range(vertices)]
         par = [-1 for i in range(vertices)]
         visit[source] = True
-        q.put((source, 1 << 63))
+        _q.put((source, 1 << 63))
         # Finds new flow using BFS.
-        while q.qsize():
-            front = q.get()
+        while _q.qsize():
+            front = _q.get()
             idx, current_flow = front
             if idx == sink:
                 tmp = current_flow
@@ -69,7 +69,7 @@ def edmonds_karp(capacity, source, sink):
                 if not visit[nxt] and flow[idx][nxt] < capacity[idx][nxt]:
                     visit[nxt] = True
                     par[nxt] = idx
-                    q.put((nxt, min(current_flow, capacity[idx][nxt] - flow[idx][nxt])))
+                    _q.put((nxt, min(current_flow, capacity[idx][nxt] - flow[idx][nxt])))
         if par[sink] == -1:
             break
         ret += tmp
@@ -89,15 +89,15 @@ def dinic_bfs(capacity, flow, level, source, sink):
     # Check whether sink is reachable only using edges that is not full.
 
     vertices = len(capacity)
-    q = queue.Queue()
-    q.put(source)
+    _q = queue.Queue()
+    _q.put(source)
     level[source] = 0
-    while q.qsize():
-        front = q.get()
+    while _q.qsize():
+        front = _q.get()
         for nxt in range(vertices):
             if level[nxt] == -1 and flow[front][nxt] < capacity[front][nxt]:
                 level[nxt] = level[front] + 1
-                q.put(nxt)
+                _q.put(nxt)
     return level[sink] != -1
 
 

@@ -20,20 +20,20 @@ True False False False
 
 
 # TC: O(N^2)  SC: O(N)
-def word_break(s, word_dict):
+def word_break(_s, word_dict):
     """
-    :type s: str
+    :type _s: str
     :type word_dict: Set[str]
     :rtype: bool
     """
-    dp = [False] * (len(s) + 1)
-    dp[0] = True
-    for i in range(1, len(s) + 1):
+    d_p = [False] * (len(_s) + 1)
+    d_p[0] = True
+    for i in range(1, len(_s) + 1):
         for j in range(0, i):
-            if dp[j] and s[j:i] in word_dict:
-                dp[i] = True
+            if d_p[j] and _s[j:i] in word_dict:
+                d_p[i] = True
                 break
-    return dp[-1]
+    return d_p[-1]
 
 
 if __name__ == "__main__":

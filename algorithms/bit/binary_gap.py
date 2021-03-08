@@ -21,26 +21,26 @@ The answer is the largest of these two distances, which is 2
 # but the experimental results show that the algorithm seems to be wrong,
 # regardless of the number, the output value is up to 2.
 # The improved method is binary_gap_improved.
-def binary_gap(N):
+def binary_gap(_n):
     last = None
     ans = 0
     index = 0
-    while N != 0:
-        if N & 1:
+    while _n != 0:
+        if _n & 1:
             if last is not None:
                 ans = max(ans, index - last)
             last = index
         index = index + 1
-        N = N >> 1
+        _n = _n >> 1
     return ans
 
 
-def binary_gap_improved(N):
+def binary_gap_improved(_n):
     last = None
     ans = 0
     index = 0
-    while N != 0:
-        tes = N & 1
+    while _n != 0:
+        tes = _n & 1
         if tes:
             if last is not None:
                 ans = max(ans, index - last + 1)
@@ -49,7 +49,7 @@ def binary_gap_improved(N):
         else:
             last = index + 1
         index = index + 1
-        N = N >> 1
+        _n = _n >> 1
     return ans
 
 

@@ -25,8 +25,8 @@ def subsets(nums):
     :param nums: List[int]
     :return: Set[tuple]
     """
-    n = len(nums)
-    total = 1 << n
+    _n = len(nums)
+    total = 1 << _n
     res = set()
 
     for i in range(total):

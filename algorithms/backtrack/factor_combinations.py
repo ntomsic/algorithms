@@ -37,26 +37,26 @@ output:
 
 
 # Iterative:
-def get_factors(n):
-    todo, combis = [(n, 2, [])], []
+def get_factors(_n):
+    todo, combis = [(_n, 2, [])], []
     while todo:
-        n, i, combi = todo.pop()
-        while i * i <= n:
-            if n % i == 0:
-                combis.append(combi + [i, n // i])
-                todo.append((n // i, i, combi + [i]))
+        _n, i, combi = todo.pop()
+        while i * i <= _n:
+            if _n % i == 0:
+                combis.append(combi + [i, _n // i])
+                todo.append((_n // i, i, combi + [i]))
             i += 1
     return combis
 
 
 # Recursive:
-def recursive_get_factors(n):
-    def factor(n, i, combi, combis):
-        while i * i <= n:
-            if n % i == 0:
-                combis.append(combi + [i, n // i]),
-                factor(n // i, i, combi + [i], combis)
+def recursive_get_factors(_n):
+    def factor(_n, i, combi, combis):
+        while i * i <= _n:
+            if _n % i == 0:
+                combis.append(combi + [i, _n // i]),
+                factor(_n // i, i, combi + [i], combis)
             i += 1
         return combis
 
-    return factor(n, 2, [], [])
+    return factor(_n, 2, [], [])

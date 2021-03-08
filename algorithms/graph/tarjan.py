@@ -14,44 +14,44 @@ class Tarjan(object):
 
         # Runs Tarjan
         # Set all node index to None
-        for v in self.graph.nodes:
-            v.index = None
+        for _v in self.graph.nodes:
+            _v.index = None
 
         self.sccs = []
-        for v in self.graph.nodes:
-            if v.index is None:
-                self.strongconnect(v, self.sccs)
+        for _v in self.graph.nodes:
+            if _v.index is None:
+                self.strongconnect(_v, self.sccs)
 
-    def strongconnect(self, v, sccs):
+    def strongconnect(self, _v, sccs):
         # Set the depth index for v to the smallest unused index
-        v.index = self.index
-        v.lowlink = self.index
+        _v.index = self.index
+        _v.lowlink = self.index
         self.index += 1
-        self.stack.append(v)
-        v.on_stack = True
+        self.stack.append(_v)
+        _v.on_stack = True
 
         # Consider successors of v
-        for w in self.graph.adjmt[v]:
-            if w.index is None:
+        for _w in self.graph.adjmt[_v]:
+            if _w.index is None:
                 # Successor w has not yet been visited; recurse on it
-                self.strongconnect(w, sccs)
-                v.lowlink = min(v.lowlink, w.lowlink)
-            elif w.on_stack:
+                self.strongconnect(_w, sccs)
+                _v.lowlink = min(_v.lowlink, _w.lowlink)
+            elif _w.on_stack:
                 # Successor w is in stack S and hence in the current SCC
                 # If w is not on stack, then (v, w) is a cross-edge in the DFS tree and must be ignored
                 # Note: The next line may look odd - but is correct.
                 # It says w.index not w.lowlink; that is deliberate and from the original paper
-                v.lowlink = min(v.lowlink, w.index)
+                _v.lowlink = min(_v.lowlink, _w.index)
 
         # If v is a root node, pop the stack and generate an SCC
-        if v.lowlink == v.index:
+        if _v.lowlink == _v.index:
             # start a new strongly connected component
             scc = []
             while True:
-                w = self.stack.pop()
-                w.on_stack = False
-                scc.append(w)
-                if w == v:
+                _w = self.stack.pop()
+                _w.on_stack = False
+                scc.append(_w)
+                if _w == _v:
                     break
             scc.sort()
             sccs.append(scc)

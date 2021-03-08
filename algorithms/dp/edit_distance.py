@@ -32,23 +32,23 @@ we need to find edit(m, n), where m is the length of A and n is the length of B.
 """
 
 
-def edit_distance(A, B):
+def edit_distance(_a, _b):
     # Time: O(m*n)
     # Space: O(m*n)
 
-    m, n = len(A) + 1, len(B) + 1
+    _m, _n = len(_a) + 1, len(_b) + 1
 
-    edit = [[0 for _ in range(n)] for _ in range(m)]
+    edit = [[0 for _ in range(_n)] for _ in range(_m)]
 
-    for i in range(1, m):
+    for i in range(1, _m):
         edit[i][0] = i
 
-    for j in range(1, n):
+    for j in range(1, _n):
         edit[0][j] = j
 
-    for i in range(1, m):
-        for j in range(1, n):
-            cost = 0 if A[i - 1] == B[j - 1] else 1
+    for i in range(1, _m):
+        for j in range(1, _n):
+            cost = 0 if _a[i - 1] == _b[j - 1] else 1
             edit[i][j] = min(edit[i - 1][j] + 1, edit[i][j - 1] + 1, edit[i - 1][j - 1] + cost)
 
     return edit[-1][-1]  # this is the same as edit[m][n]

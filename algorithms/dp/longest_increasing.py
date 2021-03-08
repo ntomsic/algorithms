@@ -46,33 +46,33 @@ def longest_increasing_subsequence_optimized(sequence):
     type sequence: list[int]
     rtype: int
     """
-    mx = max(sequence)
-    tree = [0] * (mx << 2)
+    _max = max(sequence)
+    tree = [0] * (_max << 2)
 
-    def update(p, l, r, i, v):
-        if l == r:
-            tree[p] = v
+    def update(_p, _l, _r, _i, _v):
+        if _l == _r:
+            tree[_p] = _v
             return
-        mid = (l + r) >> 1
-        if i <= mid:
-            update(p << 1, l, mid, i, v)
+        mid = (_l + _r) >> 1
+        if _i <= mid:
+            update(_p << 1, _l, mid, _i, _v)
         else:
-            update((p << 1) | 1, mid + 1, r, i, v)
-        tree[p] = max(tree[p << 1], tree[(p << 1) | 1])
+            update((_p << 1) | 1, mid + 1, _r, _i, _v)
+        tree[_p] = max(tree[_p << 1], tree[(_p << 1) | 1])
 
-    def get_max(p, l, r, s, e):
-        if l > e or r < s:
+    def get_max(_p, _l, _r, _s, _e):
+        if _l > _e or _r < _s:
             return 0
-        if l >= s and r <= e:
-            return tree[p]
-        mid = (l + r) >> 1
-        return max(get_max(p << 1, l, mid, s, e), get_max((p << 1) | 1, mid + 1, r, s, e))
+        if _l >= _s and _r <= _e:
+            return tree[_p]
+        mid = (_l + _r) >> 1
+        return max(get_max(_p << 1, _l, mid, _s, _e), get_max((_p << 1) | 1, mid + 1, _r, _s, _e))
 
     ans = 0
-    for x in sequence:
-        cur = get_max(1, 0, mx, 0, x - 1) + 1
+    for _x in sequence:
+        cur = get_max(1, 0, _max, 0, _x - 1) + 1
         ans = max(ans, cur)
-        update(1, 0, mx, x, cur)
+        update(1, 0, _max, _x, cur)
     return ans
 
 
@@ -84,33 +84,33 @@ def longest_increasing_subsequence_optimized2(sequence):
     type sequence: list[int]
     rtype: int
     """
-    n = len(sequence)
-    tree = [0] * (n << 2)
+    _n = len(sequence)
+    tree = [0] * (_n << 2)
     sorted_seq = sorted((x, -i) for i, x in enumerate(sequence))
 
-    def update(p, l, r, i, v):
-        if l == r:
-            tree[p] = v
+    def update(_p, _l, _r, _i, _v):
+        if _l == _r:
+            tree[_p] = _v
             return
-        mid = (l + r) >> 1
-        if i <= mid:
-            update(p << 1, l, mid, i, v)
+        mid = (_l + _r) >> 1
+        if _i <= mid:
+            update(_p << 1, _l, mid, _i, _v)
         else:
-            update((p << 1) | 1, mid + 1, r, i, v)
-        tree[p] = max(tree[p << 1], tree[(p << 1) | 1])
+            update((_p << 1) | 1, mid + 1, _r, _i, _v)
+        tree[_p] = max(tree[_p << 1], tree[(_p << 1) | 1])
 
-    def get_max(p, l, r, s, e):
-        if l > e or r < s:
+    def get_max(_p, _l, _r, _s, _e):
+        if _l > _e or _r < _s:
             return 0
-        if l >= s and r <= e:
-            return tree[p]
-        mid = (l + r) >> 1
-        return max(get_max(p << 1, l, mid, s, e), get_max((p << 1) | 1, mid + 1, r, s, e))
+        if _l >= _s and _r <= _e:
+            return tree[_p]
+        mid = (_l + _r) >> 1
+        return max(get_max(_p << 1, _l, mid, _s, _e), get_max((_p << 1) | 1, mid + 1, _r, _s, _e))
 
     ans = 0
     for _, j in sorted_seq:
         i = -j
-        cur = get_max(1, 0, n - 1, 0, i - 1) + 1
+        cur = get_max(1, 0, _n - 1, 0, i - 1) + 1
         ans = max(ans, cur)
-        update(1, 0, n - 1, i, cur)
+        update(1, 0, _n - 1, i, cur)
     return ans

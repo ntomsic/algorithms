@@ -22,50 +22,50 @@ n=10 k=2 no of strings = 74357
 """
 
 
-def find_k_factor(n, k):
-    dp = [[[0 for i in range(4)] for j in range((n - 1) // 3 + 2)] for k in range(n + 1)]
-    if 3 * k + 1 > n:
+def find_k_factor(_n, k):
+    d_p = [[[0 for i in range(4)] for j in range((_n - 1) // 3 + 2)] for k in range(_n + 1)]
+    if 3 * k + 1 > _n:
         return 0
     # base cases
-    dp[1][0][0] = 1
-    dp[1][0][1] = 0
-    dp[1][0][2] = 0
-    dp[1][0][3] = 25
+    d_p[1][0][0] = 1
+    d_p[1][0][1] = 0
+    d_p[1][0][2] = 0
+    d_p[1][0][3] = 25
 
-    for i in range(2, n + 1):
-        for j in range((n - 1) // 3 + 2):
+    for i in range(2, _n + 1):
+        for j in range((_n - 1) // 3 + 2):
             if j == 0:
                 # adding a at the end
-                dp[i][j][0] = dp[i - 1][j][0] + dp[i - 1][j][1] + dp[i - 1][j][3]
+                d_p[i][j][0] = d_p[i - 1][j][0] + d_p[i - 1][j][1] + d_p[i - 1][j][3]
 
                 # adding b at the end
-                dp[i][j][1] = dp[i - 1][j][0]
-                dp[i][j][2] = dp[i - 1][j][1]
+                d_p[i][j][1] = d_p[i - 1][j][0]
+                d_p[i][j][2] = d_p[i - 1][j][1]
 
                 # adding any other lowercase character
-                dp[i][j][3] = dp[i - 1][j][0] * 24 + dp[i - 1][j][1] * 24 + dp[i - 1][j][2] * 25 + dp[i - 1][j][3] * 25
+                d_p[i][j][3] = d_p[i - 1][j][0] * 24 + d_p[i - 1][j][1] * 24 + d_p[i - 1][j][2] * 25 + d_p[i - 1][j][3] * 25
 
             elif 3 * j + 1 < i:
                 # adding a at the end
-                dp[i][j][0] = dp[i - 1][j][0] + dp[i - 1][j][1] + dp[i - 1][j][3] + dp[i - 1][j - 1][2]
+                d_p[i][j][0] = d_p[i - 1][j][0] + d_p[i - 1][j][1] + d_p[i - 1][j][3] + d_p[i - 1][j - 1][2]
 
                 # adding b at the end
-                dp[i][j][1] = dp[i - 1][j][0]
-                dp[i][j][2] = dp[i - 1][j][1]
+                d_p[i][j][1] = d_p[i - 1][j][0]
+                d_p[i][j][2] = d_p[i - 1][j][1]
 
                 # adding any other lowercase character
-                dp[i][j][3] = dp[i - 1][j][0] * 24 + dp[i - 1][j][1] * 24 + dp[i - 1][j][2] * 25 + dp[i - 1][j][3] * 25
+                d_p[i][j][3] = d_p[i - 1][j][0] * 24 + d_p[i - 1][j][1] * 24 + d_p[i - 1][j][2] * 25 + d_p[i - 1][j][3] * 25
 
             elif 3 * j + 1 == i:
-                dp[i][j][0] = 1
-                dp[i][j][1] = 0
-                dp[i][j][2] = 0
-                dp[i][j][3] = 0
+                d_p[i][j][0] = 1
+                d_p[i][j][1] = 0
+                d_p[i][j][2] = 0
+                d_p[i][j][3] = 0
 
             else:
-                dp[i][j][0] = 0
-                dp[i][j][1] = 0
-                dp[i][j][2] = 0
-                dp[i][j][3] = 0
+                d_p[i][j][0] = 0
+                d_p[i][j][1] = 0
+                d_p[i][j][2] = 0
+                d_p[i][j][3] = 0
 
-    return sum(dp[n][k])
+    return sum(d_p[_n][k])

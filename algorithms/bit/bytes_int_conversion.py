@@ -20,16 +20,16 @@ def int_to_bytes_little_endian(num):
 
 def bytes_big_endian_to_int(bytestr):
     num = 0
-    for b in bytestr:
+    for _b in bytestr:
         num <<= 8
-        num += b
+        num += _b
     return num
 
 
 def bytes_little_endian_to_int(bytestr):
     num = 0
-    e = 0
-    for b in bytestr:
-        num += b << e
-        e += 8
+    _e = 0
+    for _b in bytestr:
+        num += _b << _e
+        _e += 8
     return num

@@ -29,7 +29,7 @@ output:
 """
 
 
-def get_factors(n):
+def get_factors(_n):
     """[summary]
 
     Arguments:
@@ -39,7 +39,7 @@ def get_factors(n):
         [list of lists] -- [all factors of the number n]
     """
 
-    def factor(n, i, combi, res):
+    def factor(_n, i, combi, res):
         """[summary]
         helper function
 
@@ -53,17 +53,17 @@ def get_factors(n):
             [list] -- [res]
         """
 
-        while i * i <= n:
-            if n % i == 0:
-                res += combi + [i, int(n / i)],
-                factor(n / i, i, combi + [i], res)
+        while i * i <= _n:
+            if _n % i == 0:
+                res += combi + [i, int(_n / i)],
+                factor(_n / i, i, combi + [i], res)
             i += 1
         return res
 
-    return factor(n, 2, [], [])
+    return factor(_n, 2, [], [])
 
 
-def get_factors_iterative1(n):
+def get_factors_iterative1(_n):
     """[summary]
     Computes all factors of n.
     Translated the function get_factors(...) in
@@ -76,18 +76,18 @@ def get_factors_iterative1(n):
         [list of lists] -- [all factors]
     """
 
-    todo, res = [(n, 2, [])], []
+    todo, res = [(_n, 2, [])], []
     while todo:
-        n, i, combi = todo.pop()
-        while i * i <= n:
-            if n % i == 0:
-                res += combi + [i, n // i],
-                todo.append((n // i, i, combi + [i])),
+        _n, i, combi = todo.pop()
+        while i * i <= _n:
+            if _n % i == 0:
+                res += combi + [i, _n // i],
+                todo.append((_n // i, i, combi + [i])),
             i += 1
     return res
 
 
-def get_factors_iterative2(n):
+def get_factors_iterative2(_n):
     """[summary]
     analog as above
 
@@ -98,17 +98,17 @@ def get_factors_iterative2(n):
         [list of lists] -- [all factors of n]
     """
 
-    ans, stack, x = [], [], 2
+    ans, stack, _x = [], [], 2
     while True:
-        if x > n // x:
+        if _x > _n // _x:
             if not stack:
                 return ans
-            ans.append(stack + [n])
-            x = stack.pop()
-            n *= x
-            x += 1
-        elif n % x == 0:
-            stack.append(x)
-            n //= x
+            ans.append(stack + [_n])
+            _x = stack.pop()
+            _n *= _x
+            _x += 1
+        elif _n % _x == 0:
+            stack.append(_x)
+            _n //= _x
         else:
-            x += 1
+            _x += 1

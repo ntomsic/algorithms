@@ -28,13 +28,13 @@ def shortest_distance(grid):
 
 
 def bfs(grid, matrix, i, j, count):
-    q = [(i, j, 0)]
-    while q:
-        i, j, step = q.pop(0)
-        for k, l in [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]:
+    _q = [(i, j, 0)]
+    while _q:
+        i, j, step = _q.pop(0)
+        for k, _l in [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]:
             # only the position be visited by count times will append to queue
-            if 0 <= k < len(grid) and 0 <= l < len(grid[0]) and \
-                    matrix[k][l][1] == count and grid[k][l] == 0:
-                matrix[k][l][0] += step + 1
-                matrix[k][l][1] = count + 1
-                q.append((k, l, step + 1))
+            if 0 <= k < len(grid) and 0 <= _l < len(grid[0]) and \
+                    matrix[k][_l][1] == count and grid[k][_l] == 0:
+                matrix[k][_l][0] += step + 1
+                matrix[k][_l][1] = count + 1
+                _q.append((k, _l, step + 1))

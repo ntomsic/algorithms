@@ -25,24 +25,24 @@ def three_sum(array):
     for i in range(len(array) - 2):
         if i > 0 and array[i] == array[i - 1]:
             continue
-        l, r = i + 1, len(array) - 1
-        while l < r:
-            s = array[i] + array[l] + array[r]
-            if s > 0:
-                r -= 1
-            elif s < 0:
-                l += 1
+        _l, _r = i + 1, len(array) - 1
+        while _l < _r:
+            _s = array[i] + array[_l] + array[_r]
+            if _s > 0:
+                _r -= 1
+            elif _s < 0:
+                _l += 1
             else:
                 # found three sum
-                res.add((array[i], array[l], array[r]))
+                res.add((array[i], array[_l], array[_r]))
 
                 # remove duplicates
-                while l < r and array[l] == array[l + 1]:
-                    l += 1
+                while _l < _r and array[_l] == array[_l + 1]:
+                    _l += 1
 
-                while l < r and array[r] == array[r - 1]:
-                    r -= 1
+                while _l < _r and array[_r] == array[_r - 1]:
+                    _r -= 1
 
-                l += 1
-                r -= 1
+                _l += 1
+                _r -= 1
     return res

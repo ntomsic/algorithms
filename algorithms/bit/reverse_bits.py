@@ -8,11 +8,11 @@ return 964176192
 """
 
 
-def reverse_bits(n):
-    m = 0
+def reverse_bits(_n):
+    _m = 0
     i = 0
     while i < 32:
-        m = (m << 1) + (n & 1)
-        n >>= 1
+        _m = (_m << 1) + (_n & 1)
+        _n >>= 1
         i += 1
-    return m
+    return _m

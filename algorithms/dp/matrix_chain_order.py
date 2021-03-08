@@ -8,19 +8,19 @@ INF = float("inf")
 
 
 def matrix_chain_order(array):
-    n = len(array)
-    matrix = [[0 for x in range(n)] for x in range(n)]
-    sol = [[0 for x in range(n)] for x in range(n)]
-    for chain_length in range(2, n):
-        for a in range(1, n - chain_length + 1):
-            b = a + chain_length - 1
+    _n = len(array)
+    matrix = [[0 for x in range(_n)] for x in range(_n)]
+    sol = [[0 for x in range(_n)] for x in range(_n)]
+    for chain_length in range(2, _n):
+        for _a in range(1, _n - chain_length + 1):
+            _b = _a + chain_length - 1
 
-            matrix[a][b] = INF
-            for c in range(a, b):
-                cost = matrix[a][c] + matrix[c + 1][b] + array[a - 1] * array[c] * array[b]
-                if cost < matrix[a][b]:
-                    matrix[a][b] = cost
-                    sol[a][b] = c
+            matrix[_a][_b] = INF
+            for _c in range(_a, _b):
+                cost = matrix[_a][_c] + matrix[_c + 1][_b] + array[_a - 1] * array[_c] * array[_b]
+                if cost < matrix[_a][_b]:
+                    matrix[_a][_b] = cost
+                    sol[_a][_b] = _c
     return matrix, sol
 
 
@@ -38,13 +38,13 @@ def print_optimal_solution(optimal_solution, i, j):
 
 def main():
     array = [30, 35, 15, 5, 10, 20, 25]
-    n = len(array)
+    _n = len(array)
     # Size of matrix created from above array will be
     # 30*35 35*15 15*5 5*10 10*20 20*25
     matrix, optimal_solution = matrix_chain_order(array)
 
-    print("No. of Operation required: " + str((matrix[1][n - 1])))
-    print_optimal_solution(optimal_solution, 1, n - 1)
+    print("No. of Operation required: " + str((matrix[1][_n - 1])))
+    print_optimal_solution(optimal_solution, 1, _n - 1)
 
 
 if __name__ == '__main__':

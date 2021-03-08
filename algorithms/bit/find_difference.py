@@ -21,10 +21,10 @@ and then, B xor 0 =  B
 """
 
 
-def find_difference(s, t):
+def find_difference(_s, _t):
     ret = 0
-    for ch in s + t:
+    for char in _s + _t:
         # ord(ch) return an integer representing the Unicode code point of that character
-        ret = ret ^ ord(ch)
+        ret = ret ^ ord(char)
     # chr(i) Return the string representing a character whose Unicode code point is the integer i
     return chr(ret)

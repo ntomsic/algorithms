@@ -29,8 +29,8 @@ def plus_one_v1(digits):
 
 
 def plus_one_v2(digits):
-    n = len(digits)
-    for i in range(n - 1, -1, -1):
+    _n = len(digits)
+    for i in range(_n - 1, -1, -1):
         if digits[i] < 9:
             digits[i] += 1
             return digits

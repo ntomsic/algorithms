@@ -32,18 +32,18 @@ def single_number3(nums):
     :rtype: List[int]
     """
     # isolate a^b from pairs using XOR
-    ab = 0
-    for n in nums:
-        ab ^= n
+    a_b = 0
+    for _n in nums:
+        a_b ^= _n
 
     # isolate right most bit from a^b
-    right_most = ab & (-ab)
+    right_most = a_b & (-a_b)
 
     # isolate a and b from a^b
-    a, b = 0, 0
-    for n in nums:
-        if n & right_most:
-            a ^= n
+    _a, _b = 0, 0
+    for _n in nums:
+        if _n & right_most:
+            _a ^= _n
         else:
-            b ^= n
-    return [a, b]
+            _b ^= _n
+    return [_a, _b]

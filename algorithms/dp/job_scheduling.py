@@ -17,19 +17,19 @@ class Job:
 # time.
 def binary_search(job, start_index):
     # Initialize 'lo' and 'hi' for Binary Search
-    lo = 0
-    hi = start_index - 1
+    low = 0
+    high = start_index - 1
 
     # Perform binary Search iteratively
-    while lo <= hi:
-        mid = (lo + hi) // 2
+    while low <= high:
+        mid = (low + high) // 2
         if job[mid].finish <= job[start_index].start:
             if job[mid + 1].finish <= job[start_index].start:
-                lo = mid + 1
+                low = mid + 1
             else:
                 return mid
         else:
-            hi = mid - 1
+            high = mid - 1
     return -1
 
 
@@ -41,21 +41,21 @@ def schedule(job):
 
     # Create an array to store solutions of subproblems.  table[i]
     # stores the profit for jobs till arr[i] (including arr[i])
-    n = len(job)
-    table = [0 for _ in range(n)]
+    _n = len(job)
+    table = [0 for _ in range(_n)]
 
     table[0] = job[0].profit
 
     # Fill entries in table[] using recursive property
-    for i in range(1, n):
+    for i in range(1, _n):
 
         # Find profit including the current job
         incl_prof = job[i].profit
-        l = binary_search(job, i)
-        if l != -1:
-            incl_prof += table[l]
+        _l = binary_search(job, i)
+        if _l != -1:
+            incl_prof += table[_l]
 
         # Store maximum of including and excluding
         table[i] = max(incl_prof, table[i - 1])
 
-    return table[n - 1]
+    return table[_n - 1]

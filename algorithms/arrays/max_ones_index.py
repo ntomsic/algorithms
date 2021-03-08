@@ -17,13 +17,13 @@ So the function return => 3
 
 
 def max_ones_index(arr):
-    n = len(arr)
+    _n = len(arr)
     max_count = 0
     max_index = 0
     prev_zero = -1
     prev_prev_zero = -1
 
-    for curr in range(n):
+    for curr in range(_n):
 
         # If current element is 0,
         # then calculate the difference
@@ -36,7 +36,7 @@ def max_ones_index(arr):
             prev_prev_zero = prev_zero
             prev_zero = curr
 
-    if n - prev_prev_zero > max_count:
+    if _n - prev_prev_zero > max_count:
         max_index = prev_zero
 
     return max_index

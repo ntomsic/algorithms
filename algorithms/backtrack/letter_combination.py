@@ -33,8 +33,8 @@ def letter_combinations(digits):
     ans = [""]
     for num in digits:
         tmp = []
-        for an in ans:
+        for answer in ans:
             for char in kmaps[num]:
-                tmp.append(an + char)
+                tmp.append(answer + char)
         ans = tmp
     return ans

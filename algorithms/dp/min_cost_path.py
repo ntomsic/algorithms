@@ -27,17 +27,17 @@ INF = float("inf")
 
 
 def min_cost(cost):
-    n = len(cost)
+    _n = len(cost)
     # dist[i] stores minimum cost from 0 --> i.
-    dist = [INF] * n
+    dist = [INF] * _n
 
     dist[0] = 0  # cost from 0 --> 0 is zero.
 
-    for i in range(n):
-        for j in range(i + 1, n):
+    for i in range(_n):
+        for j in range(i + 1, _n):
             dist[j] = min(dist[j], dist[i] + cost[i][j])
 
-    return dist[n - 1]
+    return dist[_n - 1]
 
 
 if __name__ == '__main__':

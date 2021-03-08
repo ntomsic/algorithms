@@ -17,33 +17,33 @@ The number of ways decoding "12" is 2.
 """
 
 
-def num_decodings(s):
+def num_decodings(_s):
     """
-    :type s: str
+    :type _s: str
     :rtype: int
     """
-    if not s or s[0] == "0":
+    if not _s or _s[0] == "0":
         return 0
     wo_last, wo_last_two = 1, 1
-    for i in range(1, len(s)):
-        x = wo_last if s[i] != "0" else 0
-        y = wo_last_two if int(s[i - 1:i + 1]) < 27 and s[i - 1] != "0" else 0
+    for i in range(1, len(_s)):
+        _x = wo_last if _s[i] != "0" else 0
+        _y = wo_last_two if int(_s[i - 1:i + 1]) < 27 and _s[i - 1] != "0" else 0
         wo_last_two = wo_last
-        wo_last = x + y
+        wo_last = _x + _y
     return wo_last
 
 
-def num_decodings2(s):
-    if not s or s.startswith('0'):
+def num_decodings2(_s):
+    if not _s or _s.startswith('0'):
         return 0
     stack = [1, 1]
-    for i in range(1, len(s)):
-        if s[i] == '0':
-            if s[i - 1] == '0' or s[i - 1] > '2':
+    for i in range(1, len(_s)):
+        if _s[i] == '0':
+            if _s[i - 1] == '0' or _s[i - 1] > '2':
                 # only '10', '20' is valid
                 return 0
             stack.append(stack[-2])
-        elif 9 < int(s[i - 1:i + 1]) < 27:
+        elif 9 < int(_s[i - 1:i + 1]) < 27:
             # '01 - 09' is not allowed
             stack.append(stack[-2] + stack[-1])
         else:

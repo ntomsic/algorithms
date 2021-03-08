@@ -7,9 +7,9 @@ Output: 5
 """
 
 
-def add_bitwise_operator(x, y):
-    while y:
-        carry = x & y
-        x = x ^ y
-        y = carry << 1
-    return x
+def add_bitwise_operator(_x, _y):
+    while _y:
+        carry = _x & _y
+        _x = _x ^ _y
+        _y = carry << 1
+    return _x

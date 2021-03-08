@@ -16,19 +16,19 @@ Number of loops is
 equal to the number of 1s in the binary representation."""
 
 
-def count_ones_recur(n):
+def count_ones_recur(_n):
     """Using Brian Kernighan's Algorithm. (Recursive Approach)"""
 
-    if not n:
+    if not _n:
         return 0
-    return 1 + count_ones_recur(n & (n - 1))
+    return 1 + count_ones_recur(_n & (_n - 1))
 
 
-def count_ones_iter(n):
+def count_ones_iter(_n):
     """Using Brian Kernighan's Algorithm. (Iterative Approach)"""
 
     count = 0
-    while n:
-        n &= (n - 1)
+    while _n:
+        _n &= (_n - 1)
         count += 1
     return count

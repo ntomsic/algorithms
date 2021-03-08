@@ -36,15 +36,15 @@ Explaination:
 """
 
 
-def int_divide(n):
-    arr = [[0 for i in range(n + 1)] for j in range(n + 1)]
+def int_divide(_n):
+    arr = [[0 for i in range(_n + 1)] for j in range(_n + 1)]
     arr[1][1] = 1
-    for i in range(1, n + 1):
-        for j in range(1, n + 1):
+    for i in range(1, _n + 1):
+        for j in range(1, _n + 1):
             if i < j:
                 arr[i][j] = arr[i][i]
             elif i == j:
                 arr[i][j] = 1 + arr[i][j - 1]
             else:
                 arr[i][j] = arr[i][j - 1] + arr[i - j][j]
-    return arr[n][n]
+    return arr[_n][_n]

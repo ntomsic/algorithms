@@ -7,16 +7,16 @@ Examples:
 """
 
 
-def anagram(s1, s2):
-    c1 = [0] * 26
-    c2 = [0] * 26
+def anagram(s_1, s_2):
+    c_1 = [0] * 26
+    c_2 = [0] * 26
 
-    for c in s1:
-        pos = ord(c) - ord('a')
-        c1[pos] = c1[pos] + 1
+    for _c in s_1:
+        pos = ord(_c) - ord('a')
+        c_1[pos] = c_1[pos] + 1
 
-    for c in s2:
-        pos = ord(c) - ord('a')
-        c2[pos] = c2[pos] + 1
+    for _c in s_2:
+        pos = ord(_c) - ord('a')
+        c_2[pos] = c_2[pos] + 1
 
-    return c1 == c2
+    return c_1 == c_2

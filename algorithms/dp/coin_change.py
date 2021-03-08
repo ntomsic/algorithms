@@ -16,13 +16,13 @@ Space complexity: O(n)
 """
 
 
-def count(coins, n):
+def count(coins, _n):
     # initialize dp array and set base case as 1
-    dp = [1] + [0] * n
+    d_p = [1] + [0] * _n
 
     # fill dp in a bottom up manner
     for coin in coins:
-        for i in range(coin, n + 1):
-            dp[i] += dp[i - coin]
+        for i in range(coin, _n + 1):
+            d_p[i] += d_p[i - coin]
 
-    return dp[n]
+    return d_p[_n]
