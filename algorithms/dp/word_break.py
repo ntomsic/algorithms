@@ -12,11 +12,9 @@ dict = ["leet", "code"].
 Return true because "leetcode" can be segmented as "leet code".
 """
 
-"""
-s = abc word_dict = ["a","bc"]
-True False False False
 
-"""
+# s = abc word_dict = ["a","bc"]
+# True False False False
 
 
 # TC: O(N^2)  SC: O(N)

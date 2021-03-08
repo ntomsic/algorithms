@@ -12,11 +12,9 @@ eg: for given string -> "appletablet"
 "thing", {"thing"} -> 1
 """
 
-COUNT = 0
-
 
 def make_sentence(str_piece, dictionaries):
-    global COUNT
+    COUNT = 0
     if len(str_piece) == 0:
         return True
     for i in range(0, len(str_piece)):

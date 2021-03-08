@@ -14,7 +14,7 @@ class Monomial:
     """
 
     def __init__(self, variables: Dict[int, int], coeff: Union[int, float, Fraction, None] = None) -> None:
-        '''
+        """
         Create a monomial in the given variables:
         Examples:
 
@@ -31,7 +31,7 @@ class Monomial:
 
             Monomial({2:3, 3:-1}, 1.5) = (3/2)(a_2)^3(a_3)^(-1)
 
-        '''
+        """
         self.variables = dict()
 
         if coeff is None:
@@ -420,8 +420,7 @@ class Polynomial:
                     result = result.__add__(i * j)
 
             return result
-        else:
-            raise ValueError('Can only multiple int, float, Fraction, Monomials, or Polynomials with Polynomials.')
+        raise ValueError('Can only multiple int, float, Fraction, Monomials, or Polynomials with Polynomials.')
 
     # def __floordiv__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __floordiv__(self, other: Union[int, float, Fraction, Monomial]):
@@ -441,11 +440,11 @@ class Polynomial:
         """
         if isinstance(other, (Fraction, float, int)):
             return self.__truediv__(Monomial({}, other))
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             poly_temp = reduce(lambda acc, val: acc + val, map(lambda x: x / other, [z for z in self.all_monomials()]),
                                Polynomial([Monomial({}, 0)]))
             return poly_temp
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             if Monomial({}, 0) in other.all_monomials():
                 if len(other.all_monomials()) == 2:
                     temp_set = {x for x in other.all_monomials() if x != Monomial({}, 0)}
@@ -490,16 +489,15 @@ class Polynomial:
         Return True if the other polynomial is the same as
         this.
         """
-        if isinstance(other, int) or isinstance(other, float) or isinstance(other, Fraction):
+        if isinstance(other, (Fraction, float, int)):
             other_poly = Polynomial([Monomial({}, other)])
             return self.__eq__(other_poly)
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             return self.__eq__(Polynomial([other]))
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             return self.all_monomials() == other.all_monomials()
-        else:
-            raise ValueError(
-                'Can only compare a polynomial with an int, float, Fraction, Monomial, or another Polynomial.')
+        raise ValueError(
+            'Can only compare a polynomial with an int, float, Fraction, Monomial, or another Polynomial.')
 
     def subs(self, substitutions: Union[int, float, Fraction, Dict[int, Union[int, float, Fraction]]]) -> Union[
         int, float, Fraction]:
@@ -511,7 +509,7 @@ class Polynomial:
         if isinstance(substitutions, (Fraction, float, int)):
             substitutions = {i: Polynomial._rationalize_if_possible(substitutions) for i in set(self.variables())}
             return self.subs(substitutions)
-        elif not isinstance(substitutions, dict):
+        if not isinstance(substitutions, dict):
             raise ValueError('The substitutions should be a dictionary.')
         if not self.variables().issubset(set(substitutions.keys())):
             raise ValueError('Some variables didn\'t receive their values.')

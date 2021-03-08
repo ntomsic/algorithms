@@ -122,7 +122,7 @@ class BTree:
 
     def _repair_tree(self, node: Node, child_index: int) -> bool:
         child = node.children[child_index]
-        if self.min_numbers_of_keys < len(child.keys) <= self.max_number_of_keys:  # The leaf/node is correct
+        if self.min_numbers_of_keys < len(child.keys) <= self.max_number_of_keys:
             return False
 
         if child_index > 0 and len(node.children[child_index - 1].keys) > self.min_numbers_of_keys:

@@ -17,7 +17,7 @@ def recursive_binomial_coefficient(_n, k):
     if k > _n:
         raise ValueError('Invalid Inputs, ensure that n >= k')
         # function is only defined for n>=k
-    if k == 0 or _n == k:
+    if k in (0, _n):
         # C(n,0) = C(n,n) = 1, so this is our base case.
         return 1
     if k > _n / 2:
