@@ -7,8 +7,7 @@ def DFA(transitions, start, final, string):
 
         if transitions[cur][string[i]] is None:
             return False
-        else:
-            cur = transitions[cur][string[i]]
+        cur = transitions[cur][string[i]]
 
     for i in range(num_final):
         if cur == final[i]:

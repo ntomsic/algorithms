@@ -4,7 +4,7 @@ Given an unsorted array of integers, find the length of longest increasing subse
 Example:
 
 Input: [10,9,2,5,3,7,101,18]
-Output: 4 
+Output: 4
 Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
 
 Time complexity:
@@ -41,7 +41,7 @@ def longest_increasing_subsequence_optimized(sequence):
     Optimized dynamic programming algorithm for
     couting the length of the longest increasing subsequence
     using segment tree data structure to achieve better complexity
-    if max element is larger than 10^5 then use 
+    if max element is larger than 10^5 then use
     longest_increasing_subsequence_optimied2() instead
     type sequence: list[int]
     rtype: int

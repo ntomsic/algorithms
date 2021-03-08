@@ -8,11 +8,11 @@ This printHosoya function takes argument n which is the height of the triangle
 
 For example:
 printHosoya( 6 ) would return:
-1 
-1 1 
-2 1 2 
-3 2 2 3 
-5 3 4 3 5 
+1
+1 1
+2 1 2
+3 2 2 3
+5 3 4 3 5
 8 5 6 6 5 8
 
 The complexity is O(n^3).
@@ -26,10 +26,9 @@ def hosoya(n, m):
         return 1
     if n > m:
         return hosoya(n - 1, m) + hosoya(n - 2, m)
-    elif m == n:
+    if m == n:
         return hosoya(n - 1, m - 1) + hosoya(n - 2, m - 2)
-    else:
-        return 0
+    return 0
 
 
 def print_hosoya(n):

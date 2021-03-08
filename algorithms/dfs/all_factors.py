@@ -31,10 +31,10 @@ output:
 
 def get_factors(n):
     """[summary]
-    
+
     Arguments:
         n {[int]} -- [to analysed number]
-    
+
     Returns:
         [list of lists] -- [all factors of the number n]
     """
@@ -48,7 +48,7 @@ def get_factors(n):
             i {[int]} -- [to tested divisor]
             combi {[list]} -- [catch divisors]
             res {[list]} -- [all factors of the number n]
-        
+
         Returns:
             [list] -- [res]
         """
@@ -71,7 +71,7 @@ def get_factors_iterative1(n):
 
     Arguments:
         n {[int]} -- [to analysed number]
-    
+
     Returns:
         [list of lists] -- [all factors]
     """
@@ -93,7 +93,7 @@ def get_factors_iterative2(n):
 
     Arguments:
         n {[int]} -- [description]
-    
+
     Returns:
         [list of lists] -- [all factors of n]
     """

@@ -88,7 +88,7 @@ class BTree:
 
             if i >= 0 and current_node.keys[i] == key:
                 return True
-            elif current_node.is_leaf:
+            if current_node.is_leaf:
                 return False
             else:
                 current_node = current_node.children[i + 1]
@@ -102,8 +102,7 @@ class BTree:
             if node.is_leaf:
                 node.keys.remove(key)
                 return True
-            else:
-                self._remove_from_nonleaf_node(node, key_index)
+            self._remove_from_nonleaf_node(node, key_index)
 
             return True
 
@@ -120,8 +119,7 @@ class BTree:
                 action_performed = self._repair_tree(node, i)
                 if action_performed:
                     return self._remove_key(node, key)
-                else:
-                    return self._remove_key(node.children[i], key)
+                return self._remove_key(node.children[i], key)
 
     def _repair_tree(self, node: Node, child_index: int) -> bool:
         child = node.children[child_index]

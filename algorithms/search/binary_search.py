@@ -28,7 +28,6 @@ def binary_search_recur(array, low, high, val):
     mid = (low + high) // 2
     if val < array[mid]:
         return binary_search_recur(array, low, mid - 1, val)
-    elif val > array[mid]:
+    if val > array[mid]:
         return binary_search_recur(array, mid + 1, high, val)
-    else:
-        return mid
+    return mid

@@ -19,7 +19,7 @@ class Graph:
     def dfs_util(self, i, visited):
         visited[i] = True
         for u in self.graph[i]:
-            if not (visited[u]):
+            if not visited[u]:
                 self.dfs_util(u, visited)
 
     def reverse_graph(self):

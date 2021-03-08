@@ -1,7 +1,7 @@
 # count connected no of component using DFS
 '''
-In graph theory, a component, sometimes called a connected component, 
-of an undirected graph is a subgraph in which any 
+In graph theory, a component, sometimes called a connected component,
+of an undirected graph is a subgraph in which any
 two vertices are connected to each other by paths.
 
 Example:
@@ -30,10 +30,10 @@ def dfs(source, visited, l):
 
 
 def count_components(l, size):
-    ''' 
+    """
     Function that counts the Connected components on bases of DFS.
     return type : int
-    '''
+    """
 
     count = 0
     visited = [False] * (size + 1)

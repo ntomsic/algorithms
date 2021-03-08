@@ -69,10 +69,8 @@ def search_rotate_recur(array, low, high, val):
     if array[low] <= array[mid]:
         if array[low] <= val <= array[mid]:
             return search_rotate_recur(array, low, mid - 1, val)  # Search left
-        else:
-            return search_rotate_recur(array, mid + 1, high, val)  # Search right
+        return search_rotate_recur(array, mid + 1, high, val)  # Search right
     else:
         if array[mid] <= val <= array[high]:
             return search_rotate_recur(array, mid + 1, high, val)  # Search right
-        else:
-            return search_rotate_recur(array, low, mid - 1, val)  # Search left
+        return search_rotate_recur(array, low, mid - 1, val)  # Search left

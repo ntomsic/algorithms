@@ -96,8 +96,7 @@ class BinaryHeap(AbstractHeap):
             # left child > right child
             if self.heap[2 * i] > self.heap[2 * i + 1]:
                 return 2 * i + 1
-            else:
-                return 2 * i
+            return 2 * i
 
     def perc_down(self, i):
         while 2 * i < self.currentSize:

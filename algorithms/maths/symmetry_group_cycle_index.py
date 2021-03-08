@@ -60,9 +60,9 @@ from polynomial import (Monomial, Polynomial)
 
 		s1 = get_cycle_index_sym(w)
 	    s2 = get_cycle_index_sym(h)
-	    
+
 	    result = cycle_product_for_two_polynomials(s1, s2, s)
-	    
+
 	    return str(result)
 
 """

@@ -12,7 +12,7 @@ class Node(object):
     def get_name(obj):
         if isinstance(obj, Node):
             return obj.name
-        elif isinstance(obj, str):
+        if isinstance(obj, str):
             return obj
         return ''
 

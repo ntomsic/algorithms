@@ -68,9 +68,9 @@ def unique_array_sum_combinations(A, B, C, target):
 
     def check_sum(n, *nums):
         if sum(x for x in nums) == n:
-            return (True, nums)
+            return True, nums
         else:
-            return (False, nums)
+            return False, nums
 
     pro = itertools.product(A, B, C)
     func = partial(check_sum, target)

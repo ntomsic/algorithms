@@ -24,10 +24,10 @@ def prims_minimum_spanning(graph_used):
     prim = []
     mincost = 0
 
-    while (len(s) > 0):
+    while len(s) > 0:
         v = heapq.heappop(s)
         x = v[1]
-        if (x in vis):
+        if x in vis:
             continue
 
         mincost += v[0]
@@ -36,7 +36,7 @@ def prims_minimum_spanning(graph_used):
 
         for j in graph_used[x]:
             i = j[-1]
-            if (i not in vis):
+            if i not in vis:
                 heapq.heappush(s, j)
 
     return mincost

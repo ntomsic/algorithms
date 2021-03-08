@@ -16,7 +16,7 @@ Then, the function satifies the following recurrence:
 
 edit(i, j) = i if j = 0
              j if i = 0
-             min(edit(i-1, j) + 1, 
+             min(edit(i-1, j) + 1,
                  edit(i, j-1), + 1,
                  edit(i-1, j-1) + cost) otherwise
 

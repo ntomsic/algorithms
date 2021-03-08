@@ -24,7 +24,7 @@ Output of this example :-
 initial: [1, 2, 3, 0, 4]
 final:   [0, 3, 2, 1, 4]
 Steps =  4
-Sequence : 
+Sequence :
 0 2 3 1 4
 2 0 3 1 4
 2 3 0 1 4
@@ -51,7 +51,7 @@ def garage(initial, final):
         steps += 1
 
     return steps, seq
-    # e.g.:  4, [{0, 2, 3, 1, 4}, {2, 0, 3, 1, 4}, 
+    # e.g.:  4, [{0, 2, 3, 1, 4}, {2, 0, 3, 1, 4},
     #            {2, 3, 0, 1, 4}, {0, 3, 2, 1, 4}]
 
 

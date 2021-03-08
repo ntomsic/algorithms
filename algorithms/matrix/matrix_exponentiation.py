@@ -19,10 +19,10 @@ def identity(n: int) -> list:
     Time Complecity: O(n^2)
     """
     I = [[0 for i in range(n)] for j in range(n)]
-    
+
     for i in range(n):
         I[i][i] = 1
-    
+
     return I
 
 def matrix_exponentiation(mat: list, n: int) -> list:
@@ -34,7 +34,7 @@ def matrix_exponentiation(mat: list, n: int) -> list:
     """
     if n == 0:
         return identity(len(mat))
-    elif n % 2 == 1:
+    if n % 2 == 1:
         return multiply(matrix_exponentiation(mat, n - 1), mat)
     else:
         tmp = matrix_exponentiation(mat, n // 2)
