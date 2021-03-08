@@ -9,7 +9,7 @@ from .generate_parenthesis import *
 from .letter_combination import *
 from .palindrome_partitioning import *
 from .pattern_match import *
-from .permute_unique import *
 from .permute import *
-from .subsets_unique import *
+from .permute_unique import *
 from .subsets import *
+from .subsets_unique import *

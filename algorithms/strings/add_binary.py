@@ -11,7 +11,7 @@ Return "100".
 
 def add_binary(a, b):
     s = ""
-    c, i, j = 0, len(a)-1, len(b)-1
+    c, i, j = 0, len(a) - 1, len(b) - 1
     zero = ord('0')
     while (i >= 0 or j >= 0 or c == 1):
         if (i >= 0):
@@ -21,6 +21,6 @@ def add_binary(a, b):
             c += ord(b[j]) - zero
             j -= 1
         s = chr(c % 2 + zero) + s
-        c //= 2 
-        
+        c //= 2
+
     return s

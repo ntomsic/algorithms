@@ -6,7 +6,6 @@ If a point p has a smaller distance to the origin than the top element of a heap
 After iterating through all points, our heap contains the k closest points to the origin.
 """
 
-
 from heapq import heapify, heappushpop
 
 
@@ -41,4 +40,4 @@ def k_closest(points, k, origin=(0, 0)):
 
 
 def distance(point, origin=(0, 0)):
-    return (point[0] - origin[0])**2 + (point[1] - origin[1])**2
+    return (point[0] - origin[0]) ** 2 + (point[1] - origin[1]) ** 2

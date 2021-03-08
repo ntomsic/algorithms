@@ -35,6 +35,7 @@ def match_symbol(words, symbols):
                 combined.append(re.sub(s, "[{}]".format(s), c))
     return combined
 
+
 def match_symbol_1(words, symbols):
     res = []
     # reversely sort the symbols according to their lengths.
@@ -51,6 +52,7 @@ def match_symbol_1(words, symbols):
         if word_replaced == '':
             res.append(word)
     return res
+
 
 """
 Another approach is to use a Tree for the dictionary (the symbols), and then

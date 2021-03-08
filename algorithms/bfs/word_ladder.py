@@ -30,7 +30,7 @@ def ladder_length(begin_word, end_word, word_list):
     :rtype: int
     """
     if len(begin_word) != len(end_word):
-        return -1   # not possible
+        return -1  # not possible
 
     if begin_word == end_word:
         return 0

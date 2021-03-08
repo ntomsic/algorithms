@@ -36,6 +36,7 @@ into one in the final output as such: [...[2 3], [4 5], [12 7], ...]
 """
 import heapq
 
+
 def get_skyline(lrh):
     """
     Wortst Time Complexity: O(NlogN)

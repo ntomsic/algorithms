@@ -27,11 +27,10 @@ def find_factorial(n):
 def krishnamurthy_number(n):
     if n == 0:
         return False
-    sum_of_digits = 0   # will hold sum of FACTORIAL of digits
+    sum_of_digits = 0  # will hold sum of FACTORIAL of digits
     temp = n
 
     while temp != 0:
-
         # get the factorial of of the last digit of n and add it to sum_of_digits
         sum_of_digits += find_factorial(temp % 10)
 

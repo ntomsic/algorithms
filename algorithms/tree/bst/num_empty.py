@@ -19,8 +19,9 @@ For example: the following tree has 10 empty branch (* is empty branch)
 
 """
 import unittest
-from bst import Node
+
 from bst import bst
+
 
 def num_empty(root):
     if root is None:
@@ -31,6 +32,7 @@ def num_empty(root):
         return 1 + num_empty(root.left)
     else:
         return num_empty(root.left) + num_empty(root.right)
+
 
 """
     The tree is created for testing:
@@ -47,6 +49,7 @@ def num_empty(root):
 
 """
 
+
 class TestSuite(unittest.TestCase):
     def setUp(self):
         self.tree = bst()
@@ -62,6 +65,7 @@ class TestSuite(unittest.TestCase):
 
     def test_num_empty(self):
         self.assertEqual(10, num_empty(self.tree.root))
+
 
 if __name__ == '__main__':
     unittest.main()

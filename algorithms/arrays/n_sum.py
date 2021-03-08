@@ -65,28 +65,28 @@ def n_sum(n, nums, target, **kv):
         return a == b
 
     def n_sum(n, nums, target):
-        if n == 2:      # want answers with only 2 terms? easy!
+        if n == 2:  # want answers with only 2 terms? easy!
             results = two_sum(nums, target)
         else:
             results = []
             prev_num = None
             for index, num in enumerate(nums):
                 if prev_num is not None and \
-                   same_closure(prev_num, num):
+                        same_closure(prev_num, num):
                     continue
 
                 prev_num = num
                 n_minus1_results = (
-                    n_sum(                      # recursive call
-                        n - 1,                  # a
-                        nums[index + 1:],       # b
-                        target - num            # c
-                        )   # x = n_sum( a, b, c )
-                    )   # n_minus1_results = x
+                    n_sum(  # recursive call
+                        n - 1,  # a
+                        nums[index + 1:],  # b
+                        target - num  # c
+                    )  # x = n_sum( a, b, c )
+                )  # n_minus1_results = x
 
                 n_minus1_results = (
                     append_elem_to_each_list(num, n_minus1_results)
-                    )
+                )
                 results += n_minus1_results
         return union(results)
 

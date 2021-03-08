@@ -39,7 +39,6 @@ class Graph:
             self.dfs_util(i, i)
         print(self.tc)
 
-
 # g = Graph(4)
 # g.add_edge(0, 1)
 # g.add_edge(0, 2)

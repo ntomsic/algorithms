@@ -5,8 +5,8 @@ Symbols that appear more often will be encoded as a shorter-bit string
 while symbols that aren't used as much will be encoded as longer strings.
 """
 
-from collections import defaultdict, deque
 import heapq
+from collections import defaultdict, deque
 
 
 class Node:

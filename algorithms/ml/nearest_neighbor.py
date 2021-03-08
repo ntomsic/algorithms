@@ -1,6 +1,7 @@
 import math
 
-def distance(x,y):
+
+def distance(x, y):
     """[summary]
     HELPER-FUNCTION
     calculates the (eulidean) distance between vector x and y.
@@ -13,9 +14,9 @@ def distance(x,y):
     result = ()
     sum = 0
     for i in range(len(x)):
-        result += (x[i] -y[i],)
+        result += (x[i] - y[i],)
     for component in result:
-        sum += component**2
+        sum += component ** 2
     return math.sqrt(sum)
 
 

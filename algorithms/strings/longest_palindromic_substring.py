@@ -15,6 +15,7 @@ Manacher's algorithm
 
 '''
 
+
 def longest_palindrome(s):
     if len(s) < 2:
         return s
@@ -30,7 +31,7 @@ def longest_palindrome(s):
             p[i] = 1
 
         while p[i] + i < len(n_str) and i - p[i] >= 0 and n_str[
-                i - p[i]] == n_str[i + p[i]]:
+            i - p[i]] == n_str[i + p[i]]:
             p[i] += 1
 
         if i + p[i] > mx:

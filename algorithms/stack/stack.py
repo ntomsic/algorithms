@@ -14,8 +14,11 @@ size() returns the number of items on the stack.
    It needs no parameters and returns an integer.
 """
 from abc import ABCMeta, abstractmethod
+
+
 class AbstractStack(metaclass=ABCMeta):
     """Abstract Class for Stacks."""
+
     def __init__(self):
         self._top = -1
 
@@ -93,6 +96,7 @@ class ArrayStack(AbstractStack):
 
 class StackNode:
     """Represents a single stack node."""
+
     def __init__(self, value):
         self.value = value
         self.next = None

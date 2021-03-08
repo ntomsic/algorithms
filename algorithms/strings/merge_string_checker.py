@@ -30,7 +30,7 @@ def is_merge_recursive(s, part1, part2):
 def is_merge_iterative(s, part1, part2):
     tuple_list = [(s, part1, part2)]
     while tuple_list:
-        string, p1, p2 = tuple_list.pop()            
+        string, p1, p2 = tuple_list.pop()
         if string:
             if p1 and string[0] == p1[0]:
                 tuple_list.append((string[1:], p1[1:], p2))

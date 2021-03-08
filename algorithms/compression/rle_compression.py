@@ -6,6 +6,7 @@ When decompressed the data will be fully recovered as RLE
 is a lossless data compression.
 """
 
+
 def encode_rle(input):
     """
     Gets a stream of data and compresses it

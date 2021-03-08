@@ -26,6 +26,7 @@ If grid is
 the answer is: -1
 '''
 
+
 def maze_search(maze):
     BLOCKED, ALLOWED = 0, 1
     UNVISITED, VISITED = 0, 1
@@ -34,7 +35,7 @@ def maze_search(maze):
 
     if maze[initial_x][initial_y] == BLOCKED:
         return -1
-    
+
     directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
     height, width = len(maze), len(maze[0])
@@ -63,5 +64,4 @@ def maze_search(maze):
                 queue.append((new_x, new_y, steps + 1))
                 is_visited[new_x][new_y] = VISITED
 
-    return -1 
-
+    return -1

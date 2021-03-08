@@ -8,7 +8,6 @@ Output: 8
 
 
 def flip_bit_longest_seq(num):
-
     curr_len = 0
     prev_len = 0
     max_len = 0
