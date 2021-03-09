@@ -169,16 +169,20 @@ Scope (functionality and code affected).
 
 #### Title: Least amount of perfect squares algorithm
 
-Correct result for perfect squares  
-The first requirement is that the algorithm works for perfect square input.
+**Requirement 1:** Correct result for perfect squares.
+    * The first requirement is that the algorithm works for perfect square input. Essentialy if the square root of the input rounded to the nearest integer has to be the input, eg. 9 = 3<sup>2</sup>
 
-The second requirement is that the agorithm works for four squares in accordance to [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem).
+**Requirement 2:** Correct result for four perfect squares.
+   * The second requirement is that the agorithm works for four squares in accordance to [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem). eg. 960 = 24<sup>2</sup> + 16<sup>2</sup> + 8<sup>2</sup> + 8<sup>2</sup>
 
-The third requirement is that the algorithm works for three squares in accordance to [Legendre's three-square theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem).
+**Requirement 3:** Correct result for three perfect squares.
+   * The third requirement is that the algorithm works for three squares in accordance to [Legendre's three-square theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem). eg. 600 = 20<sup>2</sup> + 14<sup>2</sup> + 2<sup>2</sup>
 
-The fourth requirement is that the algorithm works for two perfect squares.
+**Requirement 4:** Correct result for two perfect squares.
+   * The fourth requirement is that the algorithm works for two perfect squares. eg. 500 = 20<sup>2</sup> + 10<sup>2</sup>
 
-The final requirement is that all tests pass.
+**Requirement 5:** All tests pass
+   * The final requirement is that all tests pass for the algorithm. These new tests are placed in /tests/test_math.py and everything in this folder should pass.
 
 Optional (point 3): trace tests to requirements.
 
