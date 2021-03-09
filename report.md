@@ -79,8 +79,8 @@ with a score of 6.53/10.
 
 A run of the pylint linter results in a little under 4000 warnings across the entire code-base.
 Correcting these should not in any way affect the outcome of functions, but would instead improve readability,
-reduce dead code, and reduce the use of deprecated functions.
-[TODO: E-Joon, write the score improvement. Maybe link to the branch?]
+reduce dead code, and reduce the use of deprecated functions. It is also important to ensure that improving the code
+does not interfere with the performance of all the tests.
 
    * Original score: 6.53/10: https://github.com/ntomsic/algorithms/tree/master
    * Commit 1: 7.04/10: https://github.com/ntomsic/algorithms/commit/f97b23418e408e352c5ba8d28616b667aa7e43ab
@@ -93,7 +93,40 @@ reduce dead code, and reduce the use of deprecated functions.
    * Commit 8: 8.63/10: https://github.com/ntomsic/algorithms/commit/0ea1f53f89517c6aa18986b57d6f15de2799517a
    * Commit 9: 8.65/10: https://github.com/ntomsic/algorithms/commit/78110d54f172db4987c207463489ad0d5608d68b
 
+#### Commit 1: Reformatting the entire directory (Ctrl + Alt + L)
 
+By using the Jetbrain IDE for Python (Pycharm), we were able to reformat the code with respect to the Python standards
+with the command (Ctrl + Alt + L). This command can be used for a line, multiple lines, files, and even directories to
+reformat all the code. Reformatting can include improvements such as: Optimizing imports. Proper spacing between classes,
+functions, and definitions. Proper formatting of code statements and comments.
+
+#### Commit 2-3: Removing/editing redundant if/elif cases, removing unnecessary parentheses, and removing trailing whitespaces
+
+There were many cases in which an else or elif case were unnecessary due to the previous case having a guaranteed return.
+
+There were also many unnecessary parentheses which could be safely removed without affecting the test results.
+
+Finally, there were a lot of trailing whitespaces which could be safely removed.
+
+#### Commit 4: Editing non-used variables
+
+There were a lot of cases in which variables (specifically in for loops) were not being used. In python, unused variable
+can instead be assigned as "don't care" like so: _.
+
+#### Commit 5-8: Changing variable names to conform to standard Python naming style, editing lines that are too long, optimizing if cases through simplification.
+
+Variables names were changed so that they conformed to the standard Python naming style, such as variable names conforming
+to the snake_case style, and constant variables conforming to the UPPER_CASE style.
+
+Some lines (Mostly comments) were over a hundred character long, and therefore could be split up so that every line did not
+exceed 100 characters.
+
+Finally, a lot of if cases could either be optimized or simplified to either make the code more readable, or to improve
+code complexity through refactoring.
+
+#### Commit 9: Final Touches
+
+Some final touches were made for more difficult and sensitive code scenarios which easily affected the test results.
 
 Title: Tree planting algorithm
 
