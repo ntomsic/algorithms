@@ -156,6 +156,14 @@ Scope (functionality and code affected).
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
 #### Title: Low Pylint score
+**Requirement 1:** Improve Pylint score from original score by at least 1.0.
+   * After running Pylint on the Algorithms directory, the code in whatever way should be improved by atleast 1.0 points
+   to be considered improved substantially for the issue to be determined fixed.
+
+**Requirement 2:** Pass all test (Or at least have tests results be consistent with the Master Branch) after Linting.
+   * All the tests in the "tests" directory should be tested regularly with the linting and improvement process to ensure
+   that the codes are not affected in such a way that it affects the test results. Basically the code should overall be
+     improved without affecting the test results.
 
 #### Title: Tree planting algorithm
 
