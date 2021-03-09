@@ -71,7 +71,6 @@ you took care of and where you spent your time, if that time exceeds
 ### Title: Low pylint score
 
 Issue: https://github.com/keon/algorithms/issues/761
-PR: 
 
 Pylint is the go-to program for checking whether a Python program is adhering to the
 [PEP8](https://www.python.org/dev/peps/pep-0008/)-standard. The algorithms project scores really low
@@ -82,16 +81,16 @@ Correcting these should not in any way affect the outcome of functions, but woul
 reduce dead code, and reduce the use of deprecated functions. It is also important to ensure that improving the code
 does not interfere with the performance of all the tests.
 
-   * Original score: 6.53/10: https://github.com/ntomsic/algorithms/tree/master
-   * Commit 1: 7.04/10: https://github.com/ntomsic/algorithms/commit/f97b23418e408e352c5ba8d28616b667aa7e43ab
-   * Commit 2: 7.17/10: https://github.com/ntomsic/algorithms/commit/a7695e69f456d325e05dc12084b6d28c5d2e3aa3
-   * Commit 3: 7.37/10: https://github.com/ntomsic/algorithms/commit/4c4af54f025fca82ad988914b8089b0e8e49419e
-   * Commit 4: 7.46/10: https://github.com/ntomsic/algorithms/commit/3e922e914fb9463872ea20d87fc418c426ed3ad9
-   * Commit 5: 7.61/10: https://github.com/ntomsic/algorithms/commit/a30ddb6e5c3d9eb497873e00c192820ffd579f93
-   * Commit 6: 8.06/10: https://github.com/ntomsic/algorithms/commit/cdd2b2924d82c4926ca8bb518b5596d3b5e8f472
-   * Commit 7: 8.41/10: https://github.com/ntomsic/algorithms/commit/6e032dd83c9941449a5e0937028d0ec928b5e7ae
-   * Commit 8: 8.63/10: https://github.com/ntomsic/algorithms/commit/0ea1f53f89517c6aa18986b57d6f15de2799517a
-   * Commit 9: 8.65/10: https://github.com/ntomsic/algorithms/commit/78110d54f172db4987c207463489ad0d5608d68b
+   * **Original score: 6.53/10:** https://github.com/ntomsic/algorithms/tree/master
+   * **Commit 1: 7.04/10:** https://github.com/ntomsic/algorithms/commit/f97b23418e408e352c5ba8d28616b667aa7e43ab
+   * **Commit 2: 7.17/10:** https://github.com/ntomsic/algorithms/commit/a7695e69f456d325e05dc12084b6d28c5d2e3aa3
+   * **Commit 3: 7.37/10:** https://github.com/ntomsic/algorithms/commit/4c4af54f025fca82ad988914b8089b0e8e49419e
+   * **Commit 4: 7.46/10:** https://github.com/ntomsic/algorithms/commit/3e922e914fb9463872ea20d87fc418c426ed3ad9
+   * **Commit 5: 7.61/10:** https://github.com/ntomsic/algorithms/commit/a30ddb6e5c3d9eb497873e00c192820ffd579f93
+   * **Commit 6: 8.06/10:** https://github.com/ntomsic/algorithms/commit/cdd2b2924d82c4926ca8bb518b5596d3b5e8f472
+   * **Commit 7: 8.41/10:** https://github.com/ntomsic/algorithms/commit/6e032dd83c9941449a5e0937028d0ec928b5e7ae
+   * **Commit 8: 8.63/10:** https://github.com/ntomsic/algorithms/commit/0ea1f53f89517c6aa18986b57d6f15de2799517a
+   * **Commit 9: 8.65/10:** https://github.com/ntomsic/algorithms/commit/78110d54f172db4987c207463489ad0d5608d68b
 
 #### Commit 1: Reformatting the entire directory (Ctrl + Alt + L)
 
