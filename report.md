@@ -68,10 +68,9 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overview of issue(s) and work done.
 
-Title: Low pylint score
+### Title: Low pylint score
 
 Issue: https://github.com/keon/algorithms/issues/761
-PR: 
 
 Pylint is the go-to program for checking whether a Python program is adhering to the
 [PEP8](https://www.python.org/dev/peps/pep-0008/)-standard. The algorithms project scores really low
@@ -79,23 +78,56 @@ with a score of 6.53/10.
 
 A run of the pylint linter results in a little under 4000 warnings across the entire code-base.
 Correcting these should not in any way affect the outcome of functions, but would instead improve readability,
-reduce dead code, and reduce the use of deprecated functions.
-[TODO: E-Joon, write the score improvement. Maybe link to the branch?]
+reduce dead code, and reduce the use of deprecated functions. It is also important to ensure that improving the code
+does not interfere with the performance of all the tests.
 
-   * Original score: 6.53/10: https://github.com/ntomsic/algorithms/tree/master
-   * Commit 1: 7.04/10: https://github.com/ntomsic/algorithms/commit/f97b23418e408e352c5ba8d28616b667aa7e43ab
-   * Commit 2: 7.17/10: https://github.com/ntomsic/algorithms/commit/a7695e69f456d325e05dc12084b6d28c5d2e3aa3
-   * Commit 3: 7.37/10: https://github.com/ntomsic/algorithms/commit/4c4af54f025fca82ad988914b8089b0e8e49419e
-   * Commit 4: 7.46/10: https://github.com/ntomsic/algorithms/commit/3e922e914fb9463872ea20d87fc418c426ed3ad9
-   * Commit 5: 7.61/10: https://github.com/ntomsic/algorithms/commit/a30ddb6e5c3d9eb497873e00c192820ffd579f93
-   * Commit 6: 8.06/10: https://github.com/ntomsic/algorithms/commit/cdd2b2924d82c4926ca8bb518b5596d3b5e8f472
-   * Commit 7: 8.41/10: https://github.com/ntomsic/algorithms/commit/6e032dd83c9941449a5e0937028d0ec928b5e7ae
-   * Commit 8: 8.63/10: https://github.com/ntomsic/algorithms/commit/0ea1f53f89517c6aa18986b57d6f15de2799517a
-   * Commit 9: 8.65/10: https://github.com/ntomsic/algorithms/commit/78110d54f172db4987c207463489ad0d5608d68b
+   * **Original score: 6.53/10:** https://github.com/ntomsic/algorithms/tree/master
+   * **Commit 1: 7.04/10:** https://github.com/ntomsic/algorithms/commit/f97b23418e408e352c5ba8d28616b667aa7e43ab
+   * **Commit 2: 7.17/10:** https://github.com/ntomsic/algorithms/commit/a7695e69f456d325e05dc12084b6d28c5d2e3aa3
+   * **Commit 3: 7.37/10:** https://github.com/ntomsic/algorithms/commit/4c4af54f025fca82ad988914b8089b0e8e49419e
+   * **Commit 4: 7.46/10:** https://github.com/ntomsic/algorithms/commit/3e922e914fb9463872ea20d87fc418c426ed3ad9
+   * **Commit 5: 7.61/10:** https://github.com/ntomsic/algorithms/commit/a30ddb6e5c3d9eb497873e00c192820ffd579f93
+   * **Commit 6: 8.06/10:** https://github.com/ntomsic/algorithms/commit/cdd2b2924d82c4926ca8bb518b5596d3b5e8f472
+   * **Commit 7: 8.41/10:** https://github.com/ntomsic/algorithms/commit/6e032dd83c9941449a5e0937028d0ec928b5e7ae
+   * **Commit 8: 8.63/10:** https://github.com/ntomsic/algorithms/commit/0ea1f53f89517c6aa18986b57d6f15de2799517a
+   * **Commit 9: 8.65/10:** https://github.com/ntomsic/algorithms/commit/78110d54f172db4987c207463489ad0d5608d68b
 
+#### Commit 1: Reformatting the entire directory (Ctrl + Alt + L)
 
+By using the Jetbrain IDE for Python (Pycharm), we were able to reformat the code with respect to the Python standards
+with the command (Ctrl + Alt + L). This command can be used for a line, multiple lines, files, and even directories to
+reformat all the code. Reformatting can include improvements such as: Optimizing imports. Proper spacing between classes,
+functions, and definitions. Proper formatting of code statements and comments.
 
-Title: Tree planting algorithm
+#### Commit 2-3: Removing/editing redundant if/elif cases, removing unnecessary parentheses, and removing trailing whitespaces
+
+There were many cases in which an else or elif case were unnecessary due to the previous case having a guaranteed return.
+
+There were also many unnecessary parentheses which could be safely removed without affecting the test results.
+
+Finally, there were a lot of trailing whitespaces which could be safely removed.
+
+#### Commit 4: Editing non-used variables
+
+There were a lot of cases in which variables (specifically in for loops) were not being used. In python, unused variable
+can instead be assigned as "don't care" like so: _.
+
+#### Commit 5-8: Changing variable names to conform to standard Python naming style, editing lines that are too long, optimizing if cases through simplification.
+
+Variables names were changed so that they conformed to the standard Python naming style, such as variable names conforming
+to the snake_case style, and constant variables conforming to the UPPER_CASE style.
+
+Some lines (Mostly comments) were over a hundred character long, and therefore could be split up so that every line did not
+exceed 100 characters.
+
+Finally, a lot of if cases could either be optimized or simplified to either make the code more readable, or to improve
+code complexity through refactoring.
+
+#### Commit 9: Final Touches
+
+Some final touches were made for more difficult and sensitive code scenarios which easily affected the test results.
+
+### Title: Tree planting algorithm
 
 Issue: https://github.com/keon/algorithms/issues/768
 PR: https://github.com/keon/algorithms/pull/770
@@ -105,7 +137,7 @@ A tree planting algorithm utilizing dynamic programming.
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test algorithms using dynamic programming.
 
 
-Title: Least amount of perfect squares algorithm
+### Title: Least amount of perfect squares algorithm
 
 Issue: https://github.com/keon/algorithms/issues/767
 PR: https://github.com/keon/algorithms/pull/769
@@ -219,13 +251,13 @@ Optional (point 2): relation to design pattern(s).
 
 ## Overall experience
 
-What are your main take-aways from this project? What did you learn?
+### What are your main take-aways from this project? What did you learn?
 
 This project strenghtened our main take-away from the last project, and made us appreciate the value of a well-documented onboarding experience even more. The difference between not knowing whether the failing tests should fail or not, and the exact steps to set-up, install, test, or uninstall the project is very real, and having experienced two projects at the very extremes of onboarding has been a humbling experience.
 
 Another take-away is that you really shouldn't trust the Canvas deadlines-tab since it doesn't necessarily reflect the actual deadlines.
 
-How did you grow as a team, using the Essence standard to evaluate yourself?
+### How did you grow as a team, using the Essence standard to evaluate yourself?
 
 According to the Essence checklist on p.52, we achieved the 'Formed' state even before the first assignment was handed in. The group adopted regular meetings early on where we discussed what had been done, current issues that group members were having, and what neeeded to be done. This, combined with establishing project leaders already during the first meeting, led to a well-defined but adaptable and scrum-like setup for each of the projects. We did not achieve 'Collaborating' during the first project as we didn't really get to know each-other until after that assignment. A reason for this probably being the first assignment being so easily divided between group members.
 
