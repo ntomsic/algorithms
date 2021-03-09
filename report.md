@@ -189,9 +189,98 @@ refactoring).
 
 #### Title: Low Pylint score
 
+Before
+```
+$ python -m pytest
+============================= test session starts =============================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 366 items
+
+tests\test_array.py ............................                         [  7%]
+tests\test_automata.py .                                                 [  7%]
+tests\test_backtrack.py .........................                        [ 14%]
+tests\test_bfs.py ...                                                    [ 15%]
+tests\test_bit.py .............................                          [ 23%]
+tests\test_compression.py .....                                          [ 24%]
+tests\test_dfs.py ........                                               [ 27%]
+tests\test_dp.py .....................                                   [ 32%]
+tests\test_graph.py ..............                                       [ 36%]
+tests\test_heap.py .....                                                 [ 37%]
+tests\test_histogram.py .                                                [ 38%]
+tests\test_iterative_segment_tree.py .........                           [ 40%]
+tests\test_linkedlist.py ............                                    [ 43%]
+tests\test_map.py .......................                                [ 50%]
+tests\test_maths.py ....................................                 [ 60%]
+tests\test_matrix.py .............                                       [ 63%]
+tests\test_ml.py ..                                                      [ 64%]
+tests\test_monomial.py ........                                          [ 66%]
+tests\test_polynomial.py .......                                         [ 68%]
+tests\test_queues.py .....                                               [ 69%]
+tests\test_search.py .............                                       [ 73%]
+tests\test_set.py .                                                      [ 73%]
+tests\test_sort.py ...................                                   [ 78%]
+tests\test_stack.py ..........                                           [ 81%]
+tests\test_strings.py .................................................. [ 95%]
+...                                                                      [ 95%]
+tests\test_tree.py ...........                                           [ 98%]
+tests\test_unix.py F.F.                                                  [100%]
+
+
+=========================== short test summary info ===========================
+FAILED tests/test_unix.py::TestUnixPath::test_full_path - AssertionError: 'D:...
+FAILED tests/test_unix.py::TestUnixPath::test_simplify_path - AssertionError:...
+================== 2 failed, 364 passed, 3 warnings in 7.00s ==================
+```
+After
+```
+$ python -m pytest
+============================= test session starts =============================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 366 items
+
+tests\test_array.py ............................                         [  7%]
+tests\test_automata.py .                                                 [  7%]
+tests\test_backtrack.py .........................                        [ 14%]
+tests\test_bfs.py ...                                                    [ 15%]
+tests\test_bit.py .............................                          [ 23%]
+tests\test_compression.py .....                                          [ 24%]
+tests\test_dfs.py ........                                               [ 27%]
+tests\test_dp.py .....................                                   [ 32%]
+tests\test_graph.py ..............                                       [ 36%]
+tests\test_heap.py .....                                                 [ 37%]
+tests\test_histogram.py .                                                [ 38%]
+tests\test_iterative_segment_tree.py .........                           [ 40%]
+tests\test_linkedlist.py ............                                    [ 43%]
+tests\test_map.py .......................                                [ 50%]
+tests\test_maths.py ....................................                 [ 60%]
+tests\test_matrix.py .............                                       [ 63%]
+tests\test_ml.py ..                                                      [ 64%]
+tests\test_monomial.py ........                                          [ 66%]
+tests\test_polynomial.py .......                                         [ 68%]
+tests\test_queues.py .....                                               [ 69%]
+tests\test_search.py .............                                       [ 73%]
+tests\test_set.py .                                                      [ 73%]
+tests\test_sort.py ...................                                   [ 78%]
+tests\test_stack.py ..........                                           [ 81%]
+tests\test_strings.py .................................................. [ 95%]
+...                                                                      [ 95%]
+tests\test_tree.py ...........                                           [ 98%]
+tests\test_unix.py F.F.                                                  [100%]
+
+
+=========================== short test summary info ===========================
+FAILED tests/test_unix.py::TestUnixPath::test_full_path - AssertionError: 'D:...
+FAILED tests/test_unix.py::TestUnixPath::test_simplify_path - AssertionError:...
+================== 2 failed, 364 passed, 3 warnings in 7.41s ==================
+```
+
 #### Title: Tree planting algorithm
 Before
-```============================= test session starts =============================
+```
+$ python -m pytest tests/test_dp.py
+============================= test session starts =============================
 platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
 rootdir: ****
 collected 21 items
@@ -202,6 +291,7 @@ tests\test_dp.py .....................                                   [100%]
 ```
 After
 ```
+$ python -m pytest tests/test_dp.py
 ============================= test session starts =============================
 platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
 rootdir: ****
