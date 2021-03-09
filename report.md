@@ -42,22 +42,22 @@ For each team member, how much time was spent in
     * Niklas Tomsic: less than 30 minutes.
     * Caroline Borg: less than 30 minutes.
 5. analyzing code/output;
-    * E-Joon Ko:
+    * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
     * Caroline Borg:
 6. writing documentation;
-    * E-Joon Ko:
+    * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour (including making PRs etc.)
     * Caroline Borg:
 7. writing code;
-    * E-Joon Ko:
+    * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 4 hours
     * Caroline Borg:
 8. running code:
-    * E-Joon Ko:
+    * E-Joon Ko: 2 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
     * Caroline Borg:
