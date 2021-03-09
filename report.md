@@ -50,12 +50,12 @@ For each team member, how much time was spent in
     * E-Joon Ko: 4 hours
     * Jakob Berggren: 4 hours.
     * Niklas Tomsic: 4 hour (including making PRs etc.).
-    * Caroline Borg: 1 hour ( -||- ).
+    * Caroline Borg: 2.5 hour ( -||- ).
 7. **writing code:**
     * E-Joon Ko: 4 hours.
     * Jakob Berggren: 2 hours.
     * Niklas Tomsic: 4 hours.
-    * Caroline Borg: 4 hours.
+    * Caroline Borg: 6 hours.
 8. **running code:**
     * E-Joon Ko: 2 hours.
     * Jakob Berggren: 1 hour.
@@ -389,7 +389,32 @@ tests\test_maths.py .....................................                [100%]
 ============================= 37 passed in 3.79s ==============================
 ```
 
+#### Title: Panagram algorithm
+Before
+```
+$ python -m pytest tests/test_strings.py  
+================================= test session starts =================================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 53 items
 
+tests\test_strings.py .....................................................      [100%]
+
+================================= 53 passed in 3.62s ================================== 
+```
+After
+```
+$ python -m pytest tests/test_strings.py  
+================================= test session starts =================================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 60 items
+
+tests\test_strings.py .......................................................... [ 96%]
+..                                                                               [100%] 
+
+================================= 60 passed in 0.44s ==================================
+```
 
 ## UML class diagram and its description
 
