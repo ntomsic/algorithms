@@ -170,7 +170,7 @@ Scope (functionality and code affected).
 #### Title: Least amount of perfect squares algorithm
 
 **Requirement 1:** Correct result for perfect squares.
-    * The first requirement is that the algorithm works for perfect square input. Essentialy if the square root of the input rounded to the nearest integer has to be the input, eg. 9 = 3<sup>2</sup>
+   * The first requirement is that the algorithm works for perfect square input. Essentialy if the square root of the input rounded to the nearest integer has to be the input, eg. 9 = 3<sup>2</sup>
 
 **Requirement 2:** Correct result for four perfect squares.
    * The second requirement is that the agorithm works for four squares in accordance to [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem). eg. 960 = 24<sup>2</sup> + 16<sup>2</sup> + 8<sup>2</sup> + 8<sup>2</sup>
