@@ -42,25 +42,25 @@ For each team member, how much time was spent in
     * Niklas Tomsic: less than 30 minutes.
     * Caroline Borg: less than 30 minutes.
 5. **analyzing code/output;**
-    * E-Joon Ko: 4 hour
+    * E-Joon Ko: 4 hours
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
-    * Caroline Borg:
+    * Caroline Borg: 1 hour
 6. **writing documentation;**
-    * E-Joon Ko: 4 hour
+    * E-Joon Ko: 4 hours
     * Jakob Berggren:
     * Niklas Tomsic: 4 hour (including making PRs etc.)
-    * Caroline Borg:
+    * Caroline Borg: 1 hour ( -||- )
 7. **writing code;**
-    * E-Joon Ko: 4 hour
+    * E-Joon Ko: 4 hours
     * Jakob Berggren:
     * Niklas Tomsic: 4 hours
-    * Caroline Borg:
+    * Caroline Borg: 4 hours
 8. **running code:**
-    * E-Joon Ko: 2 hour
+    * E-Joon Ko: 2 hours
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
-    * Caroline Borg:
+    * Caroline Borg: 1 hour
 
 
 ## Overview of issue(s) and work done.
@@ -167,10 +167,22 @@ Scope (functionality and code affected).
 
 #### Title: Tree planting algorithm
 
+**Requirement 1:** Correct input and output
+   * The function should take in a list of integers, and then two additional integers. It should return a float.
+
+**Requirement 2:** Correct result for first test
+   * The function should return the correct result for the test_simple test found in /tests/test_dp.py.
+
+**Requirement 3:** Correct result for second test
+   * The function should return the correct result for the test_simple2 test found in /tests/test_dp.py.
+
+**Requirement 4:** Passing the Kattis testsuite
+   * The function should pass the [Kattis testsuite](https://open.kattis.com/problems/aspenavenue) for this algorithm.
+
 #### Title: Least amount of perfect squares algorithm
 
 **Requirement 1:** Correct result for perfect squares.
-   * The first requirement is that the algorithm works for perfect square input. Essentialy if the square root of the input rounded to the nearest integer has to be the input, eg. 9 = 3<sup>2</sup>
+   * The first requirement is that the algorithm works for perfect square input. Essentially if the square root of the input rounded to the nearest integer has to be the input, eg. 9 = 3<sup>2</sup>
 
 **Requirement 2:** Correct result for four perfect squares.
    * The second requirement is that the agorithm works for four squares in accordance to [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem). eg. 960 = 24<sup>2</sup> + 16<sup>2</sup> + 8<sup>2</sup> + 8<sup>2</sup>
