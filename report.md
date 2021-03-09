@@ -129,7 +129,7 @@ Some final touches were made for more difficult and sensitive code scenarios whi
 Issue: https://github.com/keon/algorithms/issues/768
 PR: https://github.com/keon/algorithms/pull/770
 
-A tree planting algorithm utilizing dynamic programming.
+A tree planting algorithm utilizing dynamic programming. 
 
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test algorithms using dynamic programming.
 
@@ -142,6 +142,13 @@ PR: https://github.com/keon/algorithms/pull/769
 An algorithm for calculating the least amount of perfect squares needed to sum a given integer. Even if there are relatively litte code there are some advanced mathematical theorems that are required to calculate the correct result of the algorithm such as [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem) and [Legendre's three-square theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem) which made the whole process a lot harder than it looks. If you just look at the finished code the few lines of code do not reflect the whole thought proccess surrounding the problem solving and verification of the solution.
 
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test math algorithms.
+
+### Title: Panagram
+
+Issue: https://github.com/keon/algorithms/issues/756
+PR: https://github.com/keon/algorithms/pull/771
+
+An algorithm for determining whether a string is an english panagram or not. TDD was used during the process of this feature implementation, hence the admittedly large number of requirements. 
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
@@ -185,6 +192,33 @@ This pull request adds the above algorithm with corresponding passing test cases
 
 **Requirement 5:** All tests pass
    * The final requirement is that all tests pass for the algorithm. These new tests are placed in /tests/test_math.py and everything in this folder should pass.
+
+### Title: Panagram algorithm
+
+**Requirement 1:** Correct input and output
+   * The function should take in a string and return a boolean.
+
+**Requirement 2:** Empty string
+   * The function should return False for an empty string.
+
+**Requirement 3:** Non-panagram single word
+   * The function should return False for a single word that isn't a panagram.
+
+**Requirement 4:** Panagram no whitespace
+   * The function should return True for a panagram without whitespace.
+
+**Requirement 5:** Panagram no whitespace, mixed case
+   * The function should return True for a panagram without whitespace, but with mixed case. Eg. "theqUiCkbrOwnfOxjUMPSOVErThELAzYDog".
+
+**Requirement 6:** Whitespace and common punctuation
+   * The function should return False for a string with different kinds of whitespace and punctuations.
+
+**Requirement 7:** Panagram with whitespace
+   * The function should return True for a panagram sentence. Eg. "the quick brown fox jumps over the lazy dog".
+
+**Requirement 8:** Panagram with unknown letters
+   * The function should return True for a Swedish panagram sentence. Eg. "Yxmördaren Julia Blomqvist på fäktning i Schweiz".
+
 
 ## Code changes
 
