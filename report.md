@@ -155,6 +155,60 @@ git diff 40f240a46573dcb7559d0557eaa6a768d976ba46 c2043dcc18f437352e7455c32a2fa0
 Overall results with link to a copy or excerpt of the logs (before/after
 refactoring).
 
+#### Title: Low Pylint score
+
+#### Title: Tree planting algorithm
+Before
+```============================= test session starts =============================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 21 items
+
+tests\test_dp.py .....................                                   [100%]
+
+============================= 21 passed in 0.36s ==============================
+```
+After
+```
+============================= test session starts =============================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 23 items
+
+tests\test_dp.py .......................                                 [100%]
+
+============================= 23 passed in 0.57s ==============================
+```
+
+#### Title: Least amount of perfect squares algorithm
+Before
+```
+$ python -m pytest tests/test_maths.py
+============================= test session starts =============================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 36 items
+
+tests\test_maths.py ....................................                 [100%]
+
+============================= 36 passed in 3.51s ==============================
+```
+
+After
+```
+$ python -m pytest tests/test_maths.py
+============================= test session starts =============================
+platform win32 -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: ****
+collected 37 items
+
+tests\test_maths.py .....................................                [100%]
+
+============================= 37 passed in 3.79s ==============================
+```
+
+
+
 ## UML class diagram and its description
 
 ### Key changes/classes affected
