@@ -49,7 +49,7 @@ For each team member, how much time was spent in
 6. **writing documentation;**
     * E-Joon Ko: 4 hour
     * Jakob Berggren:
-    * Niklas Tomsic: 1 hour (including making PRs etc.)
+    * Niklas Tomsic: 4 hour (including making PRs etc.)
     * Caroline Borg:
 7. **writing code;**
     * E-Joon Ko: 4 hour
