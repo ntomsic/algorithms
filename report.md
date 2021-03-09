@@ -62,9 +62,6 @@ For each team member, how much time was spent in
     * Niklas Tomsic: 1 hour
     * Caroline Borg:
 
-For setting up tools and libraries (step 4), enumerate all dependencies
-you took care of and where you spent your time, if that time exceeds
-30 minutes.
 
 ## Overview of issue(s) and work done.
 
@@ -158,7 +155,6 @@ Scope (functionality and code affected).
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
-Optional (point 3): trace tests to requirements.
 
 ## Code changes
 
@@ -335,10 +331,6 @@ tests\test_maths.py .....................................                [100%]
 
 ### Key changes/classes affected
 
-Optional (point 1): Architectural overview.
-
-Optional (point 2): relation to design pattern(s).
-
 ## Overall experience
 
 ### What are your main take-aways from this project? What did you learn?
@@ -353,6 +345,3 @@ According to the Essence checklist on p.52, we achieved the 'Formed' state even 
 
 Discounting that we lost a member after the assignment, 'Collaboration' was met towards the end of assignment 2. This was when we started doing regular pair-programming sessions as well as discussing issues over text char during off-time. Now, at the end of assignment 4, we feel that we've reached 'Performing'. Aside from the mis-hap of missing the original deadline, we've reached a state where we have an active and honest flow of communication between all active members. Our dynamic division of work has reduced extraneous work to nil, and we've gained the ability to adapt to unforeseeable events such as 'sudden deadline at work' and 'prolonged internet outage'. At the time of writing this, we still have another assignment left (More on refactoring), and as such we can't consider the group 'Adjourned' just yet.
 
-Optional (point 6): How would you put your work in context with best software engineering practice?
-
-Optional (point 7): Is there something special you want to mention here?
