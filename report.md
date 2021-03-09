@@ -22,44 +22,44 @@ Algorithms also has a much better documentation present in it's readme file comp
 For each team member, how much time was spent in
 
 1. plenary discussions/meetings;
-    * E-Joon Ko:
-    * Jakob Berggren:
-    * Niklas Tomsic:
-    * Caroline Borg:
+    * E-Joon Ko: 2 hour.
+    * Jakob Berggren: 2 hour.
+    * Niklas Tomsic: 2 hour.
+    * Caroline Borg: 2 hour.
 2. discussions within parts of the group;
-    * E-Joon Ko:
-    * Jakob Berggren:
-    * Niklas Tomsic:
-    * Caroline Borg:
+    * E-Joon Ko: 3 hour.
+    * Jakob Berggren: 3 hour.
+    * Niklas Tomsic: 3 hour.
+    * Caroline Borg: 3 hour.
 3. reading documentation;
-    * E-Joon Ko:
-    * Jakob Berggren:
-    * Niklas Tomsic:
-    * Caroline Borg:
+    * E-Joon Ko: 1 hour.
+    * Jakob Berggren: 1 hour.
+    * Niklas Tomsic: 1 hour.
+    * Caroline Borg: 1 hour.
 4. configuration and setup;
-    * E-Joon Ko:
-    * Jakob Berggren:
-    * Niklas Tomsic:
-    * Caroline Borg:
+    * E-Joon Ko: less than 30 minutes.
+    * Jakob Berggren: less than 30 minutes.
+    * Niklas Tomsic: less than 30 minutes.
+    * Caroline Borg: less than 30 minutes.
 5. analyzing code/output;
     * E-Joon Ko:
     * Jakob Berggren:
-    * Niklas Tomsic:
+    * Niklas Tomsic: 1 hour
     * Caroline Borg:
 6. writing documentation;
     * E-Joon Ko:
     * Jakob Berggren:
-    * Niklas Tomsic:
+    * Niklas Tomsic: 1 hour (including making PRs etc.)
     * Caroline Borg:
 7. writing code;
     * E-Joon Ko:
     * Jakob Berggren:
-    * Niklas Tomsic:
+    * Niklas Tomsic: 4 hours
     * Caroline Borg:
 8. running code:
     * E-Joon Ko:
     * Jakob Berggren:
-    * Niklas Tomsic:
+    * Niklas Tomsic: 1 hour
     * Caroline Borg:
 
 For setting up tools and libraries (step 4), enumerate all dependencies
@@ -110,7 +110,7 @@ Title: Algorithm for calculating the least amount of perfect squares needed to s
 Issue: https://github.com/keon/algorithms/issues/767
 PR: https://github.com/keon/algorithms/pull/769
 
-An algorithm for calculating the least amount of perfect squares needed to sum a given integer.
+An algorithm for calculating the least amount of perfect squares needed to sum a given integer. Even if there are relatively litte code there are some advanced mathematical theorems that are required to calculate the correct result of the algorithm such as [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem) and [Legendre's three-square theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem) which made the whole process a lot harder than it looks. If you just look at the finished code the few lines of code do not reflect the whole thought proccess surrounding the problem solving and verification of the solution.
 
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test math algorithms.
 
