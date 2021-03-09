@@ -21,37 +21,37 @@ Algorithms also has a much better documentation present in it's readme file comp
 
 For each team member, how much time was spent in
 
-1. **plenary discussions/meetings;**
+1. **plenary discussions/meetings:**
     * E-Joon Ko: 2 hour.
     * Jakob Berggren: 2 hour.
     * Niklas Tomsic: 2 hour.
     * Caroline Borg: 2 hour.
-2. **discussions within parts of the group;**
+2. **discussions within parts of the group:**
     * E-Joon Ko: 3 hour.
     * Jakob Berggren: 3 hour.
     * Niklas Tomsic: 3 hour.
     * Caroline Borg: 3 hour.
-3. **reading documentation;**
+3. **reading documentation:**
     * E-Joon Ko: 1 hour.
     * Jakob Berggren: 1 hour.
     * Niklas Tomsic: 1 hour.
     * Caroline Borg: 1 hour.
-4. **configuration and setup;**
+4. **configuration and setup:**
     * E-Joon Ko: less than 30 minutes.
     * Jakob Berggren: less than 30 minutes.
     * Niklas Tomsic: less than 30 minutes.
     * Caroline Borg: less than 30 minutes.
-5. **analyzing code/output;**
+5. **analyzing code/output:**
     * E-Joon Ko: 4 hours
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
     * Caroline Borg: 1 hour
-6. **writing documentation;**
+6. **writing documentation:**
     * E-Joon Ko: 4 hours
     * Jakob Berggren:
     * Niklas Tomsic: 4 hour (including making PRs etc.)
     * Caroline Borg: 1 hour ( -||- )
-7. **writing code;**
+7. **writing code:**
     * E-Joon Ko: 4 hours
     * Jakob Berggren:
     * Niklas Tomsic: 4 hours
@@ -143,19 +143,9 @@ An algorithm for calculating the least amount of perfect squares needed to sum a
 
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test math algorithms.
 
-[TODO: Add the pytest logs after all our issues are done.]
-
-Title:
-
-URL:
-
-Summary in one or two sentences
-
-Scope (functionality and code affected).
-
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
-#### Title: Low Pylint score
+### Title: Low Pylint score
 **Requirement 1:** Improve Pylint score from original score by at least 1.0.
    * After running Pylint on the Algorithms directory, the code in whatever way should be improved by atleast 1.0 points
    to be considered improved substantially for the issue to be determined fixed.
@@ -165,7 +155,7 @@ Scope (functionality and code affected).
    that the codes are not affected in such a way that it affects the test results. Basically the code should overall be
      improved without affecting the test results.
 
-#### Title: Tree planting algorithm
+### Title: Tree planting algorithm
 
 **Requirement 1:** Correct input and output
    * The function should take in a list of integers, and then two additional integers. It should return a float.
@@ -179,7 +169,7 @@ Scope (functionality and code affected).
 **Requirement 4:** Passing the Kattis testsuite
    * The function should pass the [Kattis testsuite](https://open.kattis.com/problems/aspenavenue) for this algorithm.
 
-#### Title: Least amount of perfect squares algorithm
+### Title: Least amount of perfect squares algorithm
 
 **Requirement 1:** Correct result for perfect squares.
    * The first requirement is that the algorithm works for perfect square input. Essentially if the square root of the input rounded to the nearest integer has to be the input, eg. 9 = 3<sup>2</sup>
@@ -195,8 +185,6 @@ Scope (functionality and code affected).
 
 **Requirement 5:** All tests pass
    * The final requirement is that all tests pass for the algorithm. These new tests are placed in /tests/test_math.py and everything in this folder should pass.
-
-Optional (point 3): trace tests to requirements.
 
 ## Code changes
 
@@ -377,7 +365,7 @@ tests\test_maths.py .....................................                [100%]
 
 ### What are your main take-aways from this project? What did you learn?
 
-This project strenghtened our main take-away from the last project, and made us appreciate the value of a well-documented onboarding experience even more. The difference between not knowing whether the failing tests should fail or not, and the exact steps to set-up, install, test, or uninstall the project is very real, and having experienced two projects at the very extremes of onboarding has been a humbling experience.
+This project strengthened our main take-away from the last project, and made us appreciate the value of a well-documented onboarding experience even more. The difference between not knowing whether the failing tests should fail or not, and the exact steps to set-up, install, test, or uninstall the project is very real, and having experienced two projects at the very extremes of onboarding has been a humbling experience.
 
 Another take-away is that you really shouldn't trust the Canvas deadlines-tab since it doesn't necessarily reflect the actual deadlines.
 
