@@ -242,6 +242,12 @@ git diff 40f240a46573dcb7559d0557eaa6a768d976ba46 d5b397ab89e48935f0afc0af4d4fa1
 git diff 40f240a46573dcb7559d0557eaa6a768d976ba46 c2043dcc18f437352e7455c32a2fa0b1ffc275df
 ```
 
+#### Title: Panagram algorithm
+
+```
+git diff 40f240a46573dcb7559d0557eaa6a768d976ba46 49e2d272eec0a2e41f419716a48d9877dffd1388
+```
+
 ## Test results
 
 Overall results with link to a copy or excerpt of the logs (before/after
