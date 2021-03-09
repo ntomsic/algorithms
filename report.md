@@ -68,7 +68,7 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overview of issue(s) and work done.
 
-Title: Low pylint score
+### Title: Low pylint score
 
 Issue: https://github.com/keon/algorithms/issues/761
 PR: 
@@ -128,7 +128,7 @@ code complexity through refactoring.
 
 Some final touches were made for more difficult and sensitive code scenarios which easily affected the test results.
 
-Title: Tree planting algorithm
+### Title: Tree planting algorithm
 
 Issue: https://github.com/keon/algorithms/issues/768
 PR: https://github.com/keon/algorithms/pull/770
@@ -138,7 +138,7 @@ A tree planting algorithm utilizing dynamic programming.
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test algorithms using dynamic programming.
 
 
-Title: Least amount of perfect squares algorithm
+### Title: Least amount of perfect squares algorithm
 
 Issue: https://github.com/keon/algorithms/issues/767
 PR: https://github.com/keon/algorithms/pull/769
@@ -198,13 +198,13 @@ Optional (point 2): relation to design pattern(s).
 
 ## Overall experience
 
-What are your main take-aways from this project? What did you learn?
+### What are your main take-aways from this project? What did you learn?
 
 This project strenghtened our main take-away from the last project, and made us appreciate the value of a well-documented onboarding experience even more. The difference between not knowing whether the failing tests should fail or not, and the exact steps to set-up, install, test, or uninstall the project is very real, and having experienced two projects at the very extremes of onboarding has been a humbling experience.
 
 Another take-away is that you really shouldn't trust the Canvas deadlines-tab since it doesn't necessarily reflect the actual deadlines.
 
-How did you grow as a team, using the Essence standard to evaluate yourself?
+### How did you grow as a team, using the Essence standard to evaluate yourself?
 
 According to the Essence checklist on p.52, we achieved the 'Formed' state even before the first assignment was handed in. The group adopted regular meetings early on where we discussed what had been done, current issues that group members were having, and what neeeded to be done. This, combined with establishing project leaders already during the first meeting, led to a well-defined but adaptable and scrum-like setup for each of the projects. We did not achieve 'Collaborating' during the first project as we didn't really get to know each-other until after that assignment. A reason for this probably being the first assignment being so easily divided between group members.
 
