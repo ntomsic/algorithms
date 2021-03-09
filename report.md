@@ -132,8 +132,7 @@ Optional (point 3): trace tests to requirements.
 
 ### Patch
 
-### Title: Low Pylint score
-
+#### Title: Low Pylint score
 ``` 
 git checkout linting 
 git diff 0ea1f53f89517c6aa18986b57d6f15de2799517a^ HEAD 
