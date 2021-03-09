@@ -424,7 +424,15 @@ tests\test_strings.py ..........................................................
 
 ## UML class diagram and its description
 
+![UML Diagram of affected code](https://i.imgur.com/JNIrowQ.png)
+
+Legend:
+- ![#87ceeb](https://via.placeholder.com/15/87ceeb/000000?text=+) Modules
+- ![#ffa500](https://via.placeholder.com/15/ffa500/000000?text=+) Changed
+- ![#8fbc8f](https://via.placeholder.com/15/8fbc8f/000000?text=+) Added
+
 ### Key changes/classes affected
+As can be seen above, there wasn't a whole lot of classes affected by our feature related pull requests.
 
 ## Overall experience
 
