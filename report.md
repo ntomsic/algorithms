@@ -158,6 +158,23 @@ Scope (functionality and code affected).
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
+#### Title: Low Pylint score
+
+#### Title: Tree planting algorithm
+
+#### Title: Least amount of perfect squares algorithm
+
+Correct result for perfect squares  
+The first requirement is that the algorithm works for perfect square input.
+
+The second requirement is that the agorithm works for four squares in accordance to [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem).
+
+The third requirement is that the algorithm works for three squares in accordance to [Legendre's three-square theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem).
+
+The fourth requirement is that the algorithm works for two perfect squares.
+
+The final requirement is that all tests pass.
+
 Optional (point 3): trace tests to requirements.
 
 ## Code changes
