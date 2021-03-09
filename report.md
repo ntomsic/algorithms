@@ -38,29 +38,29 @@ For each team member, how much time was spent in
     * Caroline Borg: 1 hour.
 4. **configuration and setup:**
     * E-Joon Ko: less than 30 minutes.
-    * Jakob Berggren: less than 30 minutes.
+    * Jakob Berggren: 1 hour (issue with running tests).
     * Niklas Tomsic: less than 30 minutes.
     * Caroline Borg: less than 30 minutes.
 5. **analyzing code/output:**
-    * E-Joon Ko: 4 hours
-    * Jakob Berggren:
-    * Niklas Tomsic: 1 hour
-    * Caroline Borg: 1 hour
+    * E-Joon Ko: 4 hours.
+    * Jakob Berggren: 1 hour.
+    * Niklas Tomsic: 1 hour.
+    * Caroline Borg: 1 hour.
 6. **writing documentation:**
     * E-Joon Ko: 4 hours
-    * Jakob Berggren:
-    * Niklas Tomsic: 4 hour (including making PRs etc.)
-    * Caroline Borg: 1 hour ( -||- )
+    * Jakob Berggren: 4 hours.
+    * Niklas Tomsic: 4 hour (including making PRs etc.).
+    * Caroline Borg: 1 hour ( -||- ).
 7. **writing code:**
-    * E-Joon Ko: 4 hours
-    * Jakob Berggren:
-    * Niklas Tomsic: 4 hours
-    * Caroline Borg: 4 hours
+    * E-Joon Ko: 4 hours.
+    * Jakob Berggren: 2 hours.
+    * Niklas Tomsic: 4 hours.
+    * Caroline Borg: 4 hours.
 8. **running code:**
-    * E-Joon Ko: 2 hours
-    * Jakob Berggren:
-    * Niklas Tomsic: 1 hour
-    * Caroline Borg: 1 hour
+    * E-Joon Ko: 2 hours.
+    * Jakob Berggren: 1 hour.
+    * Niklas Tomsic: 1 hour.
+    * Caroline Borg: 1 hour.
 
 
 ## Overview of issue(s) and work done.
