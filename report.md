@@ -22,20 +22,45 @@ Algorithms also has a much better documentation present in it's readme file comp
 For each team member, how much time was spent in
 
 1. plenary discussions/meetings;
-
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
 2. discussions within parts of the group;
-
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
 3. reading documentation;
-
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
 4. configuration and setup;
-
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
 5. analyzing code/output;
-
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
 6. writing documentation;
-
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
 7. writing code;
-
-8. running code?
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
+8. running code:
+    * E-Joon Ko:
+    * Jakob Berggren:
+    * Niklas Tomsic:
+    * Caroline Borg:
 
 For setting up tools and libraries (step 4), enumerate all dependencies
 you took care of and where you spent your time, if that time exceeds
