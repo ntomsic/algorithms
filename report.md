@@ -105,7 +105,7 @@ A tree planting algorithm utilizing dynamic programming.
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test algorithms using dynamic programming.
 
 
-Title: Algorithm for calculating the least amount of perfect squares needed to sum a given integer
+Title: Least amount of perfect squares algorithm
 
 Issue: https://github.com/keon/algorithms/issues/767
 PR: https://github.com/keon/algorithms/pull/769
@@ -132,11 +132,23 @@ Optional (point 3): trace tests to requirements.
 
 ### Patch
 
-Titel: Low Pylint score
+### Title: Low Pylint score
 
 ``` 
 git checkout linting 
 git diff 0ea1f53f89517c6aa18986b57d6f15de2799517a^ HEAD 
+```
+
+#### Title: Tree planting algorithm
+
+``` 
+git diff 40f240a46573dcb7559d0557eaa6a768d976ba46 d5b397ab89e48935f0afc0af4d4fa1c078e9bd1e
+```
+
+#### Title: Least amount of perfect squares algorithm
+
+``` 
+git diff 40f240a46573dcb7559d0557eaa6a768d976ba46 c2043dcc18f437352e7455c32a2fa0b1ffc275df
 ```
 
 ## Test results
