@@ -21,42 +21,42 @@ Algorithms also has a much better documentation present in it's readme file comp
 
 For each team member, how much time was spent in
 
-1. plenary discussions/meetings;
+1. **plenary discussions/meetings;**
     * E-Joon Ko: 2 hour.
     * Jakob Berggren: 2 hour.
     * Niklas Tomsic: 2 hour.
     * Caroline Borg: 2 hour.
-2. discussions within parts of the group;
+2. **discussions within parts of the group;**
     * E-Joon Ko: 3 hour.
     * Jakob Berggren: 3 hour.
     * Niklas Tomsic: 3 hour.
     * Caroline Borg: 3 hour.
-3. reading documentation;
+3. **reading documentation;**
     * E-Joon Ko: 1 hour.
     * Jakob Berggren: 1 hour.
     * Niklas Tomsic: 1 hour.
     * Caroline Borg: 1 hour.
-4. configuration and setup;
+4. **configuration and setup;**
     * E-Joon Ko: less than 30 minutes.
     * Jakob Berggren: less than 30 minutes.
     * Niklas Tomsic: less than 30 minutes.
     * Caroline Borg: less than 30 minutes.
-5. analyzing code/output;
+5. **analyzing code/output;**
     * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
     * Caroline Borg:
-6. writing documentation;
+6. **writing documentation;**
     * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour (including making PRs etc.)
     * Caroline Borg:
-7. writing code;
+7. **writing code;**
     * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 4 hours
     * Caroline Borg:
-8. running code:
+8. **running code:**
     * E-Joon Ko: 2 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
