@@ -93,7 +93,7 @@ This pull request adds the above algorithm with corresponding passing test cases
 Issue: https://github.com/keon/algorithms/issues/767
 PR: https://github.com/keon/algorithms/pull/769
 
-An algorithm for calculating the least amount of perfect squares needed to sum a given integer. Even if there are relatively litte code there are some advanced mathematical theorems that are required to calculate the correct result of the algorithm such as (Lagrange's four-square theorem)[https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem] and (Legendre's three-square theorem)[https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem] which made the whole process a lot harder than it looks. If you just look at the finished code the few lines of code do not reflect the whole thought proccess surrounding the problem solving and verification of the solution.
+An algorithm for calculating the least amount of perfect squares needed to sum a given integer. Even if there are relatively litte code there are some advanced mathematical theorems that are required to calculate the correct result of the algorithm such as [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem) and [Legendre's three-square theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem) which made the whole process a lot harder than it looks. If you just look at the finished code the few lines of code do not reflect the whole thought proccess surrounding the problem solving and verification of the solution.
 
 This pull request adds the above algorithm with corresponding passing test cases to the repository. The affected code is restricted to a module used to test math algorithms.
 
