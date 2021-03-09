@@ -21,50 +21,47 @@ Algorithms also has a much better documentation present in it's readme file comp
 
 For each team member, how much time was spent in
 
-1. plenary discussions/meetings;
+1. **plenary discussions/meetings;**
     * E-Joon Ko: 2 hour.
     * Jakob Berggren: 2 hour.
     * Niklas Tomsic: 2 hour.
     * Caroline Borg: 2 hour.
-2. discussions within parts of the group;
+2. **discussions within parts of the group;**
     * E-Joon Ko: 3 hour.
     * Jakob Berggren: 3 hour.
     * Niklas Tomsic: 3 hour.
     * Caroline Borg: 3 hour.
-3. reading documentation;
+3. **reading documentation;**
     * E-Joon Ko: 1 hour.
     * Jakob Berggren: 1 hour.
     * Niklas Tomsic: 1 hour.
     * Caroline Borg: 1 hour.
-4. configuration and setup;
+4. **configuration and setup;**
     * E-Joon Ko: less than 30 minutes.
     * Jakob Berggren: less than 30 minutes.
     * Niklas Tomsic: less than 30 minutes.
     * Caroline Borg: less than 30 minutes.
-5. analyzing code/output;
-    * E-Joon Ko:
+5. **analyzing code/output;**
+    * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
     * Caroline Borg:
-6. writing documentation;
-    * E-Joon Ko:
+6. **writing documentation;**
+    * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour (including making PRs etc.)
     * Caroline Borg:
-7. writing code;
-    * E-Joon Ko:
+7. **writing code;**
+    * E-Joon Ko: 4 hour
     * Jakob Berggren:
     * Niklas Tomsic: 4 hours
     * Caroline Borg:
-8. running code:
-    * E-Joon Ko:
+8. **running code:**
+    * E-Joon Ko: 2 hour
     * Jakob Berggren:
     * Niklas Tomsic: 1 hour
     * Caroline Borg:
 
-For setting up tools and libraries (step 4), enumerate all dependencies
-you took care of and where you spent your time, if that time exceeds
-30 minutes.
 
 ## Overview of issue(s) and work done.
 
@@ -352,10 +349,6 @@ tests\test_maths.py .....................................                [100%]
 
 ### Key changes/classes affected
 
-Optional (point 1): Architectural overview.
-
-Optional (point 2): relation to design pattern(s).
-
 ## Overall experience
 
 ### What are your main take-aways from this project? What did you learn?
@@ -370,6 +363,3 @@ According to the Essence checklist on p.52, we achieved the 'Formed' state even 
 
 Discounting that we lost a member after the assignment, 'Collaboration' was met towards the end of assignment 2. This was when we started doing regular pair-programming sessions as well as discussing issues over text char during off-time. Now, at the end of assignment 4, we feel that we've reached 'Performing'. Aside from the mis-hap of missing the original deadline, we've reached a state where we have an active and honest flow of communication between all active members. Our dynamic division of work has reduced extraneous work to nil, and we've gained the ability to adapt to unforeseeable events such as 'sudden deadline at work' and 'prolonged internet outage'. At the time of writing this, we still have another assignment left (More on refactoring), and as such we can't consider the group 'Adjourned' just yet.
 
-Optional (point 6): How would you put your work in context with best software engineering practice?
-
-Optional (point 7): Is there something special you want to mention here?
