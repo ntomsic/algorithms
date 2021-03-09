@@ -37,10 +37,10 @@ For each team member, how much time was spent in
     * Niklas Tomsic: 1 hour.
     * Caroline Borg: 1 hour.
 4. configuration and setup;
-    * E-Joon Ko: 0 hour.
-    * Jakob Berggren: 0 hour.
-    * Niklas Tomsic: 0 hour.
-    * Caroline Borg: 0 hour.
+    * E-Joon Ko: less than 30 minutes.
+    * Jakob Berggren: less than 30 minutes.
+    * Niklas Tomsic: less than 30 minutes.
+    * Caroline Borg: less than 30 minutes.
 5. analyzing code/output;
     * E-Joon Ko:
     * Jakob Berggren:
