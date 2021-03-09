@@ -132,11 +132,22 @@ Optional (point 3): trace tests to requirements.
 
 ### Patch
 
-Titel: Low Pylint score
-
+Title: Low Pylint score
 ``` 
 git checkout linting 
 git diff 0ea1f53f89517c6aa18986b57d6f15de2799517a^ HEAD 
+```
+
+Title: Tree planting algorithm
+``` 
+git checkout issue#768
+git diff d5b397ab89e48935f0afc0af4d4fa1c078e9bd1e^ HEAD
+```
+
+Title: Algorithm for calculating the least amount of perfect squares needed to sum a given integer
+``` 
+git checkout issue#767
+git diff c2043dcc18f437352e7455c32a2fa0b1ffc275df^ HEAD
 ```
 
 ## Test results
