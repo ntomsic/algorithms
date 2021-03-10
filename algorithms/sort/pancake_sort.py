@@ -5,7 +5,7 @@ def pancake_sort(arr):
     mutation of selection sort
 
     reference: https://www.geeksforgeeks.org/pancake-sorting/
-    
+
     Overall time complexity : O(N^2)
     """
 

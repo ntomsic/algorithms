@@ -45,7 +45,7 @@ def n_sum(n, nums, target, **kv):
     return: list[list[object]]
 
     Note:
-    1. type of sum_closure's return should be same 
+    1. type of sum_closure's return should be same
        as type of compare_closure's first param
     """
 

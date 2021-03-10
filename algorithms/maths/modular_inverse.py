@@ -1,5 +1,5 @@
-# extended_gcd(a, b) modified from 
-# https://github.com/keon/algorithms/blob/master/algorithms/maths/extended_gcd.py 
+# extended_gcd(a, b) modified from
+# https://github.com/keon/algorithms/blob/master/algorithms/maths/extended_gcd.py
 
 def extended_gcd(a: int, b: int) -> [int, int, int]:
     """Extended GCD algorithm.
@@ -25,7 +25,7 @@ def extended_gcd(a: int, b: int) -> [int, int, int]:
 def modular_inverse(a: int, m: int) -> int:
     """
     Returns x such that a * x = 1 (mod m)
-    a and m must be coprime 
+    a and m must be coprime
     """
 
     s, t, g = extended_gcd(a, m)

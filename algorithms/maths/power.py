@@ -1,10 +1,10 @@
 def power(a: int, n: int, r: int = None):
     """
     Iterative version of binary exponentiation
-    
+
     Calculate a ^ n
     if r is specified, return the result modulo r
-    
+
     Time Complexity :  O(log(n))
     Space Complexity : O(1)
     """
@@ -23,10 +23,10 @@ def power(a: int, n: int, r: int = None):
 def power_recur(a: int, n: int, r: int = None):
     """
     Recursive version of binary exponentiation
-    
+
     Calculate a ^ n
     if r is specified, return the result modulo r
-    
+
     Time Complexity :  O(log(n))
     Space Complexity : O(log(n))
     """

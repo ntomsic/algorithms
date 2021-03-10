@@ -1,4 +1,4 @@
-# Python program for weighted job scheduling using Dynamic 
+# Python program for weighted job scheduling using Dynamic
 # Programming and Binary Search
 
 # Class to represent a job

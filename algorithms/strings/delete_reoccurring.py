@@ -1,9 +1,9 @@
 """
-QUESTION: Given a string as your input, delete any reoccurring 
+QUESTION: Given a string as your input, delete any reoccurring
 character, and return the new string.
 
 This is a Google warmup interview question that was asked duirng phone screening
-at my university. 
+at my university.
 """
 
 
