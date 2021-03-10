@@ -24,10 +24,10 @@ def find_k_factor(n, k):
     if (3 * k + 1 > n):
         return 0
     # base cases
-    dp[1][0][0] = 1;
-    dp[1][0][1] = 0;
-    dp[1][0][2] = 0;
-    dp[1][0][3] = 25;
+    dp[1][0][0] = 1
+    dp[1][0][1] = 0
+    dp[1][0][2] = 0
+    dp[1][0][3] = 25
 
     for i in range(2, n + 1):
         for j in range((n - 1) // 3 + 2):
