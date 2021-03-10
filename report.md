@@ -39,12 +39,12 @@ For each team member, how much time was spent in
 4. **configuration and setup:**
     * E-Joon Ko: less than 30 minutes.
     * Jakob Berggren: 1 hour (issue with running tests).
-    * Niklas Tomsic: less than 30 minutes.
+    * Niklas Tomsic: 1 hour.
     * Caroline Borg: 1 hour (installed WSL to be able to test for unix)
 5. **analyzing code/output:**
     * E-Joon Ko: 4 hours.
     * Jakob Berggren: 4 hour.
-    * Niklas Tomsic: 1 hour.
+    * Niklas Tomsic: 2 hour.
     * Caroline Borg: 1 hour.
 6. **writing documentation:**
     * E-Joon Ko: 4 hours
