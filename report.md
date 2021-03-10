@@ -43,7 +43,7 @@ For each team member, how much time was spent in
     * Caroline Borg: 1 hour (installed WSL to be able to test for unix)
 5. **analyzing code/output:**
     * E-Joon Ko: 4 hours.
-    * Jakob Berggren: 1 hour.
+    * Jakob Berggren: 4 hour.
     * Niklas Tomsic: 1 hour.
     * Caroline Borg: 1 hour.
 6. **writing documentation:**
@@ -53,12 +53,12 @@ For each team member, how much time was spent in
     * Caroline Borg: 5 hours ( -||- ).
 7. **writing code:**
     * E-Joon Ko: 4 hours.
-    * Jakob Berggren: 2 hours.
+    * Jakob Berggren: 1 hours.
     * Niklas Tomsic: 4 hours.
     * Caroline Borg: 6 hours.
 8. **running code:**
     * E-Joon Ko: 2 hours.
-    * Jakob Berggren: 1 hour.
+    * Jakob Berggren: 2 hour.
     * Niklas Tomsic: 1 hour.
     * Caroline Borg: 1 hour.
 
