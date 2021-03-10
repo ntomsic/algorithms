@@ -18,7 +18,7 @@ def first_unique_char(s):
     :type s: str
     :rtype: int
     """
-    if (len(s) == 1):
+    if len(s) == 1:
         return 0
     ban = []
     for i in range(len(s)):

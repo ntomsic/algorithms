@@ -20,7 +20,7 @@ class Graph:
             if y in self.graph[x]:
                 self.has_path = True
                 return
-            if (not (visited[i])):
+            if not visited[i]:
                 self.dfsutil(visited, x, i)
 
     def is_reachable(self, x, y):

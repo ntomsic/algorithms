@@ -64,7 +64,7 @@ def is_palindrome_reverse(s):
     s = remove_punctuation(s)
 
     # can also get rid of the string_reverse function and just do this return s == s[::-1] in one line.
-    if (s == string_reverse(s)):
+    if s == string_reverse(s):
         return True
     return False
 
@@ -74,7 +74,7 @@ def is_palindrome_two_pointer(s):
     s = remove_punctuation(s)
 
     for i in range(0, len(s) // 2):
-        if (s[i] != s[len(s) - i - 1]):
+        if s[i] != s[len(s) - i - 1]:
             return False
     return True
 

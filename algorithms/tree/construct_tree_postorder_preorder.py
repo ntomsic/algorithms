@@ -49,27 +49,27 @@ def construct_tree_util(pre: list, post: list, low: int, high: int, size: int):
         pre_index = 0
 
     # Base case
-    if (pre_index >= size or low > high):
+    if pre_index >= size or low > high:
         return None
 
     root = TreeNode(pre[pre_index])
     pre_index += 1
 
     # If only one element in the subarray return root
-    if (low == high or pre_index >= size):
+    if low == high or pre_index >= size:
         return root
 
     # Find the next element of pre[] in post[]
     i = low
     while i <= high:
-        if (pre[pre_index] == post[i]):
+        if pre[pre_index] == post[i]:
             break
 
         i += 1
 
     # Use index of element present in postorder to divide postorder array
     # to two parts: left subtree and right subtree
-    if (i <= high):
+    if i <= high:
         root.left = construct_tree_util(pre, post, low, i, size)
         root.right = construct_tree_util(pre, post, i + 1, high, size)
 

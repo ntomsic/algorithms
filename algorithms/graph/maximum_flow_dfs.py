@@ -30,7 +30,7 @@ def maximum_flow_dfs(adjacency_matrix):
     new_array = copy.deepcopy(adjacency_matrix)
     total = 0
 
-    while (1):
+    while 1:
         # setting min to max_value
         min = math.inf
         # save visited nodes
@@ -46,28 +46,28 @@ def maximum_flow_dfs(adjacency_matrix):
         stack.append(0)
 
         # DFS to find path
-        while (len(stack) > 0):
+        while len(stack) > 0:
             # pop from queue
             src = stack.pop()
             for k in range(len(new_array)):
                 # checking capacity and visit
-                if (new_array[src][k] > 0 and visited[k] == 0):
+                if new_array[src][k] > 0 and visited[k] == 0:
                     # if not, put into queue and chage to visit and save path
                     visited[k] = 1
                     stack.append(k)
                     path[k] = src
 
         # if there is no path from src to sink
-        if (visited[len(new_array) - 1] == 0):
+        if visited[len(new_array) - 1] == 0:
             break
 
         # initial setting
         tmp = len(new_array) - 1
 
         # Get minimum flow
-        while (tmp != 0):
+        while tmp != 0:
             # find minimum flow
-            if (min > new_array[path[tmp]][tmp]):
+            if min > new_array[path[tmp]][tmp]:
                 min = new_array[path[tmp]][tmp]
             tmp = path[tmp]
 
@@ -75,7 +75,7 @@ def maximum_flow_dfs(adjacency_matrix):
         tmp = len(new_array) - 1
 
         # reduce capacity
-        while (tmp != 0):
+        while tmp != 0:
             new_array[path[tmp]][tmp] = new_array[path[tmp]][tmp] - min
             tmp = path[tmp]
 

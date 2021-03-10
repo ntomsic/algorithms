@@ -35,17 +35,17 @@ Order of certain number may or may not be exist. If so, return -1.
 
 
 def find_order(a, n):
-    if ((a == 1) & (n == 1)):
+    if (a == 1) & (n == 1):
         return 1
         """ Exception Handeling :
         1 is the order of of 1 """
     else:
-        if (math.gcd(a, n) != 1):
+        if math.gcd(a, n) != 1:
             print("a and n should be relative prime!")
             return -1
         else:
             for i in range(1, n):
-                if (pow(a, i) % n == 1):
+                if pow(a, i) % n == 1:
                     return i
             return -1
 
@@ -82,7 +82,7 @@ If so, return empty list.
 
 
 def find_primitive_root(n):
-    if (n == 1):
+    if n == 1:
         return [0]
         """ Exception Handeling :
         0 is the only primitive root of 1 """
@@ -91,13 +91,13 @@ def find_primitive_root(n):
         p_root_list = []
         """ It will return every primitive roots of n. """
         for i in range(1, n):
-            if (math.gcd(i, n) != 1):
+            if math.gcd(i, n) != 1:
                 continue
                 """ To have order, a and n must be
                 relative prime with each other. """
             else:
                 order = find_order(i, n)
-                if (order == phi):
+                if order == phi:
                     p_root_list.append(i)
                 else:
                     continue
@@ -159,11 +159,11 @@ def bob_shared_key(a_pu_k, b_pr_k, p):
 
 
 def diffie_hellman_key_exchange(a, p, option=None):
-    if (option != None):
+    if option != None:
         option = 1
         """ Print explanation of process
         when option parameter is given """
-    if (prime_check(p) == False):
+    if prime_check(p) == False:
         print("%d is not a prime number" % p)
         return False
         """p must be large prime number"""
@@ -182,7 +182,7 @@ def diffie_hellman_key_exchange(a, p, option=None):
         b_pr_k = bob_private_key(p)
         b_pu_k = bob_public_key(b_pr_k, a, p)
 
-        if (option == 1):
+        if option == 1:
             print("Private key of Alice = %d" % a_pr_k)
             print("Public key of Alice = %d" % a_pu_k)
             print("Private key of Bob = %d" % b_pr_k)
@@ -196,4 +196,4 @@ def diffie_hellman_key_exchange(a, p, option=None):
         print("Shared key calculated by Alice = %d" % a_sh_k)
         print("Shared key calculated by Bob = %d" % b_sh_k)
 
-        return (a_sh_k == b_sh_k)
+        return a_sh_k == b_sh_k

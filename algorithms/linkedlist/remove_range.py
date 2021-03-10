@@ -12,7 +12,7 @@ legal range of the list (0 < start index < end index < size of list).
 
 
 def remove_range(head, start, end):
-    assert (start <= end)
+    assert start <= end
     # Case: remove node at head
     if start == 0:
         for i in range(0, end + 1):

@@ -52,7 +52,7 @@ def schedule(job):
         # Find profit including the current job
         incl_prof = job[i].profit
         l = binary_search(job, i)
-        if (l != -1):
+        if l != -1:
             incl_prof += table[l]
 
         # Store maximum of including and excluding
