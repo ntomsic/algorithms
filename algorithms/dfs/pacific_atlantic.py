@@ -35,9 +35,11 @@ def pacific_atlantic(matrix):
     :rtype: List[List[int]]
     """
     n = len(matrix)
-    if not n: return []
+    if not n:
+        return []
     m = len(matrix[0])
-    if not m: return []
+    if not m:
+        return []
     res = []
     atlantic = [[False for _ in range(n)] for _ in range(m)]
     pacific = [[False for _ in range(n)] for _ in range(m)]

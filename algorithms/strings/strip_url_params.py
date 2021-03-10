@@ -84,7 +84,8 @@ def strip_url_params2(url, param_to_strip=[]):
 
 # Here is my friend's solution using python's builtin libraries
 def strip_url_params3(url, strip=None):
-    if not strip: strip = []
+    if not strip:
+        strip = []
 
     parse = urllib.parse.urlparse(url)
     query = urllib.parse.parse_qs(parse.query)

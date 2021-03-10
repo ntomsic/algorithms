@@ -14,7 +14,8 @@ def encode_rle(input):
     :param input: The data to be encoded.
     :return: The encoded string.
     """
-    if not input: return ''
+    if not input:
+        return ''
 
     encoded_str = ''
     prev_ch = ''

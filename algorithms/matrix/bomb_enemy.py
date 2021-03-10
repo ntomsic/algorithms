@@ -19,7 +19,8 @@ return 3. (Placing a bomb at (1,1) kills 3 enemies)
 
 
 def max_killed_enemies(grid):
-    if not grid: return 0
+    if not grid:
+        return 0
     m, n = len(grid), len(grid[0])
     max_killed = 0
     row_e, col_e = 0, [0] * n
