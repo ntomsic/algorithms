@@ -18,7 +18,7 @@ def merge_k_lists(lists):
     h = [(n.val, n) for n in lists if n]
     heapify(h)
     while h:
-        v, n = h[0]
+        _, n = h[0]
         if n.next is None:
             heappop(h)  # only change heap size when necessary
         else:

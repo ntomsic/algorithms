@@ -21,7 +21,7 @@ def bellman_ford(graph, source):
 
     initialize_single_source(graph, source, weight, pre_node)
 
-    for i in range(1, len(graph)):
+    for _ in range(1, len(graph)):
         for node in graph:
             for adjacent in graph[node]:
                 if weight[adjacent] > weight[node] + graph[node][adjacent]:

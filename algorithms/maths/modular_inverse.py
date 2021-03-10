@@ -28,7 +28,7 @@ def modular_inverse(a: int, m: int) -> int:
     a and m must be coprime
     """
 
-    s, t, g = extended_gcd(a, m)
+    s, _, g = extended_gcd(a, m)
     if g != 1:
         raise ValueError("a and m must be coprime")
     return s % m
