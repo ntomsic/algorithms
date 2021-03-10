@@ -24,7 +24,7 @@ def is_prime(n, k):
         """
         x = pow(int(a), int(d), int(n))
 
-        if x == 1 or x == n - 1:
+        if x in (1, n - 1):
             return False
 
         for _ in range(r - 1):
@@ -39,7 +39,7 @@ def is_prime(n, k):
 
     # precondition n >= 5
     if n < 5:
-        return n == 2 or n == 3  # True for prime
+        return n in (2, 3)  # True for prime
 
     r, d = pow2_factor(n - 1)
 

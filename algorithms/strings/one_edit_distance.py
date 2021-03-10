@@ -32,4 +32,4 @@ def is_one_edit2(s, t):
             else:
                 s = s[:i] + t[i] + s[i:]  # insertion
             break
-    return s == t or s == t[:-1]
+    return s in (t, t[:-1])
