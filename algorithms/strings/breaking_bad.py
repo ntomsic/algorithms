@@ -22,11 +22,11 @@ output:
 ['[Am]azon', 'Mi[cro]soft', 'Goog[le]', 'Amaz[o]n', 'Micr[o]s[o]ft', 'G[o][o]gle']
 """
 
+import re
 from functools import reduce
 
 
 def match_symbol(words, symbols):
-    import re
     combined = []
     for s in symbols:
         for c in words:
@@ -39,7 +39,7 @@ def match_symbol(words, symbols):
 def match_symbol_1(words, symbols):
     res = []
     # reversely sort the symbols according to their lengths.
-    symbols = sorted(symbols, key=lambda _: len(_), reverse=True)
+    symbols = sorted(symbols, key=len, reverse=True)
     for word in words:
         for symbol in symbols:
             word_replaced = ''

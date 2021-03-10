@@ -59,7 +59,9 @@ class DirectedEdge(object):
 
 
 class DirectedGraph(object):
-    def __init__(self, load_dict={}):
+    def __init__(self, load_dict=None):
+        if load_dict is None:
+            load_dict = {}
         self.nodes = []
         self.edges = []
         self.adjmt = {}

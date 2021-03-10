@@ -345,10 +345,10 @@ class Polynomial:
                     monos -= {_own_monos}
                     temp_variables = {i: other.variables[i] for i in other.variables}
                     monos |= {Monomial(temp_variables, Polynomial._rationalize_if_possible(scalar + other.coeff))}
-                    return Polynomial([z for z in monos])
+                    return Polynomial(list(monos))
 
             monos |= {other.clone()}
-            return Polynomial([z for z in monos])
+            return Polynomial(list(monos))
         if isinstance(other, Polynomial):
             temp = list(z for z in {m.clone() for m in self.all_monomials()})
 
@@ -375,13 +375,13 @@ class Polynomial:
                     monos -= {_own_monos}
                     temp_variables = {i: other.variables[i] for i in other.variables}
                     monos |= {Monomial(temp_variables, Polynomial._rationalize_if_possible(scalar - other.coeff))}
-                    return Polynomial([z for z in monos])
+                    return Polynomial(list(monos))
 
             to_insert = other.clone()
             to_insert.coeff *= -1
 
             monos |= {to_insert}
-            return Polynomial([z for z in monos])
+            return Polynomial(list(monos))
 
         if isinstance(other, Polynomial):
             p = Polynomial(list(z for z in {m.clone() for m in self.all_monomials()}))
@@ -442,7 +442,7 @@ class Polynomial:
         if isinstance(other, (Fraction, float, int)):
             return self.__truediv__(Monomial({}, other))
         if isinstance(other, Monomial):
-            poly_temp = reduce(lambda acc, val: acc + val, map(lambda x: x / other, [z for z in self.all_monomials()]),
+            poly_temp = reduce(lambda acc, val: acc + val, map(lambda x: x / other, list(self.all_monomials())),
                                Polynomial([Monomial({}, 0)]))
             return poly_temp
         if isinstance(other, Polynomial):
@@ -452,7 +452,7 @@ class Polynomial:
                     only = temp_set.pop()
                     return self.__truediv__(only)
             if len(other.all_monomials()) == 1:
-                temp_set = {x for x in other.all_monomials()}
+                temp_set = set(other.all_monomials())
                 only = temp_set.pop()
                 return self.__truediv__(only)
 
@@ -474,7 +474,7 @@ class Polynomial:
         """
         res = set()
         for i in self.all_monomials():
-            res |= {j for j in i.variables}
+            res |= i.variables.keys()
         res = list(res)
         # res.sort()
         return set(res)

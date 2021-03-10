@@ -68,7 +68,9 @@ def strip_url_params1(url, params_to_strip=None):
 
 
 # A very friendly pythonic solution (easy to follow)
-def strip_url_params2(url, param_to_strip=[]):
+def strip_url_params2(url, param_to_strip=None):
+    if param_to_strip is None:
+        param_to_strip = []
     if '?' not in url:
         return url
 

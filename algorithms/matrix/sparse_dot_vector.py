@@ -7,6 +7,8 @@ find a data structure to store them
 get the dot product of them
 """
 
+import time
+import random
 
 def vector_to_index_value_list(vector):
     return [(i, v) for i, v in enumerate(vector) if v != 0.0]
@@ -46,7 +48,6 @@ def __test_time():
     nozero_counut = 10
 
     def random_vector():
-        import random
         vector = [0 for _ in range(vector_length)]
         for i in random.sample(range(vector_length), nozero_counut):
             vector[i] = random.random()
@@ -55,7 +56,6 @@ def __test_time():
     vectors = [random_vector() for _ in range(vector_count)]
     iv_lists = [vector_to_index_value_list(vector) for vector in vectors]
 
-    import time
 
     time_start = time.time()
     for i in range(vector_count):

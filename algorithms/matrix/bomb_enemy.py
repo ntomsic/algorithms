@@ -17,6 +17,8 @@ E 0 W E
 return 3. (Placing a bomb at (1,1) kills 3 enemies)
 """
 
+import unittest
+
 
 def max_killed_enemies(grid):
     if not grid:
@@ -68,8 +70,6 @@ def col_kills(grid, i, j):
 """
     Testsuite for the project
 """
-
-import unittest
 
 
 class TestBombEnemy(unittest.TestCase):
