@@ -8,8 +8,8 @@ Space complexity is O(|V|)
 
 """
 
-def check_bipartite(adj_list):
 
+def check_bipartite(adj_list):
     V = len(adj_list)
 
     # Divide vertexes in the graph into set_type 1 and 2
@@ -36,4 +36,3 @@ def check_bipartite(adj_list):
                     q.append(u)
 
     return True
-

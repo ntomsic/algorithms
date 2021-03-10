@@ -11,6 +11,7 @@ class Interval:
      numbers are included in the set.
     Includes related methods to merge and print interval sets.
     """
+
     def __init__(self, start=0, end=0):
         self.start = start
         self.end = end

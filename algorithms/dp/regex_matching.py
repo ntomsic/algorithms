@@ -20,10 +20,11 @@ is_match("aab", "c*a*b") → true
 """
 import unittest
 
+
 class Solution(object):
     def is_match(self, s, p):
         m, n = len(s) + 1, len(p) + 1
-        matches = [[False] * n  for _ in range(m)]
+        matches = [[False] * n for _ in range(m)]
 
         # Match empty string with empty pattern
         matches[0][0] = True
@@ -55,6 +56,7 @@ class Solution(object):
                         matches[i][j] |= matches[i - 1][j]
 
         return matches[-1][-1]
+
 
 class TestSolution(unittest.TestCase):
     def test_none_0(self):

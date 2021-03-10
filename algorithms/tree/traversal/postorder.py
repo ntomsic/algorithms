@@ -2,6 +2,7 @@
 Time complexity : O(n)
 '''
 
+
 class Node:
 
     def __init__(self, val, left=None, right=None):
@@ -28,6 +29,7 @@ def postorder(root):
         res.append(res_temp.pop())
     return res
 
+
 # Recursive Implementation
 def postorder_rec(root, res=None):
     if root is None:
@@ -38,4 +40,3 @@ def postorder_rec(root, res=None):
     postorder_rec(root.right, res)
     res.append(root.val)
     return res
-

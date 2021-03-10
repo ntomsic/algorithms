@@ -4,6 +4,8 @@ counts the number of integers between 1 and n inclusive,
 which are coprime to n.
 (Two numbers are coprime if their greatest common divisor (GCD) equals 1).
 """
+
+
 def euler_totient(n):
     """Euler's totient function or Phi function.
     Time Complexity: O(sqrt(n))."""

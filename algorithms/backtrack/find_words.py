@@ -15,7 +15,6 @@ words = ["oath","pea","eat","rain"]
 
 
 def find_words(board, words):
-
     def backtrack(board, i, j, trie, pre, used, result):
         '''
         backtrack tries to build each words from
@@ -42,14 +41,14 @@ def find_words(board, words):
 
         if not used[i][j] and board[i][j] in trie:
             used[i][j] = True
-            backtrack(board, i+1, j, trie[board[i][j]],
-                      pre+board[i][j], used, result)
-            backtrack(board, i, j+1, trie[board[i][j]],
-                      pre+board[i][j], used, result)
-            backtrack(board, i-1, j, trie[board[i][j]],
-                      pre+board[i][j], used, result)
-            backtrack(board, i, j-1, trie[board[i][j]],
-                      pre+board[i][j], used, result)
+            backtrack(board, i + 1, j, trie[board[i][j]],
+                      pre + board[i][j], used, result)
+            backtrack(board, i, j + 1, trie[board[i][j]],
+                      pre + board[i][j], used, result)
+            backtrack(board, i - 1, j, trie[board[i][j]],
+                      pre + board[i][j], used, result)
+            backtrack(board, i, j - 1, trie[board[i][j]],
+                      pre + board[i][j], used, result)
             used[i][j] = False
 
     # make a trie structure that is essentially dictionaries of dictionaries
@@ -65,7 +64,7 @@ def find_words(board, words):
 
     # result is a set of found words since we do not want repeats
     result = set()
-    used = [[False]*len(board[0]) for _ in range(len(board))]
+    used = [[False] * len(board[0]) for _ in range(len(board))]
 
     for i in range(len(board)):
         for j in range(len(board[0])):

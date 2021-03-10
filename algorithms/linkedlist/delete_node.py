@@ -25,7 +25,6 @@ def delete_node(node):
 class TestSuite(unittest.TestCase):
 
     def test_delete_node(self):
-
         # make linkedlist 1 -> 2 -> 3 -> 4
         head = Node(1)
         curr = head
@@ -59,5 +58,4 @@ class TestSuite(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
     unittest.main()

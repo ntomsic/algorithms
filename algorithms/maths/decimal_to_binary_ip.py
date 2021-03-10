@@ -6,6 +6,7 @@ accepts string
 returns string
 """
 
+
 def decimal_to_binary_util(val):
     bits = [128, 64, 32, 16, 8, 4, 2, 1]
     val = int(val)
@@ -18,6 +19,7 @@ def decimal_to_binary_util(val):
             binary_rep += str(0)
 
     return binary_rep
+
 
 def decimal_to_binary_ip(ip):
     values = ip.split('.')

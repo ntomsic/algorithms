@@ -6,17 +6,17 @@ Removes any query string parameters specified within the 2nd argument (optional 
 An example:
 www.saadbenn.com?a=1&b=2&a=2') // returns 'www.saadbenn.com?a=1&b=2'
 """
-from collections import defaultdict
 import urllib
 import urllib.parse
+from collections import defaultdict
+
 
 # Here is a very non-pythonic grotesque solution
 def strip_url_params1(url, params_to_strip=None):
-    
     if not params_to_strip:
         params_to_strip = []
     if url:
-        result = '' # final result to be returned
+        result = ''  # final result to be returned
         tokens = url.split('?')
         domain = tokens[0]
         query_string = tokens[-1]
@@ -44,7 +44,7 @@ def strip_url_params1(url, params_to_strip=None):
                 if _token[0]:
                     length = len(_token[0])
                     if length == 1:
-                        if _token and (not(_token[0] in dict)):
+                        if _token and (not (_token[0] in dict)):
                             if params_to_strip:
                                 if _token[0] != params_to_strip[0]:
                                     dict[_token[0]] = _token[1]
@@ -56,7 +56,7 @@ def strip_url_params1(url, params_to_strip=None):
                     else:
                         check = _token[0]
                         letter = check[1]
-                        if _token and (not(letter in dict)):
+                        if _token and (not (letter in dict)):
                             if params_to_strip:
                                 if letter != params_to_strip[0]:
                                     dict[letter] = _token[1]
@@ -66,6 +66,7 @@ def strip_url_params1(url, params_to_strip=None):
                                     dict[letter] = _token[1]
                                     result = result + _token[0] + '=' + _token[1]
     return result
+
 
 # A very friendly pythonic solution (easy to follow)
 def strip_url_params2(url, param_to_strip=[]):
@@ -84,12 +85,12 @@ def strip_url_params2(url, param_to_strip=[]):
 # Here is my friend's solution using python's builtin libraries
 def strip_url_params3(url, strip=None):
     if not strip: strip = []
-    
+
     parse = urllib.parse.urlparse(url)
     query = urllib.parse.parse_qs(parse.query)
-    
+
     query = {k: v[0] for k, v in query.items() if k not in strip}
     query = urllib.parse.urlencode(query)
     new = parse._replace(query=query)
-    
+
     return new.geturl()

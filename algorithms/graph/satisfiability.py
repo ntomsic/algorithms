@@ -6,7 +6,6 @@ is no solution.
 https://en.wikipedia.org/wiki/2-satisfiability
 '''
 
-
 ''' Format:
         - each clause is a pair of literals
         - each literal in the form (name, is_neg)

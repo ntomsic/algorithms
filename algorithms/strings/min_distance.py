@@ -11,8 +11,10 @@ Explanation: You need one step to make "sea" to "ea" and another step to make "e
 Reference: https://leetcode.com/problems/delete-operation-for-two-strings/description/
 """
 
+
 def min_distance(word1, word2):
     return len(word1) + len(word2) - 2 * lcs(word1, word2, len(word1), len(word2))
+
 
 def lcs(s1, s2, i, j):
     """

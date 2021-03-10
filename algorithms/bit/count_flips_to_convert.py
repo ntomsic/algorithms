@@ -8,7 +8,6 @@ Output: 2
 
 
 def count_flips_to_convert(a, b):
-
     diff = a ^ b
 
     # count number of ones in diff

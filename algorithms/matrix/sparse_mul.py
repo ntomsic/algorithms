@@ -67,6 +67,7 @@ def multiply(self, a, b):
                     c[i][j] += eleA * eleB
     return c
 
+
 # Python solution with two tables (~196ms):
 def multiply(self, a, b):
     """

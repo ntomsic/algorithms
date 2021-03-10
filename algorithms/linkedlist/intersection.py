@@ -19,7 +19,6 @@ class Node(object):
 
 
 def intersection(h1, h2):
-
     count = 0
     flag = None
     h1_orig = h1
@@ -37,7 +36,7 @@ def intersection(h1, h2):
         if h2:
             h2 = h2.next
 
-    long_len = count    # Mark the length of the longer of the two lists
+    long_len = count  # Mark the length of the longer of the two lists
     short_len = flag[0]
 
     if flag[1] is None:
@@ -67,7 +66,6 @@ def intersection(h1, h2):
 class TestSuite(unittest.TestCase):
 
     def test_intersection(self):
-
         # create linked list as:
         # 1 -> 3 -> 5
         #            \
@@ -97,5 +95,4 @@ class TestSuite(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
     unittest.main()

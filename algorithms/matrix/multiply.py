@@ -16,7 +16,7 @@ def multiply(multiplicand: list, multiplier: list) -> list:
     multiplicand_row, multiplicand_col = len(
         multiplicand), len(multiplicand[0])
     multiplier_row, multiplier_col = len(multiplier), len(multiplier[0])
-    if(multiplicand_col != multiplier_row):
+    if (multiplicand_col != multiplier_row):
         raise Exception(
             "Multiplicand matrix not compatible with Multiplier matrix.")
     # create a result matrix

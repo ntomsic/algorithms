@@ -11,7 +11,7 @@ Output:
     part[0]: algorithms/unix
     part[1]: test.py
 """
-import os
+
 
 def split(path):
     parts = []

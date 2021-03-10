@@ -18,6 +18,7 @@ the remaining should be the exact bit of the single number.
 In this way, you get the 32 bits of the single number.
 """
 
+
 # Another awesome answer
 def single_number2(nums):
     ones, twos = 0, 0

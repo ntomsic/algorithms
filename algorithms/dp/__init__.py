@@ -7,7 +7,9 @@ from .egg_drop import *
 from .fib import *
 from .hosoya_triangle import *
 from .house_robber import *
+from .int_divide import *
 from .job_scheduling import *
+from .k_factor import *
 from .knapsack import *
 from .longest_increasing import *
 from .matrix_chain_order import *
@@ -18,5 +20,3 @@ from .num_decodings import *
 from .regex_matching import *
 from .rod_cut import *
 from .word_break import *
-from .int_divide import *
-from .k_factor import *

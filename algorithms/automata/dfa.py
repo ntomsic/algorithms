@@ -1,5 +1,4 @@
 def DFA(transitions, start, final, string):
-
     num = len(string)
     num_final = len(final)
     cur = start
