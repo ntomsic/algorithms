@@ -20,12 +20,11 @@ def permute(elements):
     """
     if len(elements) <= 1:
         return [elements]
-    else:
-        tmp = []
-        for perm in permute(elements[1:]):
-            for i in range(len(elements)):
-                tmp.append(perm[:i] + elements[0:1] + perm[i:])
-        return tmp
+    tmp = []
+    for perm in permute(elements[1:]):
+        for i in range(len(elements)):
+            tmp.append(perm[:i] + elements[0:1] + perm[i:])
+    return tmp
 
 
 def permute_iter(elements):

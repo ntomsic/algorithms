@@ -13,8 +13,7 @@ Reference: https://leetcode.com/problems/rotate-string/description/
 def is_rotated(s1, s2):
     if len(s1) == len(s2):
         return s2 in s1 + s1
-    else:
-        return False
+    return False
 
 
 """

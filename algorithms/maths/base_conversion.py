@@ -18,7 +18,7 @@ def int_to_base(n, base):
     is_negative = False
     if n == 0:
         return '0'
-    elif n < 0:
+    if n < 0:
         is_negative = True
         n *= -1
     digit = string.digits + string.ascii_uppercase
@@ -28,8 +28,7 @@ def int_to_base(n, base):
         n //= base
     if is_negative:
         return '-' + res[::-1]
-    else:
-        return res[::-1]
+    return res[::-1]
 
 
 def base_to_int(s, base):

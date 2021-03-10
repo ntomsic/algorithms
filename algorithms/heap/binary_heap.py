@@ -92,12 +92,10 @@ class BinaryHeap(AbstractHeap):
     def min_child(self, i):
         if 2 * i + 1 > self.currentSize:  # No right child
             return 2 * i
-        else:
-            # left child > right child
-            if self.heap[2 * i] > self.heap[2 * i + 1]:
-                return 2 * i + 1
-            else:
-                return 2 * i
+        # left child > right child
+        if self.heap[2 * i] > self.heap[2 * i + 1]:
+            return 2 * i + 1
+        return 2 * i
 
     def perc_down(self, i):
         while 2 * i < self.currentSize:

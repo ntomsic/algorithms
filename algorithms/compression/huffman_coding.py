@@ -105,8 +105,7 @@ class HuffmanReader:
         if self._load_byte(buff_limit):
             bit = self.buffer.pop(0)
             return bit
-        else:
-            return -1
+        return -1
 
     def get_byte(self):
         if self._load_byte():
@@ -114,8 +113,7 @@ class HuffmanReader:
             self.buffer = self.buffer[8:]
 
             return "".join(byte_list)
-        else:
-            return -1
+        return -1
 
 
 class HuffmanWriter:
@@ -216,8 +214,7 @@ class TreeFinder:
         if self.current_node.sign is not None:
             self._reset(self.current_node.sign)
             return True
-        else:
-            return False
+        return False
 
     def _reset(self, found=""):
         self.found = found

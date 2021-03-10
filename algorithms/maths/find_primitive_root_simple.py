@@ -13,15 +13,13 @@ def find_order(a, n):
         return 1
         """ Exception Handeling :
         1 is the order of of 1 """
-    else:
-        if math.gcd(a, n) != 1:
-            print("a and n should be relative prime!")
-            return -1
-        else:
-            for i in range(1, n):
-                if pow(a, i) % n == 1:
-                    return i
-            return -1
+    if math.gcd(a, n) != 1:
+        print("a and n should be relative prime!")
+        return -1
+    for i in range(1, n):
+        if pow(a, i) % n == 1:
+            return i
+    return -1
 
 
 """
@@ -60,19 +58,17 @@ def find_primitive_root(n):
         return [0]
         """ Exception Handeling :
         0 is the only primitive root of 1 """
-    else:
-        phi = euler_totient(n)
-        p_root_list = []
-        """ It will return every primitive roots of n. """
-        for i in range(1, n):
-            if math.gcd(i, n) != 1:
-                continue
-                """ To have order, a and n must be
-                relative prime with each other. """
-            else:
-                order = find_order(i, n)
-                if order == phi:
-                    p_root_list.append(i)
-                else:
-                    continue
-        return p_root_list
+    phi = euler_totient(n)
+    p_root_list = []
+    """ It will return every primitive roots of n. """
+    for i in range(1, n):
+        if math.gcd(i, n) != 1:
+            continue
+            """ To have order, a and n must be
+            relative prime with each other. """
+        order = find_order(i, n)
+        if order == phi:
+            p_root_list.append(i)
+        else:
+            continue
+    return p_root_list

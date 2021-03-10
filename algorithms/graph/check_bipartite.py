@@ -30,7 +30,7 @@ def check_bipartite(adj_list):
             if adj_list[v][u]:
                 if set_type[u] == set_type[v]:
                     return False
-                elif set_type[u] == -1:
+                if set_type[u] == -1:
                     # set type of u opposite of v
                     set_type[u] = 1 - set_type[v]
                     q.append(u)

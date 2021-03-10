@@ -18,8 +18,7 @@ def kth_to_last_eval(head, k):
     while head:
         if eval(seeker) is None:
             return head
-        else:
-            head = head.next
+        head = head.next
 
     return False
 

@@ -59,8 +59,7 @@ def convert_to_list(number: int) -> Node:
             quotient //= 10
         current.next = Node(remainder)
         return head.next
-    else:
-        print("number must be positive!")
+    print("number must be positive!")
 
 
 def convert_to_str(l: Node) -> str:

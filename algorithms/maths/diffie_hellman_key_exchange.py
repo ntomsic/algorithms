@@ -39,15 +39,13 @@ def find_order(a, n):
         return 1
         """ Exception Handeling :
         1 is the order of of 1 """
-    else:
-        if math.gcd(a, n) != 1:
-            print("a and n should be relative prime!")
-            return -1
-        else:
-            for i in range(1, n):
-                if pow(a, i) % n == 1:
-                    return i
-            return -1
+    if math.gcd(a, n) != 1:
+        print("a and n should be relative prime!")
+        return -1
+    for i in range(1, n):
+        if pow(a, i) % n == 1:
+            return i
+    return -1
 
 
 """
@@ -86,22 +84,20 @@ def find_primitive_root(n):
         return [0]
         """ Exception Handeling :
         0 is the only primitive root of 1 """
-    else:
-        phi = euler_totient(n)
-        p_root_list = []
-        """ It will return every primitive roots of n. """
-        for i in range(1, n):
-            if math.gcd(i, n) != 1:
-                continue
-                """ To have order, a and n must be
-                relative prime with each other. """
-            else:
-                order = find_order(i, n)
-                if order == phi:
-                    p_root_list.append(i)
-                else:
-                    continue
-        return p_root_list
+    phi = euler_totient(n)
+    p_root_list = []
+    """ It will return every primitive roots of n. """
+    for i in range(1, n):
+        if math.gcd(i, n) != 1:
+            continue
+            """ To have order, a and n must be
+            relative prime with each other. """
+        order = find_order(i, n)
+        if order == phi:
+            p_root_list.append(i)
+        else:
+            continue
+    return p_root_list
 
 
 """
@@ -167,33 +163,32 @@ def diffie_hellman_key_exchange(a, p, option=None):
         print("%d is not a prime number" % p)
         return False
         """p must be large prime number"""
-    else:
-        try:
-            p_root_list = find_primitive_root(p)
-            p_root_list.index(a)
-        except ValueError:
-            print("%d is not a primitive root of %d" % (a, p))
-            return False
-            """ a must be primitive root of p """
+    try:
+        p_root_list = find_primitive_root(p)
+        p_root_list.index(a)
+    except ValueError:
+        print("%d is not a primitive root of %d" % (a, p))
+        return False
+        """ a must be primitive root of p """
 
-        a_pr_k = alice_private_key(p)
-        a_pu_k = alice_public_key(a_pr_k, a, p)
+    a_pr_k = alice_private_key(p)
+    a_pu_k = alice_public_key(a_pr_k, a, p)
 
-        b_pr_k = bob_private_key(p)
-        b_pu_k = bob_public_key(b_pr_k, a, p)
+    b_pr_k = bob_private_key(p)
+    b_pu_k = bob_public_key(b_pr_k, a, p)
 
-        if option == 1:
-            print("Private key of Alice = %d" % a_pr_k)
-            print("Public key of Alice = %d" % a_pu_k)
-            print("Private key of Bob = %d" % b_pr_k)
-            print("Public key of Bob = %d" % b_pu_k)
+    if option == 1:
+        print("Private key of Alice = %d" % a_pr_k)
+        print("Public key of Alice = %d" % a_pu_k)
+        print("Private key of Bob = %d" % b_pr_k)
+        print("Public key of Bob = %d" % b_pu_k)
 
-        """ In here, Alice send her public key to Bob,
-        and Bob also send his public key to Alice."""
+    """ In here, Alice send her public key to Bob,
+    and Bob also send his public key to Alice."""
 
-        a_sh_k = alice_shared_key(b_pu_k, a_pr_k, p)
-        b_sh_k = bob_shared_key(a_pu_k, b_pr_k, p)
-        print("Shared key calculated by Alice = %d" % a_sh_k)
-        print("Shared key calculated by Bob = %d" % b_sh_k)
+    a_sh_k = alice_shared_key(b_pu_k, a_pr_k, p)
+    b_sh_k = bob_shared_key(a_pu_k, b_pr_k, p)
+    print("Shared key calculated by Alice = %d" % a_sh_k)
+    print("Shared key calculated by Bob = %d" % b_sh_k)
 
-        return a_sh_k == b_sh_k
+    return a_sh_k == b_sh_k

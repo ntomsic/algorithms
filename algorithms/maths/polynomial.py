@@ -61,8 +61,7 @@ class Monomial:
         if isinstance(num, Rational):
             res = Fraction(num, 1)
             return Fraction(res.numerator, res.denominator)
-        else:
-            return num
+        return num
 
     # def equal_upto_scalar(self, other: Monomial) -> bool:
     def equal_upto_scalar(self, other) -> bool:
@@ -124,20 +123,19 @@ class Monomial:
 
         if not isinstance(other, Monomial):
             raise ValueError('Can only multiply monomials, ints, floats, or Fractions.')
-        else:
-            mono = {i: self.variables[i] for i in self.variables}
-            for i in other.variables:
-                if i in mono:
-                    mono[i] += other.variables[i]
-                else:
-                    mono[i] = other.variables[i]
+        mono = {i: self.variables[i] for i in self.variables}
+        for i in other.variables:
+            if i in mono:
+                mono[i] += other.variables[i]
+            else:
+                mono[i] = other.variables[i]
 
-            temp = dict()
-            for k in mono:
-                if mono[k] != 0:
-                    temp[k] = mono[k]
+        temp = dict()
+        for k in mono:
+            if mono[k] != 0:
+                temp[k] = mono[k]
 
-            return Monomial(temp, Monomial._rationalize_if_possible(self.coeff * other.coeff)).clean()
+        return Monomial(temp, Monomial._rationalize_if_possible(self.coeff * other.coeff)).clean()
 
     # def inverse(self) -> Monomial:
     def inverse(self):
@@ -328,8 +326,7 @@ class Polynomial:
         if isinstance(num, Rational):
             res = Fraction(num, 1)
             return Fraction(res.numerator, res.denominator)
-        else:
-            return num
+        return num
 
     # def __add__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __add__(self, other: Union[int, float, Fraction, Monomial]):
@@ -339,7 +336,7 @@ class Polynomial:
         """
         if isinstance(other, (Fraction, float, int)):
             return self.__add__(Monomial({}, Polynomial._rationalize_if_possible(other)))
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             monos = {m.clone() for m in self.monomials}
 
             for _own_monos in monos:
@@ -352,15 +349,14 @@ class Polynomial:
 
             monos |= {other.clone()}
             return Polynomial([z for z in monos])
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             temp = list(z for z in {m.clone() for m in self.all_monomials()})
 
             p = Polynomial(temp)
             for o in other.all_monomials():
                 p = p.__add__(o.clone())
             return p
-        else:
-            raise ValueError('Can only add int, float, Fraction, Monomials, or Polynomials to Polynomials.')
+        raise ValueError('Can only add int, float, Fraction, Monomials, or Polynomials to Polynomials.')
 
     # def __sub__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __sub__(self, other: Union[int, float, Fraction, Monomial]):
@@ -371,7 +367,7 @@ class Polynomial:
         """
         if isinstance(other, (Fraction, float, int)):
             return self.__sub__(Monomial({}, Polynomial._rationalize_if_possible(other)))
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             monos = {m.clone() for m in self.all_monomials()}
             for _own_monos in monos:
                 if _own_monos.equal_upto_scalar(other):
@@ -387,15 +383,14 @@ class Polynomial:
             monos |= {to_insert}
             return Polynomial([z for z in monos])
 
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             p = Polynomial(list(z for z in {m.clone() for m in self.all_monomials()}))
             for o in other.all_monomials():
                 p = p.__sub__(o.clone())
             return p
 
-        else:
-            raise ValueError('Can only subtract int, float, Fraction, Monomials, or Polynomials from Polynomials.')
-            return
+        raise ValueError('Can only subtract int, float, Fraction, Monomials, or Polynomials from Polynomials.')
+        return
 
     # def __mul__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __mul__(self, other: Union[int, float, Fraction, Monomial]):
@@ -409,13 +404,13 @@ class Polynomial:
             for m in monos:
                 result = result.__add__(m.clone() * other)
             return result
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             result = Polynomial([])
             monos = {m.clone() for m in self.all_monomials()}
             for m in monos:
                 result = result.__add__(m.clone() * other)
             return result
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             temp_self = {m.clone() for m in self.all_monomials()}
             temp_other = {m.clone() for m in other.all_monomials()}
 
@@ -426,8 +421,7 @@ class Polynomial:
                     result = result.__add__(i * j)
 
             return result
-        else:
-            raise ValueError('Can only multiple int, float, Fraction, Monomials, or Polynomials with Polynomials.')
+        raise ValueError('Can only multiple int, float, Fraction, Monomials, or Polynomials with Polynomials.')
 
     # def __floordiv__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __floordiv__(self, other: Union[int, float, Fraction, Monomial]):
@@ -447,17 +441,17 @@ class Polynomial:
         """
         if isinstance(other, (Fraction, float, int)):
             return self.__truediv__(Monomial({}, other))
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             poly_temp = reduce(lambda acc, val: acc + val, map(lambda x: x / other, [z for z in self.all_monomials()]),
                                Polynomial([Monomial({}, 0)]))
             return poly_temp
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             if Monomial({}, 0) in other.all_monomials():
                 if len(other.all_monomials()) == 2:
                     temp_set = {x for x in other.all_monomials() if x != Monomial({}, 0)}
                     only = temp_set.pop()
                     return self.__truediv__(only)
-            elif len(other.all_monomials()) == 1:
+            if len(other.all_monomials()) == 1:
                 temp_set = {x for x in other.all_monomials()}
                 only = temp_set.pop()
                 return self.__truediv__(only)
@@ -499,13 +493,12 @@ class Polynomial:
         if isinstance(other, (Fraction, float, int)):
             other_poly = Polynomial([Monomial({}, other)])
             return self.__eq__(other_poly)
-        elif isinstance(other, Monomial):
+        if isinstance(other, Monomial):
             return self.__eq__(Polynomial([other]))
-        elif isinstance(other, Polynomial):
+        if isinstance(other, Polynomial):
             return self.all_monomials() == other.all_monomials()
-        else:
-            raise ValueError(
-                'Can only compare a polynomial with an int, float, Fraction, Monomial, or another Polynomial.')
+        raise ValueError(
+            'Can only compare a polynomial with an int, float, Fraction, Monomial, or another Polynomial.')
 
     def subs(self, substitutions: Union[int, float, Fraction, Dict[int, Union[int, float, Fraction]]]) -> Union[
         int, float, Fraction]:
@@ -517,7 +510,7 @@ class Polynomial:
         if isinstance(substitutions, (Fraction, float, int)):
             substitutions = {i: Polynomial._rationalize_if_possible(substitutions) for i in set(self.variables())}
             return self.subs(substitutions)
-        elif not isinstance(substitutions, dict):
+        if not isinstance(substitutions, dict):
             raise ValueError('The substitutions should be a dictionary.')
         if not self.variables().issubset(set(substitutions.keys())):
             raise ValueError('Some variables didn\'t receive their values.')

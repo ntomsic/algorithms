@@ -57,9 +57,8 @@ def is_subtree(big, small):
         if node.val == small.val:
             flag = comp(node, small)
             break
-        else:
-            queue.append(node.left)
-            queue.append(node.right)
+        queue.append(node.left)
+        queue.append(node.right)
     return flag
 
 

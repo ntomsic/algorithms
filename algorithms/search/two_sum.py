@@ -26,7 +26,7 @@ def two_sum(numbers, target):
             mid = low + (high - low) // 2
             if second_val == numbers[mid]:
                 return [i + 1, mid + 1]
-            elif second_val > numbers[mid]:
+            if second_val > numbers[mid]:
                 low = mid + 1
             else:
                 high = mid - 1
@@ -49,7 +49,7 @@ def two_sum2(numbers, target):
         s = numbers[p1] + numbers[p2]
         if s == target:
             return [p1 + 1, p2 + 1]
-        elif s > target:
+        if s > target:
             p2 = p2 - 1
         else:
             p1 = p1 + 1

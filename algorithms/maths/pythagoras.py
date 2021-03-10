@@ -7,11 +7,10 @@ def pythagoras(opposite, adjacent, hypotenuse):
     try:
         if opposite == str("?"):
             return "Opposite = " + str(((hypotenuse ** 2) - (adjacent ** 2)) ** 0.5)
-        elif adjacent == str("?"):
+        if adjacent == str("?"):
             return "Adjacent = " + str(((hypotenuse ** 2) - (opposite ** 2)) ** 0.5)
-        elif hypotenuse == str("?"):
+        if hypotenuse == str("?"):
             return "Hypotenuse = " + str(((opposite ** 2) + (adjacent ** 2)) ** 0.5)
-        else:
-            return "You already know the answer!"
+        return "You already know the answer!"
     except:
         raise ValueError("invalid argument were given.")

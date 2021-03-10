@@ -2,8 +2,7 @@ def combination(n, r):
     """This function calculates nCr."""
     if r in (n, 0):
         return 1
-    else:
-        return combination(n - 1, r - 1) + combination(n - 1, r)
+    return combination(n - 1, r - 1) + combination(n - 1, r)
 
 
 def combination_memo(n, r):

@@ -44,7 +44,7 @@ def interpolation_search(array: List[int], search_key: int) -> int:
             return pos
         # if the search_key is greater than array[pos] restart the search with the
         # subarray greater than array[pos]
-        elif search_key > array[pos]:
+        if search_key > array[pos]:
             low = pos + 1
         # in this case start the search with the subarray smaller than current array[pos]
         elif search_key < array[pos]:

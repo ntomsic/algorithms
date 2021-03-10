@@ -56,10 +56,9 @@ def n_sum(n, nums, target, **kv):
         """ above, below, or right on? """
         if num < target:
             return -1
-        elif num > target:
+        if num > target:
             return 1
-        else:
-            return 0
+        return 0
 
     def same_closure_default(a, b):
         return a == b
