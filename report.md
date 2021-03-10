@@ -27,10 +27,10 @@ For each team member, how much time was spent in
     * Niklas Tomsic: 2 hour.
     * Caroline Borg: 2 hour.
 2. **discussions within parts of the group:**
-    * E-Joon Ko: 3 hour.
-    * Jakob Berggren: 3 hour.
-    * Niklas Tomsic: 3 hour.
-    * Caroline Borg: 3 hour.
+    * E-Joon Ko: 5 hour.
+    * Jakob Berggren: 5 hour.
+    * Niklas Tomsic: 5 hour.
+    * Caroline Borg: 5 hour.
 3. **reading documentation:**
     * E-Joon Ko: 1 hour.
     * Jakob Berggren: 1 hour.
